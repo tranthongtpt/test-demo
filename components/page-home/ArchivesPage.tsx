@@ -1,6 +1,8 @@
+import Image from "next/image"
+
 const ArchivesPage = () => {
   return (
-    <section className="container mx-auto my-32 space-y-12 p-6 lg:px-8">
+    <section className="relative container mx-auto my-32 space-y-12 p-6 lg:px-8">
       <div className="mx-auto max-w-2xl">
         {' '}
         <h2 className="mb-4 text-center text-3xl font-bold uppercase !leading-tight text-black sm:text-4xl">

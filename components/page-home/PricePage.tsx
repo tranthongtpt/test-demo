@@ -3,24 +3,13 @@ import { useMemo } from "react"
 import ScrollAnimationWrapper from "../ScrollAnimationWrapper"
 import { motion } from "framer-motion"
 import getScrollAnimation from "utils/getScrollAnimation"
+import Image from "next/image"
 const PricePage = () => {
     const scrollAnimation = useMemo(() => getScrollAnimation(), [])
   return (
     <section className="relative my-32 space-y-12">
-      <svg
-        className="absolute right-0 top-80 h-full"
-        xmlns="http://www.w3.org/2000/svg"
-        width="375"
-        height="658"
-      >
-        <g fill="none" fillRule="evenodd" stroke="#D0D5F6" strokeWidth="2">
-          <path d="M172.71-101C70.623-79.38 17.478-39.688 13.273 18.074c-6.307 86.643 231.598 17.186 136.358 198-95.241 180.813-181.318 185.29-136.358 298C58.233 626.784 178.96 685.954 319.21 641.2c93.501-29.836 144.652-140.545 153.453-332.126" />
-          <path d="M214.7-101C134.617-82.012 92.926-47.154 89.628 3.575c-4.948 76.093 181.679 15.094 106.966 173.89C121.882 336.262 54.36 340.192 89.628 439.18c35.269 98.986 129.974 150.95 239.995 111.646C402.97 524.622 443.096 427.395 450 259.141" />
-          <path d="M250.935-103c-60.604 16.56-92.153 46.963-94.65 91.208-3.743 66.367 137.488 13.165 80.949 151.664-56.54 138.5-107.638 141.927-80.948 228.261 26.69 86.335 98.359 131.656 181.618 97.376C393.41 442.655 423.775 357.855 429 211.108" />
-        </g>
-      </svg>
-      <div className="relative min-h-full pb-12">
-        <div className="w-full  rounded-lg bg-gradient-to-r from-[#f598a8] to-[#EF4444] pb-24 pt-16 text-center">
+      <div className="min-h-full pb-12">
+        <div className="w-full bg-[#D01F1B] pb-24 pt-16 text-center">
           <h2 className="text-center text-3xl font-bold uppercase text-white sm:text-4xl">
             Thông tin các gói thi thử
           </h2>
@@ -70,11 +59,6 @@ const PricePage = () => {
             </button>
             <span className="text-base font-medium text-white">Theo năm</span>
           </div>
-          {/* <div className='absolute flex flex-col items-center justify-center -translate-x-1/2'>
-                <h1>Best seller</h1>
-                <Image src='svg/letter_send.svg' width={300} height={300} alt='loader' className='object-contain' />
-                
-              </div> */}
         </div>
         <div className="mx-auto -mt-8 flex w-full items-center justify-center px-8 md:px-32 lg:px-16 2xl:w-3/4 2xl:px-0">
           <div className="relative grid w-full grid-cols-1 gap-8 xl:grid-cols-3">
@@ -1137,6 +1121,28 @@ const PricePage = () => {
             </div>
           </div>
         </div>
+      </div>
+      <svg
+        className="absolute right-0 top-56 h-full -z-10"
+        xmlns="http://www.w3.org/2000/svg"
+        width="375"
+        height="658"
+      >
+        <g fill="none" fillRule="evenodd" stroke="#d15f5d" strokeWidth="2">
+          <path d="M172.71-101C70.623-79.38 17.478-39.688 13.273 18.074c-6.307 86.643 231.598 17.186 136.358 198-95.241 180.813-181.318 185.29-136.358 298C58.233 626.784 178.96 685.954 319.21 641.2c93.501-29.836 144.652-140.545 153.453-332.126" />
+          <path d="M214.7-101C134.617-82.012 92.926-47.154 89.628 3.575c-4.948 76.093 181.679 15.094 106.966 173.89C121.882 336.262 54.36 340.192 89.628 439.18c35.269 98.986 129.974 150.95 239.995 111.646C402.97 524.622 443.096 427.395 450 259.141" />
+          <path d="M250.935-103c-60.604 16.56-92.153 46.963-94.65 91.208-3.743 66.367 137.488 13.165 80.949 151.664-56.54 138.5-107.638 141.927-80.948 228.261 26.69 86.335 98.359 131.656 181.618 97.376C393.41 442.655 423.775 357.855 429 211.108" />
+        </g>
+      </svg>
+      <div className="absolute -bottom-96 -left-80">
+        <Image
+          src="/static/svg/test/svg-decorator-blob-3.svg"
+          alt="VPN Illustrasi"
+          layout="responsive"
+          height={50}
+          width={100}
+          className="pointer-events-none z-10 fill-current text-gray-900 opacity-25"
+        />
       </div>
     </section>
   )

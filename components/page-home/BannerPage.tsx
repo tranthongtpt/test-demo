@@ -1,6 +1,6 @@
 const BannerPage = () => {
   return (
-    <section className="relative z-10 overflow-hidden bg-red-600 px-8 py-16">
+    <section className="relative z-10 overflow-hidden bg-[#D01F1B] px-8 py-16">
       <div className="container mx-auto">
         <div className="-mx-4 flex flex-wrap items-center">
           <div className="w-full px-4 lg:w-1/2">

@@ -138,7 +138,7 @@ const AchievementPage = () => {
           ))}
         </Swiper>
       </div>
-      <span className="absolute right-0 top-7 z-[-1]">
+      {/* <span className="absolute right-0 top-7 z-[-1]">
         <svg
           width="77"
           height="172"
@@ -395,8 +395,8 @@ const AchievementPage = () => {
             fill="#EC2229"
           />
         </svg>
-      </span>
-      <div className="absolute -left-96 top-0">
+      </span> */}
+      <div className="absolute -left-80 -top-72">
         <Image
           src="/static/svg/test/svg-decorator-blob-3.svg"
           alt="VPN Illustrasi"

@@ -44,7 +44,7 @@ function HeroHome() {
   }
 
   return (
-    <section className="bg-gradient-to-r from-[#f598a8] to-[#EF4444]">
+    <section className="bg-[#D01F1B]">
       <div className="container mx-auto p-6 md:px-12 lg:px-6 xl:px-0">
         <div className="relative ml-auto">
           <div className="gap-12 md:flex md:items-center">

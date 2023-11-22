@@ -22,16 +22,22 @@ export const MenuItem = ({
   active,
   item,
   children,
-  scrolling
+  scrolling,
+  href,
 }: {
   setActive: any
   active: any
   item: any
   children?: any
-  scrolling:boolean
+  scrolling: boolean
+  href: string
 }) => {
   return (
-    <div onMouseEnter={() => setActive(item)} className={scrolling ? 'relative text-red-500' : 'relative text-white'}>
+    <a
+      href={href}
+      onMouseEnter={() => setActive(item)}
+      className={`relative  ${scrolling ? 'text-red-500' : 'text-white'}`}
+    >
       <motion.p
         animate={{
           color: active === item ? 'text-red-200' : 'text-white',
@@ -65,7 +71,7 @@ export const MenuItem = ({
           )}
         </motion.div>
       )}
-    </div>
+    </a>
   )
 }
 
@@ -142,11 +148,17 @@ export default function AppHeader({ children }: AppHeaderProps) {
     }
   }, [])
   return (
-    <header className={`sticky top-0 z-[99999] ${scrolling ? 'bg-inherit	' : 'bg-gradient-to-r from-[#f598a8] to-[#EF4444]'}`}>
+    <header
+      className={`sticky top-0 z-[99999] ${
+        scrolling
+          ? 'bg-gray-50/90 shadow-lg backdrop-blur-sm transition duration-300 dark:bg-gray-900/90'
+          : 'bg-[#D01F1B]'
+      }`}
+    >
       <div className="container mx-auto">
         <Menu setActive={setActive}>
           <div className="flex flex-1 items-center md:absolute md:inset-y-0 md:left-0">
-            <div className="flex w-full items-center justify-between md:w-auto">
+            <div className="md: flex w-auto w-full items-center justify-between">
               <a href="" aria-label="Home">
                 <Image
                   src="/static/images/logos/logo.svg"
@@ -154,6 +166,7 @@ export default function AppHeader({ children }: AppHeaderProps) {
                   height={100}
                   width={100}
                   priority
+                  className="rounded-md border border-dashed border-red-600 bg-white"
                 />
               </a>
               <div className="-mr-2 flex items-center md:hidden">
@@ -176,14 +189,26 @@ export default function AppHeader({ children }: AppHeaderProps) {
               </div>
             </div>
           </div>
-          <MenuItem setActive={setActive} active={active} scrolling={scrolling} item="Khóa học">
+          <MenuItem
+            setActive={setActive}
+            active={active}
+            scrolling={scrolling}
+            item="Khóa học"
+            href="/khoa-hoc"
+          >
             <div className="flex flex-col space-y-4 text-sm">
               <HoveredLink href="/lich-khai-giang">Lịch khai giảng</HoveredLink>
               <HoveredLink href="/ielts-writing">IELTS Writing</HoveredLink>
               <HoveredLink href="/ielts-speaking">IELTS Speaking</HoveredLink>
             </div>
           </MenuItem>
-          <MenuItem setActive={setActive} active={active} scrolling={scrolling} item="Đăng ký thi IETLS">
+          <MenuItem
+            setActive={setActive}
+            active={active}
+            scrolling={scrolling}
+            item="Đăng ký thi IETLS"
+            href="/dang-ky-thi-ielts"
+          >
             <div className="  grid grid-cols-2 gap-10 p-4 text-sm">
               <ProductItem
                 title="Thi thử IELTS"
@@ -199,7 +224,7 @@ export default function AppHeader({ children }: AppHeaderProps) {
               />
             </div>
           </MenuItem>
-          <MenuItem setActive={setActive} active={active} scrolling={scrolling} item="Bí kíp">
+          <MenuItem setActive={setActive} active={active} scrolling={scrolling} item="Bí kíp" href='/bi-kip'>
             <div className="flex flex-col space-y-4 text-sm">
               <HoveredLink href="/tieng-anh-giao-tiep">Tiếng anh giao tiếp</HoveredLink>
               <HoveredLink href="/phuong-phap-hoc">Phương pháp học</HoveredLink>
@@ -210,7 +235,9 @@ export default function AppHeader({ children }: AppHeaderProps) {
             <span className="inline-flex">
               <a
                 href="/login"
-                className={`inline-flex items-center border border-transparent px-4 py-2 ${scrolling ? 'text-red-500' :'text-white'} font-medium leading-6 transition duration-150 ease-in-out hover:text-red-100 focus:outline-none`}
+                className={`inline-flex items-center border border-transparent px-4 py-2 ${
+                  scrolling ? 'text-red-500' : 'text-white'
+                } font-medium leading-6 transition duration-150 ease-in-out hover:text-red-100 focus:outline-none`}
               >
                 Đăng nhập
               </a>
@@ -218,7 +245,7 @@ export default function AppHeader({ children }: AppHeaderProps) {
             <span className="ml-2 inline-flex rounded-md shadow">
               <a
                 href="/signup"
-                className="inline-flex items-center rounded-md border border-red-500 bg-white px-4 py-2 text-red-500 font-medium leading-6  transition duration-150 ease-in-out hover:bg-red-100 focus:border-blue-700 focus:outline-none"
+                className="inline-flex items-center rounded-md border border-red-500 bg-white px-4 py-2 font-medium leading-6 text-red-500  transition duration-150 ease-in-out hover:bg-red-100 focus:border-blue-700 focus:outline-none"
               >
                 Đăng ký
               </a>

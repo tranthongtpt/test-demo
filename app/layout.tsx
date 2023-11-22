@@ -58,11 +58,7 @@ const roboto = Roboto({
 type RootLayoutProps = React.PropsWithChildren
 export default function RootLayout({ children }: RootLayoutProps) {
   return (
-    <html
-      lang='en'
-      className={`${roboto.className} scroll-smooth`}
-      suppressHydrationWarning
-    >
+    <html lang="en" className={`${roboto.className} scroll-smooth`} suppressHydrationWarning>
       <link rel="apple-touch-icon" sizes="76x76" href="/static/favicons/apple-touch-icon.png" />
       <link rel="icon" type="image/png" sizes="32x32" href="/static/favicons/favicon-32x32.png" />
       <link rel="icon" type="image/png" sizes="16x16" href="/static/favicons/favicon-16x16.png" />
@@ -72,7 +68,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
       <meta name="theme-color" media="(prefers-color-scheme: light)" content="#fff" />
       <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#000" />
       <link rel="alternate" type="application/rss+xml" href="/feed.xml" />
-      <body className="bg-white">
+      <body className="bg-white overflow-x-hidden	">
         <ThemeProviders>
           {children}
           {/* <Analytics analyticsConfig={siteMetadata.analytics as AnalyticsConfig} />
