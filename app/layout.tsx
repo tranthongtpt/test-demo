@@ -7,6 +7,7 @@ import { SearchProvider, SearchConfig } from 'pliny/search'
 // import siteMetadata from '@/data/siteMetadata'
 import { ThemeProviders } from './theme-providers'
 import { Metadata } from 'next'
+import Providers from '../components/Providers'
 
 const roboto = Roboto({
   weight: ['300', '400', '700'],
@@ -67,9 +68,9 @@ export default function RootLayout({ children }: RootLayoutProps) {
       <meta name="theme-color" media="(prefers-color-scheme: light)" content="#fff" />
       <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#000" />
       <link rel="alternate" type="application/rss+xml" href="/feed.xml" />
-      <body className="overflow-x-hidden bg-white	">
+      <body className="overflow-x-hidden bg-white ">
         <ThemeProviders>
-          {children}
+          <Providers>{children}</Providers>
           {/* <Analytics analyticsConfig={siteMetadata.analytics as AnalyticsConfig} />
           <SearchProvider searchConfig={siteMetadata.search as SearchConfig}>
           </SearchProvider> */}
