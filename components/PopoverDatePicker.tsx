@@ -131,7 +131,7 @@ const PopoverDatePicker = ({
               <PopoverTrigger>
                 <div className='flex items-start space-x-2 cursor-pointer flex-1'>
                   <div className='w-4 h-4 flex justify-center items-center'>
-                    <Image src='/svg/calendar.svg' width={150} height={150} alt='loader' />
+                    <Image src='/static/svg/calendar.svg' width={150} height={150} alt='loader' />
                   </div>
                   <div>
                     <p className='text-black font-bold dark:text-white text-xs'>Ngày</p>
@@ -142,7 +142,6 @@ const PopoverDatePicker = ({
                 </div>
               </PopoverTrigger>
               <PopoverContent>
-                {/* add datepicktime */}
                 <div className='flex flex-col gap-2 h-[390px] w-[410px] mt-12'>
                   <div className='grid grid-cols-3'>
                     <button type='button' onClick={prevMonth} disabled={isThisMonth(new Date(currentMonth))}>
@@ -306,7 +305,7 @@ const PopoverDatePicker = ({
                     <PopoverTrigger>
                       <div className='flex items-start space-x-2 cursor-pointer flex-1'>
                         <div className='w-4 h-4 flex justify-center items-center'>
-                          <Image src='/svg/clock.svg' width={400} height={400} alt='loader' />
+                          <Image src='/static/svg/clock.svg' width={400} height={400} alt='loader' />
                         </div>
                         <div>
                           <p className='text-black font-bold dark:text-white text-xs'>Ca thi L-R-W</p>

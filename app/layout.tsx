@@ -67,7 +67,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
       <meta name="theme-color" media="(prefers-color-scheme: light)" content="#fff" />
       <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#000" />
       <link rel="alternate" type="application/rss+xml" href="/feed.xml" />
-      <body className="bg-white overflow-x-hidden	">
+      <body className="overflow-x-hidden bg-white	">
         <ThemeProviders>
           {children}
           {/* <Analytics analyticsConfig={siteMetadata.analytics as AnalyticsConfig} />
