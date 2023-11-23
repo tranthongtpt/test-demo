@@ -8,7 +8,6 @@ module.exports = {
     optimizeUniversalDefaults: true,
   },
   content: [
-    './node_modules/pliny/**/*.js',
     './app/**/*.{js,ts,jsx,tsx}',
     './pages/**/*.{js,ts,tsx}',
     './components/**/*.{js,ts,tsx}',

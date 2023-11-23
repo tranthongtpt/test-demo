@@ -1,6 +1,5 @@
 import 'css/tailwind.css'
 import 'css/home.css'
-import 'pliny/search/algolia.css'
 
 import { Roboto } from 'next/font/google'
 import { Analytics, AnalyticsConfig } from 'pliny/analytics'

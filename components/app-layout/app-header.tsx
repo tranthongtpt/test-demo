@@ -207,12 +207,12 @@ export default function AppHeader({ children }: AppHeaderProps) {
             active={active}
             scrolling={scrolling}
             item="Đăng ký thi IETLS"
-            href="/dang-ky-thi-ielts"
+            href=""
           >
             <div className="  grid grid-cols-2 gap-10 p-4 text-sm">
               <ProductItem
                 title="Thi thử IELTS"
-                href="/lich-khai-giang"
+                href="/dang-ky-thi-thu-ielts"
                 src="/static/images/avatar.png"
                 description="Thi thử IELTS giúp người học luyện tập và cải thiện kỹ năng Nghe, Đọc, Viết và Nói, tất cả những kỹ năng quan trọng được đánh giá trong bài thi IELTS."
               />
