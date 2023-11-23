@@ -1,3 +1,4 @@
+'use client'
 import FormAdvise from '@/components/FormAdvise'
 import AchievementPage from '@/components/page-home/AchievementPage'
 import ArchivesPage from '@/components/page-home/ArchivesPage'

@@ -4,6 +4,7 @@ import Image from 'next/image'
 import { useEffect } from 'react'
 import { Highlighter } from './Highlighter'
 import { useTheme } from 'next-themes'
+import { ColorContainer } from '../ContainerColor'
 
 const words = `   Tham gia sự kiện thi thử IELTS ngay hôm nay cùng cựu giám khảo IDP và Hội đồng Anh. Đừng bỏ lỡ cơ
 hội hiếm có này để trải nghiệm môi trường thi thử chân thực và nhận phản hồi chi tiết từ những
@@ -44,7 +45,7 @@ function HeroHome() {
   }
 
   return (
-    <section className="bg-[#D01F1B]">
+    <ColorContainer>
       <div className="container mx-auto p-6 md:px-12 lg:px-6 xl:px-0">
         <div className="relative ml-auto">
           <div className="gap-12 md:flex md:items-center">
@@ -328,7 +329,7 @@ function HeroHome() {
           </g>
         </svg>
       </div>
-    </section>
+    </ColorContainer>
   )
 }
 

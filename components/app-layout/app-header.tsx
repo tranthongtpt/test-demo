@@ -159,7 +159,7 @@ export default function AppHeader({ children }: AppHeaderProps) {
         <Menu setActive={setActive}>
           <div className="flex flex-1 items-center md:absolute md:inset-y-0 md:left-0">
             <div className="md: flex w-auto w-full items-center justify-between">
-              <a href="" aria-label="Home">
+              <a href="/" aria-label="Home">
                 <Image
                   src="/static/images/logos/logo.svg"
                   alt="logo"

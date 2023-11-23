@@ -1,4 +1,5 @@
 'use client'
+import { ColorContainer } from '@/components/ContainerColor';
 import BlogCard from '@/components/page-bikip/BlogCard'
 import { useEffect, useState } from 'react'
 const data = [
@@ -71,10 +72,10 @@ const data = [
 
 function Blog() {
   const [result, setResult] = useState<number | null>(null);
-  const [datar, setDatar] = useState<number>(0);
-  const [datal, setDatal] = useState<number>(0);
-  const [datas, setDatas] = useState<number>(0);
-  const [dataw, setDataw] = useState<number>(0);
+  const [datar, setDatar] = useState<any>(0);
+  const [datal, setDatal] = useState<any>(0);
+  const [datas, setDatas] = useState<any>(0);
+  const [dataw, setDataw] = useState<any>(0);
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>): void => {
     e.preventDefault()
@@ -87,7 +88,7 @@ function Blog() {
 
   return (
     <>
-      <div className='bg-[#D01F1B]'>
+      <ColorContainer>
         <div className='relative items-center w-full  pt-12 mx-auto max-w-7xl'>
           <div className='text-center'>
             <h1 className='max-w-5xl text-2xl font-bold leading-none tracking-tighter text-white md:text-5xl lg:text-6xl lg:max-w-7xl'>
@@ -164,7 +165,7 @@ function Blog() {
             </g>
           </svg>
         </div>
-      </div>
+      </ColorContainer>
       <div className='container mx-auto mt-8'>
         <div className='flex flex-wrap justify-between'>
           <div className='w-full md:w-8/12 px-4 mb-8'>
