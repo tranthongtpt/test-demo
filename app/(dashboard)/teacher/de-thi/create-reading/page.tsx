@@ -1,5 +1,4 @@
 'use client'
-import PageContainer from '@/components/container/PageContainer'
 import TextEditor from '@/components/dashboard/TextEditor'
 import { Button, Card, CardBody, Input, Select, SelectItem, Tab, Tabs } from '@nextui-org/react'
 import React, { useEffect, useState } from 'react'
@@ -23,12 +22,14 @@ const Page = () => {
   const [inputValuesExams, setInputValuesExams] = useState<InputValueExamsType>()
   const [selectedTab, setSelectedTab] = useState(1)
 
-  const [groupQuestions, setGroupQuestions] = useState<{ [key: number]: { exams: string; question: string } }>([])
+  const [groupQuestions, setGroupQuestions] = useState<{
+    [key: number]: { exams: string; question: string }
+  }>([])
   const [array, setArray] = useState<number[]>([])
   const [arrayMap, setArrayMap] = useState<{ [key: string]: number[] }>({
     1: [1],
     2: [1, 2],
-    3: [1, 2, 3]
+    3: [1, 2, 3],
   })
 
   useEffect(() => {
@@ -58,7 +59,7 @@ const Page = () => {
           toast.addEventListener('mouseleave', Swal.resumeTimer)
         },
         icon: 'success',
-        title: 'Tạo đề thành công'
+        title: 'Tạo đề thành công',
       }).then(() => {
         setLoadingSubmit(false)
         router.push(pathname.replace(/\/[^/]*$/, ''))
@@ -78,35 +79,37 @@ const Page = () => {
       ...prevGroupQuestions,
       [passage]: {
         ...prevGroupQuestions[passage],
-        [editorName]: content
-      }
+        [editorName]: content,
+      },
     }))
   }
   console.log(groupQuestions)
   return (
-    <PageContainer title='Create Exams Page' description='this is Create Exams Page'>
+    <>
       <div>{loadingSubmit && <LoadingScreen />}</div>
-      <section className='bg-[#f1f1f1] min-h-screen h-full w-full p-4'>
-        <div className='px-1 py-6 bg-white rounded-md'>
-          <div className='my-2 text-center text-rose-500'>
-            <h1 className='uppercase text-h1'>{inputValuesExams?.nameTitle || 'Tạo đề thi Reading'}</h1>
+      <section className="h-full min-h-screen w-full bg-[#f1f1f1] p-4">
+        <div className="rounded-md bg-white px-1 py-6">
+          <div className="my-2 text-center text-rose-500">
+            <h1 className="text-h1 uppercase">
+              {inputValuesExams?.nameTitle || 'Tạo đề thi Reading'}
+            </h1>
           </div>
-          <div className='max-h-[300px]'>
-            <div className='grid gap-2 p-4'>
+          <div className="max-h-[300px]">
+            <div className="grid gap-2 p-4">
               <Input
-                type='text'
-                label='Tên đề thi:'
-                labelPlacement='outside'
-                placeholder='Nhập tên đề thi'
-                name='nameTitle'
+                type="text"
+                label="Tên đề thi:"
+                labelPlacement="outside"
+                placeholder="Nhập tên đề thi"
+                name="nameTitle"
                 value={inputValuesExams?.nameTitle}
                 onChange={handleOnChange}
               />
               <Select
-                label='Số lượng passage:'
-                placeholder='Chọn số lượng passage'
-                className='w-full'
-                labelPlacement='outside'
+                label="Số lượng passage:"
+                placeholder="Chọn số lượng passage"
+                className="w-full"
+                labelPlacement="outside"
                 disableSelectorIconRotation
                 selectedKeys={String(inputValuesExams?.passage)}
                 onChange={handleSelectionChange}
@@ -125,29 +128,42 @@ const Page = () => {
           </div>
           {array && (
             <Tabs
-              aria-label='Options'
+              aria-label="Options"
               selectedKey={selectedTab}
               onSelectionChange={(key) => setSelectedTab(key as any)}
             >
               {array.map((passage) => (
                 <Tab key={passage} title={`PASSAGE ${passage}`}>
-                  <Card className='!rounded-md'>
-                    <CardBody className='!p-0'>
-                      <Split className='flex min-h-screen' minSize={300} sizes={[50, 50]} direction='horizontal'>
+                  <Card className="!rounded-md">
+                    <CardBody className="!p-0">
+                      <Split
+                        className="flex min-h-screen"
+                        minSize={300}
+                        sizes={[50, 50]}
+                        direction="horizontal"
+                      >
                         <div>
-                          <p className='my-8 text-xl font-semibold text-center'>Đề thi cho PASSAGE {passage}</p>
+                          <p className="my-8 text-center text-xl font-semibold">
+                            Đề thi cho PASSAGE {passage}
+                          </p>
                           <TextEditor
-                            setInputValues={(content) => handleEditorChange(content.toString(), passage, 'exams')}
-                            name='exams'
+                            setInputValues={(content) =>
+                              handleEditorChange(content.toString(), passage, 'exams')
+                            }
+                            name="exams"
                             value={groupQuestions[passage]?.exams}
                           />
                         </div>
-                        <Split minSize={300} expandToMin={false} direction='vertical'>
+                        <Split minSize={300} expandToMin={false} direction="vertical">
                           <div>
-                            <p className='my-8 text-xl font-semibold text-center'>Câu hỏi cho PASSAGE {passage}</p>
+                            <p className="my-8 text-center text-xl font-semibold">
+                              Câu hỏi cho PASSAGE {passage}
+                            </p>
                             <TextEditor
-                              setInputValues={(content) => handleEditorChange(content.toString(), passage, 'question')}
-                              name='question'
+                              setInputValues={(content) =>
+                                handleEditorChange(content.toString(), passage, 'question')
+                              }
+                              name="question"
                               value={groupQuestions[passage]?.question}
                             />
                           </div>
@@ -159,14 +175,14 @@ const Page = () => {
               ))}
             </Tabs>
           )}
-          <div className='text-center'>
-            <Button className='min-w-[200px]' onClick={(e) => handleSubmit(e)} color='danger'>
+          <div className="text-center">
+            <Button className="min-w-[200px]" onClick={(e) => handleSubmit(e)} color="danger">
               Tạo đề
             </Button>
           </div>
         </div>
       </section>
-    </PageContainer>
+    </>
   )
 }
 export default Page

@@ -1,6 +1,5 @@
 'use client'
 import React, { useEffect, useState } from 'react'
-import PageContainer from '@/components/container/PageContainer'
 import { questionGroupListening } from '@/data/dummy'
 import { Card, CardBody, Tab, Tabs } from '@nextui-org/react'
 import { AudioPlayer } from '@/components/dashboard/AudioPlayer/AudioPlayer'
@@ -36,7 +35,7 @@ const Page = () => {
     setDataHandle(filteredData as any)
   }, [selected, data])
   return (
-    <PageContainer title='Let goooo' description='this is Listening'>
+    <>
       <section className='bg-[#f1f1f1] min-h-screen h-full w-full p-4'>
         <div className='flex items-center pt-4 pb-2'>{/* <Breadcrumbs /> */}</div>
         <div className='p-6 bg-white rounded-lg'>
@@ -55,7 +54,7 @@ const Page = () => {
           </Tabs>
         </div>
       </section>
-    </PageContainer>
+    </>
   )
 }
 

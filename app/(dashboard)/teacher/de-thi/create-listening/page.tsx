@@ -1,9 +1,18 @@
 'use client'
-import PageContainer from '@/components/container/PageContainer'
 import InputFile from '@/components/dashboard/InputFile/InputFile'
 import LoadingScreen from '@/components/dashboard/LoadingScreen'
 import TextEditor from '@/components/dashboard/TextEditor'
-import { Button, Card, CardBody, Input, Select, SelectItem, Switch, Tab, Tabs } from '@nextui-org/react'
+import {
+  Button,
+  Card,
+  CardBody,
+  Input,
+  Select,
+  SelectItem,
+  Switch,
+  Tab,
+  Tabs,
+} from '@nextui-org/react'
 import { usePathname, useRouter } from 'next/navigation'
 import React, { useEffect, useState } from 'react'
 import { FiUpload, FiUploadCloud } from 'react-icons/fi'
@@ -33,7 +42,7 @@ const Page = () => {
     1: [1],
     2: [1, 2],
     3: [1, 2, 3],
-    4: [1, 2, 3, 4]
+    4: [1, 2, 3, 4],
   })
   useEffect(() => {
     const newArray = arrayMap[inputValuesExams?.section || '']
@@ -51,8 +60,8 @@ const Page = () => {
       ...prevGroupQuestions,
       [passage]: {
         ...prevGroupQuestions[passage],
-        [editorName]: content
-      }
+        [editorName]: content,
+      },
     }))
   }
   const handleSubmit = (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
@@ -70,7 +79,7 @@ const Page = () => {
           toast.addEventListener('mouseleave', Swal.resumeTimer)
         },
         icon: 'success',
-        title: 'Tạo đề thành công'
+        title: 'Tạo đề thành công',
       }).then(() => {
         setLoadingSubmit(false)
         router.push(pathname.replace(/\/[^/]*$/, ''))
@@ -90,32 +99,32 @@ const Page = () => {
   console.log('groupQuestions', groupQuestions)
 
   return (
-    <PageContainer title='Create Exams Page' description='this is Create Exams Page'>
+    <>
       <div>{loadingSubmit && <LoadingScreen />}</div>
-      <section className='bg-[#f1f1f1] min-h-screen h-full w-full p-4'>
-        <div className='px-1 py-6 bg-white rounded-md'>
-          <div className='text-center text-rose-500'>
-            <h1 className='uppercase text-h1'>
+      <section className="h-full min-h-screen w-full bg-[#f1f1f1] p-4">
+        <div className="rounded-md bg-white px-1 py-6">
+          <div className="text-center text-rose-500">
+            <h1 className="text-h1 uppercase">
               {inputValuesExams?.nameTitle ? inputValuesExams?.nameTitle : 'Tạo đề thi Listening'}
             </h1>
           </div>
-          <div className=''>
-            <div className='grid gap-2 p-4'>
+          <div className="">
+            <div className="grid gap-2 p-4">
               <Input
-                type='text'
-                label='Tên đề thi:'
-                labelPlacement='outside'
-                placeholder='Nhập tên đề thi'
-                name='nameTitle'
+                type="text"
+                label="Tên đề thi:"
+                labelPlacement="outside"
+                placeholder="Nhập tên đề thi"
+                name="nameTitle"
                 value={inputValuesExams?.nameTitle}
                 onChange={handleOnChange}
               />
 
               <Select
-                label='Số lượng section:'
-                placeholder='Chọn số lượng section'
-                className='w-full mb-3'
-                labelPlacement='outside'
+                label="Số lượng section:"
+                placeholder="Chọn số lượng section"
+                className="mb-3 w-full"
+                labelPlacement="outside"
                 disableSelectorIconRotation
                 selectedKeys={String(inputValuesExams?.section)}
                 onChange={handleSelectionChange}
@@ -134,31 +143,37 @@ const Page = () => {
                 </SelectItem>
               </Select>
               <Switch
-                className=''
+                className=""
                 isSelected={isOneFile}
                 onValueChange={setIsOneFile}
-                size='md'
-                color='default'
+                size="md"
+                color="default"
                 thumbIcon={({ isSelected, className }) =>
-                  isSelected ? <FiUploadCloud className={className} /> : <FiUpload className={className} />
+                  isSelected ? (
+                    <FiUploadCloud className={className} />
+                  ) : (
+                    <FiUpload className={className} />
+                  )
                 }
               >
-                <p className='text-sm'>1 File nghe cho tất cả session ?</p>
+                <p className="text-sm">1 File nghe cho tất cả session ?</p>
               </Switch>
               {isOneFile && (
                 <Input
-                  type='text'
-                  label='Thời gian bắt đầu section:'
-                  labelPlacement='outside'
-                  placeholder='vd: 05:30, 10:20, 15:30, 22:30'
-                  name='timeSection'
+                  type="text"
+                  label="Thời gian bắt đầu section:"
+                  labelPlacement="outside"
+                  placeholder="vd: 05:30, 10:20, 15:30, 22:30"
+                  name="timeSection"
                   value={inputValuesExams?.timeSection}
                   onChange={handleOnChange}
                 />
               )}
               {isOneFile && (
                 <InputFile
-                  setInputValues={(values) => setInputValuesExams({ ...inputValuesExams, file: values.files })}
+                  setInputValues={(values) =>
+                    setInputValuesExams({ ...inputValuesExams, file: values.files })
+                  }
                   setFileBefore={setFileBefore}
                   fileAfter={fileAfter}
                   multi={false}
@@ -166,30 +181,34 @@ const Page = () => {
               )}
               {array && (
                 <Tabs
-                  aria-label='Options'
+                  aria-label="Options"
                   selectedKey={selectedTab}
                   onSelectionChange={(key) => setSelectedTab(key as any)}
                 >
                   {array.map((section) => (
                     <Tab key={section} title={`SECTION ${section}`}>
-                      <Card className='!rounded-md'>
-                        <CardBody className='!p-0'>
-                          <p className='my-4 text-xl font-semibold text-center'>Đề thi cho section {section}</p>
+                      <Card className="!rounded-md">
+                        <CardBody className="!p-0">
+                          <p className="my-4 text-center text-xl font-semibold">
+                            Đề thi cho section {section}
+                          </p>
                           <TextEditor
-                            setInputValues={(content) => handleEditorChange(content.toString(), section, 'question')}
-                            name='question'
+                            setInputValues={(content) =>
+                              handleEditorChange(content.toString(), section, 'question')
+                            }
+                            name="question"
                             value={groupQuestions[section]?.question}
                           />
                           {!isOneFile && (
-                            <div className='py-2 pl-4'>
+                            <div className="py-2 pl-4">
                               <InputFile
                                 setInputValues={(values) =>
                                   setGroupQuestions((prevGroupQuestions) => ({
                                     ...prevGroupQuestions,
                                     [section]: {
                                       ...prevGroupQuestions[section],
-                                      file: values?.files
-                                    }
+                                      file: values?.files,
+                                    },
                                   }))
                                 }
                                 setFileBefore={setFileBefore}
@@ -206,14 +225,14 @@ const Page = () => {
               )}
             </div>
           </div>
-          <div className='text-center'>
-            <Button className='min-w-[200px]' onClick={(e) => handleSubmit(e)} color='danger'>
+          <div className="text-center">
+            <Button className="min-w-[200px]" onClick={(e) => handleSubmit(e)} color="danger">
               Tạo đề
             </Button>
           </div>
         </div>
       </section>
-    </PageContainer>
+    </>
   )
 }
 export default Page

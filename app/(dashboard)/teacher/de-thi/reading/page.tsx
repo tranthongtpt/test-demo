@@ -1,6 +1,5 @@
 'use client'
 import React, { useEffect, useState } from 'react'
-import PageContainer from '@/components/container/PageContainer'
 import { questionGroup } from '@/data/dummy'
 import { Card, CardBody, Tab, Tabs } from '@nextui-org/react'
 import Screen from '@/components/dashboard/Reading/Screen/Screen'
@@ -35,15 +34,19 @@ const Page = () => {
     setDataHandle(filteredData as any)
   }, [selected, data])
   return (
-    <PageContainer title='Let goooo' description='this is Reading'>
-      <section className='bg-[#f1f1f1] min-h-screen h-full w-full p-4'>
-        <div className='flex items-center pt-4 pb-2'>{/* <Breadcrumbs /> */}</div>
-        <div className='p-6 bg-white rounded-lg'>
-          <Tabs aria-label='Options' selectedKey={selected} onSelectionChange={(key) => setSelected(key as any)}>
+    <>
+      <section className="h-full min-h-screen w-full bg-[#f1f1f1] p-4">
+        <div className="flex items-center pb-2 pt-4">{/* <Breadcrumbs /> */}</div>
+        <div className="rounded-lg bg-white p-6">
+          <Tabs
+            aria-label="Options"
+            selectedKey={selected}
+            onSelectionChange={(key) => setSelected(key as any)}
+          >
             {[1, 2, 3].map((section) => (
               <Tab key={`PASSAGE ${section}`} title={`PASSAGE ${section}`}>
                 <Card>
-                  <CardBody className='!p-0 h-[70vh]'>
+                  <CardBody className="h-[70vh] !p-0">
                     <Screen data={dataHandle as any} />
                   </CardBody>
                 </Card>
@@ -52,7 +55,7 @@ const Page = () => {
           </Tabs>
         </div>
       </section>
-    </PageContainer>
+    </>
   )
 }
 

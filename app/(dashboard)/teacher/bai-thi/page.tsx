@@ -1,5 +1,4 @@
 'use client'
-import PageContainer from '@/components/container/PageContainer'
 import { Card, CardBody, Dropdown, DropdownItem, DropdownMenu, DropdownTrigger, Tab, Tabs } from '@nextui-org/react'
 import React, { useEffect, useState } from 'react'
 import Image from 'next/image'
@@ -10,7 +9,6 @@ import TableAcademic from '@/components/Table/TableAcademic'
 const Page = () => {
   const router = useRouter()
   return (
-    // <PageContainer title='PracticeTest Page' description='this is PracticeTest Page'>
     <div className='p-10'>
       <Tabs aria-label='Options' variant='bordered'>
         <Tab
@@ -75,7 +73,6 @@ const Page = () => {
         </Tab>
       </Tabs>
     </div>
-    // </PageContainer>
   )
 }
 export default Page

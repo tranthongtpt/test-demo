@@ -26,11 +26,11 @@ function AdminSidebar() {
             alt="logo"
             height={100}
             width={100}
-            className="text-white h-25"
+            className="h-25 text-white"
           />
         </div>
-        <div className="flex flex-col justify-between h-full">
-          {/* <div className="flex flex-col gap-6 px-2 mt-9">
+        <div className="flex h-full flex-col justify-between">
+          <div className="mt-9 flex flex-col gap-6 px-2">
             {userInfo?.typeUser !== 'admin' && (
               <>
                 {user.map((item, index) => (
@@ -63,8 +63,8 @@ function AdminSidebar() {
                 ))}
               </>
             )}
-          </div> */}
-          <div className="flex flex-col gap-6 px-2 mt-9">
+          </div>
+          {/* <div className="flex flex-col gap-6 px-2 mt-9">
             {linkData.map((item, index) => (
               <Link
                 className="max-w-full text-default-900 active:bg-none"
@@ -77,9 +77,9 @@ function AdminSidebar() {
                 </div>
               </Link>
             ))}
-          </div>
-          <div className="flex items-center justify-center gap-6 px-8 pt-16 pb-8 md:pb-0 md:pt-10">
-            <p className="text-xs text-center">© 2023 All Rights Reserved Developed by TTH</p>
+          </div> */}
+          <div className="flex items-center justify-center gap-6 px-8 pb-8 pt-16 md:pb-0 md:pt-10">
+            <p className="text-center text-xs">© 2023 All Rights Reserved Developed by TTH</p>
           </div>
         </div>
       </div>

@@ -1,8 +1,17 @@
 'use client'
-import PageContainer from '@/components/container/PageContainer'
 import Breadcrumbs from '@/components/dashboard/Layout/Breadcrumbs'
 import TextEditor from '@/components/dashboard/TextEditor'
-import { Button, Card, CardBody, Input, Select, SelectItem, Selection, Tab, Tabs } from '@nextui-org/react'
+import {
+  Button,
+  Card,
+  CardBody,
+  Input,
+  Select,
+  SelectItem,
+  Selection,
+  Tab,
+  Tabs,
+} from '@nextui-org/react'
 import dynamic from 'next/dynamic'
 import React, { useEffect, useState } from 'react'
 import { BsPlus, BsTrash } from 'react-icons/bs'
@@ -29,7 +38,7 @@ const Page = () => {
     2: [1, 2],
     3: [1, 2, 3],
     4: [1, 2, 3, 4],
-    5: [1, 2, 3, 4, 5]
+    5: [1, 2, 3, 4, 5],
   })
   useEffect(() => {
     const newArray = arrayMap[inputValuesExams?.practice || '']
@@ -45,29 +54,29 @@ const Page = () => {
   console.log('groupQuestion', groupQuestion)
   return (
     <>
-      <section className='bg-[#f1f1f1] min-h-screen h-full w-full p-4'>
-        <div className='px-1 py-6 bg-white rounded-md'>
-          <div className='my-2 text-center text-rose-500'>
-            <h1 className='uppercase text-h1'>
+      <section className="h-full min-h-screen w-full bg-[#f1f1f1] p-4">
+        <div className="rounded-md bg-white px-1 py-6">
+          <div className="my-2 text-center text-rose-500">
+            <h1 className="text-h1 uppercase">
               {inputValuesExams?.nameTitle ? inputValuesExams?.nameTitle : 'Academic Test'}
             </h1>
           </div>
-          <div className='max-h-[300px]'>
-            <div className='grid gap-2 p-4'>
+          <div className="max-h-[300px]">
+            <div className="grid gap-2 p-4">
               <Input
-                type='text'
-                label='Tên đề thi:'
-                labelPlacement='outside'
-                placeholder='Nhập tên đề thi'
-                name='nameTitle'
+                type="text"
+                label="Tên đề thi:"
+                labelPlacement="outside"
+                placeholder="Nhập tên đề thi"
+                name="nameTitle"
                 value={inputValuesExams?.nameTitle}
                 onChange={handleOnChange}
               />
               <Select
-                label='Số lượng practice:'
-                placeholder='Chọn số lượng practice'
-                className='w-full'
-                labelPlacement='outside'
+                label="Số lượng practice:"
+                placeholder="Chọn số lượng practice"
+                className="w-full"
+                labelPlacement="outside"
                 disableSelectorIconRotation
                 selectedKeys={String(inputValuesExams?.practice)}
                 onChange={handleSelectionChange}
@@ -86,19 +95,26 @@ const Page = () => {
           </div>
           {array && (
             <Tabs
-              aria-label='Options'
+              aria-label="Options"
               selectedKey={selectedTab}
               onSelectionChange={(key) => setSelectedTab(key as any)}
             >
               {array.map((section) => (
                 <Tab key={`${section}`} title={`PRACTICE ${section}`}>
-                  <Card className='!rounded-md'>
-                    <CardBody className='!p-0'>
-                      <Split className='flex min-h-screen' minSize={300} sizes={[35, 65]} direction='horizontal'>
+                  <Card className="!rounded-md">
+                    <CardBody className="!p-0">
+                      <Split
+                        className="flex min-h-screen"
+                        minSize={300}
+                        sizes={[35, 65]}
+                        direction="horizontal"
+                      >
                         <div>
-                          <p className='my-8 text-xl font-semibold text-center'>Đề thi cho PRACTICE {section}</p>
+                          <p className="my-8 text-center text-xl font-semibold">
+                            Đề thi cho PRACTICE {section}
+                          </p>
                         </div>
-                        <Split minSize={300} expandToMin={false} direction='vertical'>
+                        <Split minSize={300} expandToMin={false} direction="vertical">
                           <div>content</div>
                         </Split>
                       </Split>

@@ -1,5 +1,4 @@
 'use client'
-import PageContainer from '@/components/container/PageContainer'
 import InputFile from '@/components/dashboard/InputFile/InputFile'
 import LoadingScreen from '@/components/dashboard/LoadingScreen'
 import TextEditor from '@/components/dashboard/TextEditor'
@@ -23,11 +22,13 @@ const Page = () => {
   const [groupQuestion, setGroupQuestion] = useState([])
   const [array, setArray] = useState<number[]>([])
   const [selectedTab, setSelectedTab] = useState(1)
-  const [groupQuestions, setGroupQuestions] = useState<{ [key: number]: { exams: string; question: string } }>([])
+  const [groupQuestions, setGroupQuestions] = useState<{
+    [key: number]: { exams: string; question: string }
+  }>([])
   const [arrayMap, setArrayMap] = useState<{ [key: string]: number[] }>({
     1: [1],
     2: [1, 2],
-    3: [1, 2, 3]
+    3: [1, 2, 3],
   })
   useEffect(() => {
     const newArray = arrayMap[inputValuesExams?.task || '']
@@ -45,8 +46,8 @@ const Page = () => {
       ...prevGroupQuestions,
       [passage]: {
         ...prevGroupQuestions[passage],
-        [editorName]: content
-      }
+        [editorName]: content,
+      },
     }))
   }
   const handleSubmit = (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
@@ -64,7 +65,7 @@ const Page = () => {
           toast.addEventListener('mouseleave', Swal.resumeTimer)
         },
         icon: 'success',
-        title: 'Tạo đề thành công'
+        title: 'Tạo đề thành công',
       }).then(() => {
         setLoadingSubmit(false)
         router.push(pathname.replace(/\/[^/]*$/, ''))
@@ -74,31 +75,31 @@ const Page = () => {
 
   console.log('groupQuestion', groupQuestion)
   return (
-    <PageContainer title='Create Exams Page' description='this is Create Exams Page'>
+    <>
       <div>{loadingSubmit && <LoadingScreen />}</div>
-      <section className='bg-[#f1f1f1] min-h-screen h-full w-full p-4'>
-        <div className='px-1 py-6 bg-white rounded-md'>
-          <div className='my-2 text-center text-rose-500'>
-            <h1 className='uppercase text-h1'>
+      <section className="h-full min-h-screen w-full bg-[#f1f1f1] p-4">
+        <div className="rounded-md bg-white px-1 py-6">
+          <div className="my-2 text-center text-rose-500">
+            <h1 className="text-h1 uppercase">
               {inputValuesExams?.nameTitle ? inputValuesExams?.nameTitle : 'Tạo đề thi Writing'}
             </h1>
           </div>
-          <div className=''>
-            <div className='grid gap-2 p-4'>
+          <div className="">
+            <div className="grid gap-2 p-4">
               <Input
-                type='text'
-                label='Tên đề thi:'
-                labelPlacement='outside'
-                placeholder='Nhập tên đề thi'
-                name='nameTitle'
+                type="text"
+                label="Tên đề thi:"
+                labelPlacement="outside"
+                placeholder="Nhập tên đề thi"
+                name="nameTitle"
                 value={inputValuesExams?.nameTitle}
                 onChange={handleOnChange}
               />
               <Select
-                label='Số lượng task:'
-                placeholder='Chọn số lượng task'
-                className='w-full mb-3'
-                labelPlacement='outside'
+                label="Số lượng task:"
+                placeholder="Chọn số lượng task"
+                className="mb-3 w-full"
+                labelPlacement="outside"
                 disableSelectorIconRotation
                 selectedKeys={String(inputValuesExams?.task)}
                 onChange={handleSelectionChange}
@@ -115,18 +116,22 @@ const Page = () => {
               </Select>
               {array && (
                 <Tabs
-                  aria-label='Options'
+                  aria-label="Options"
                   selectedKey={selectedTab}
                   onSelectionChange={(key) => setSelectedTab(key as any)}
                 >
                   {array.map((task) => (
                     <Tab key={task} title={`TASK ${task}`}>
-                      <Card className='!rounded-md'>
-                        <CardBody className='!p-0'>
-                          <p className='my-8 text-xl font-semibold text-center'>Đề thi cho task {task}</p>
+                      <Card className="!rounded-md">
+                        <CardBody className="!p-0">
+                          <p className="my-8 text-center text-xl font-semibold">
+                            Đề thi cho task {task}
+                          </p>
                           <TextEditor
-                            setInputValues={(content) => handleEditorChange(content.toString(), task, 'question')}
-                            name='question'
+                            setInputValues={(content) =>
+                              handleEditorChange(content.toString(), task, 'question')
+                            }
+                            name="question"
                             value={groupQuestions[task]?.question}
                           />
                         </CardBody>
@@ -137,14 +142,14 @@ const Page = () => {
               )}
             </div>
           </div>
-          <div className='text-center'>
-            <Button className='min-w-[200px]' onClick={(e) => handleSubmit(e)} color='danger'>
+          <div className="text-center">
+            <Button className="min-w-[200px]" onClick={(e) => handleSubmit(e)} color="danger">
               Tạo đề
             </Button>
           </div>
         </div>
       </section>
-    </PageContainer>
+    </>
   )
 }
 export default Page
