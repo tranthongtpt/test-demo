@@ -7,6 +7,8 @@ import Link from 'next/link'
 import Image from 'next/image'
 import { motion } from 'framer-motion'
 import React, { useEffect, useState } from 'react'
+import { signOut, useSession } from 'next-auth/react'
+import { Dropdown, DropdownItem, DropdownMenu, DropdownTrigger, User } from '@nextui-org/react'
 type AppHeaderProps = React.PropsWithChildren
 
 const transition = {
@@ -58,11 +60,11 @@ export const MenuItem = ({
               <motion.div
                 transition={transition}
                 layoutId="active" // layoutId ensures smooth animation
-                className="overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-xl "
+                className="overflow-hidden bg-white border shadow-xl rounded-2xl border-slate-200 "
               >
                 <motion.div
                   layout // layout ensures smooth animation
-                  className="h-full w-max p-4"
+                  className="h-full p-4 w-max"
                 >
                   {children}
                 </motion.div>
@@ -79,7 +81,7 @@ export const Menu = ({ setActive, children }: { setActive: any; children: any })
   return (
     <nav
       onMouseLeave={() => setActive(null)} // resets the state
-      className="relative flex items-center justify-between space-x-4 py-10 sm:h-10 md:justify-center"
+      className="relative flex items-center justify-between py-10 space-x-4 sm:h-10 md:justify-center"
     >
       {children}
     </nav>
@@ -127,6 +129,8 @@ const HoveredLink = ({ children, ...rest }: any) => {
 export default function AppHeader({ children }: AppHeaderProps) {
   const [active, setActive] = useState(null)
   const [scrolling, setScrolling] = useState(false)
+  const { data: session } = useSession()
+  const userInfo = session?.user as User
 
   useEffect(() => {
     const handleScroll = () => {
@@ -157,8 +161,8 @@ export default function AppHeader({ children }: AppHeaderProps) {
     >
       <div className="container mx-auto">
         <Menu setActive={setActive}>
-          <div className="flex flex-1 items-center md:absolute md:inset-y-0 md:left-0">
-            <div className="md: flex w-auto w-full items-center justify-between">
+          <div className="flex items-center flex-1 md:absolute md:inset-y-0 md:left-0">
+            <div className="flex items-center justify-between w-auto w-full md:">
               <a href="/" aria-label="Home">
                 <Image
                   src="/static/images/logos/logo.svg"
@@ -166,18 +170,18 @@ export default function AppHeader({ children }: AppHeaderProps) {
                   height={100}
                   width={100}
                   priority
-                  className="rounded-md border border-dashed border-red-600 bg-white"
+                  className="bg-white border border-red-600 border-dashed rounded-md"
                 />
               </a>
-              <div className="-mr-2 flex items-center md:hidden">
+              <div className="flex items-center -mr-2 md:hidden">
                 <button
                   type="button"
                   id="main-menu"
                   aria-label="Main menu"
                   aria-haspopup="true"
-                  className="inline-flex items-center justify-center rounded-md p-2 text-gray-400 transition duration-150 ease-in-out hover:bg-gray-100 hover:text-gray-500 focus:bg-gray-100 focus:text-gray-500 focus:outline-none"
+                  className="inline-flex items-center justify-center p-2 text-gray-400 transition duration-150 ease-in-out rounded-md hover:bg-gray-100 hover:text-gray-500 focus:bg-gray-100 focus:text-gray-500 focus:outline-none"
                 >
-                  <svg stroke="currentColor" fill="none" viewBox="0 0 24 24" className="h-6 w-6">
+                  <svg stroke="currentColor" fill="none" viewBox="0 0 24 24" className="w-6 h-6">
                     <path
                       stroke-linecap="round"
                       stroke-linejoin="round"
@@ -209,7 +213,7 @@ export default function AppHeader({ children }: AppHeaderProps) {
             item="Đăng ký thi IETLS"
             href=""
           >
-            <div className="  grid grid-cols-2 gap-10 p-4 text-sm">
+            <div className="grid grid-cols-2 gap-10 p-4 text-sm ">
               <ProductItem
                 title="Thi thử IELTS"
                 href="/dang-ky-thi-thu-ielts"
@@ -224,33 +228,70 @@ export default function AppHeader({ children }: AppHeaderProps) {
               />
             </div>
           </MenuItem>
-          <MenuItem setActive={setActive} active={active} scrolling={scrolling} item="Bí kíp" href='/bi-kip'>
+          <MenuItem
+            setActive={setActive}
+            active={active}
+            scrolling={scrolling}
+            item="Bí kíp"
+            href="/bi-kip"
+          >
             <div className="flex flex-col space-y-4 text-sm">
               <HoveredLink href="/tieng-anh-giao-tiep">Tiếng anh giao tiếp</HoveredLink>
               <HoveredLink href="/phuong-phap-hoc">Phương pháp học</HoveredLink>
               <HoveredLink href="/tai-lieu">Tài liệu</HoveredLink>
             </div>
           </MenuItem>
-          <div className="hidden md:absolute md:inset-y-0 md:right-0 md:flex md:items-center md:justify-end">
-            <span className="inline-flex">
-              <a
-                href="/login"
-                className={`inline-flex items-center border border-transparent px-4 py-2 ${
-                  scrolling ? 'text-red-500' : 'text-white'
-                } font-medium leading-6 transition duration-150 ease-in-out hover:text-red-100 focus:outline-none`}
-              >
-                Đăng nhập
-              </a>
-            </span>
-            <span className="ml-2 inline-flex rounded-md shadow">
-              <a
-                href="/signup"
-                className="inline-flex items-center rounded-md border border-red-500 bg-white px-4 py-2 font-medium leading-6 text-red-500  transition duration-150 ease-in-out hover:bg-red-100 focus:border-blue-700 focus:outline-none"
-              >
-                Đăng ký
-              </a>
-            </span>
-          </div>
+          {userInfo && (
+            <div className="hidden md:absolute md:inset-y-0 md:right-0 md:flex md:items-center md:justify-end">
+              <Dropdown placement="bottom-end">
+                <DropdownTrigger>
+                  <div className="flex items-center p-2 text-xl font-semibold bg-white rounded-md cursor-pointer">
+                    <User
+                      name={'Hi, ' + session?.user?.name}
+                      description={<Link href="#">{session?.user?.email}</Link>}
+                      avatarProps={{
+                        src:
+                          session?.user?.image ||
+                          'https://avatars.githubusercontent.com/u/30373425?v=4',
+                      }}
+                    />
+                  </div>
+                </DropdownTrigger>
+                <DropdownMenu aria-label="Profile Actions" variant="flat">
+                  <DropdownItem key="settings">Hồ sơ</DropdownItem>
+                  <DropdownItem
+                    key="logout"
+                    color="danger"
+                    onClick={() => signOut({ callbackUrl: '/' })}
+                  >
+                    Đăng xuất
+                  </DropdownItem>
+                </DropdownMenu>
+              </Dropdown>
+            </div>
+          )}
+          {!userInfo && (
+            <div className="hidden md:absolute md:inset-y-0 md:right-0 md:flex md:items-center md:justify-end">
+              <span className="inline-flex">
+                <a
+                  href="/login"
+                  className={`inline-flex items-center border border-transparent px-4 py-2 ${
+                    scrolling ? 'text-red-500' : 'text-white'
+                  } font-medium leading-6 transition duration-150 ease-in-out hover:text-red-100 focus:outline-none`}
+                >
+                  Đăng nhập
+                </a>
+              </span>
+              <span className="inline-flex ml-2 rounded-md shadow">
+                <a
+                  href="/signup"
+                  className="inline-flex items-center px-4 py-2 font-medium leading-6 text-red-500 transition duration-150 ease-in-out bg-white border border-red-500 rounded-md hover:bg-red-100 focus:border-blue-700 focus:outline-none"
+                >
+                  Đăng ký
+                </a>
+              </span>
+            </div>
+          )}
         </Menu>
       </div>
     </header>

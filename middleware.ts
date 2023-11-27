@@ -7,10 +7,14 @@ export default withAuth(
     const { pathname } = request.nextUrl
     const token = await getToken({ req: request })
     console.log('pathname', pathname)
+    console.log('token', token)
     if (!token) {
       const url = new URL(`/login`, request.url)
       url.searchParams.set('callbackUrl', encodeURI(request.url))
       return NextResponse.redirect(url)
+    }
+    if (token.email === 'thienmai1312@gmail.com') {
+      token.typeUser = 'admin'
     }
 
     const isAdmin = token.typeUser === 'admin'

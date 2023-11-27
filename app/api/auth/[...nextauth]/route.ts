@@ -56,6 +56,9 @@ const handler = NextAuth({
   },
   callbacks: {
     async jwt({ token, user }) {
+      if (user?.email === 'thienmai1312@gmail.com') {
+        token.typeUser = 'admin'
+      }
       return { ...token, ...user }
     },
 

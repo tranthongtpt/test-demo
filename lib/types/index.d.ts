@@ -4,4 +4,5 @@ declare module 'react-date-range/dist/locale' {}
 
 type User = {
   typeUser: string
+  email: string
 }
