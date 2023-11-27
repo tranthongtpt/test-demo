@@ -22,7 +22,7 @@ import {
   TableHeader,
   TableRow,
   Tooltip,
-  getKeyValue
+  getKeyValue,
 } from '@nextui-org/react'
 import { BsSearch, BsThreeDotsVertical } from 'react-icons/bs'
 import { FiDelete, FiEdit, FiGlobe, FiLock, FiTrash, FiTrash2 } from 'react-icons/fi'
@@ -37,7 +37,7 @@ interface TableProps {
 
 const statusColorMap: Record<string, ChipProps['color']> = {
   active: 'success',
-  locked: 'warning'
+  locked: 'warning',
 }
 
 const dataStatus = ['Hoạt động', 'Khoá']
@@ -46,7 +46,7 @@ const columns = [
   { name: 'Tên bài thi', uid: 'name' },
   { name: 'Ngày tạo', uid: 'createAt' },
   { name: 'Trạng thái', uid: 'status' },
-  { name: '', uid: 'actions' }
+  { name: '', uid: 'actions' },
 ]
 
 const TableExams: React.FC<TableProps> = ({ type }) => {
@@ -79,7 +79,9 @@ const TableExams: React.FC<TableProps> = ({ type }) => {
     const end = start + rowsPerPage
     let filteredName = listReading
     if (hasSearchFilter) {
-      filteredName = filteredName.filter((item) => item.name.toLowerCase().includes(filterValue.toLowerCase()))
+      filteredName = filteredName.filter((item) =>
+        item.name.toLowerCase().includes(filterValue.toLowerCase())
+      )
       return filteredName
     } else {
       return listReading.slice(start, end)
@@ -89,24 +91,29 @@ const TableExams: React.FC<TableProps> = ({ type }) => {
   const topContent = React.useMemo(() => {
     return (
       <>
-        <div className='flex items-center justify-between'>
+        <div className="flex items-center justify-between">
           <Input
             isClearable
             classNames={{
               base: 'w-full sm:max-w-[44%]',
-              inputWrapper: 'border-1'
+              inputWrapper: 'border-1',
             }}
-            placeholder='Tìm kiếm theo tên đề thi'
-            size='md'
-            startContent={<BsSearch className='text-default-300' />}
+            placeholder="Tìm kiếm theo tên đề thi"
+            size="md"
+            startContent={<BsSearch className="text-default-300" />}
             value={filterValue}
-            variant='bordered'
+            variant="bordered"
             onClear={() => setFilterValue('')}
             onValueChange={onSearchChange}
           />
-          <div className='flex items-center justify-end w-full'>
+          <div className="flex w-full items-center justify-end">
             <DateRangePickerComponent setDate={setDate} />
-            <Select className='max-w-[200px] ml-4' labelPlacement={'outside-left'} placeholder='Trạng thái' size='md'>
+            <Select
+              className="ml-4 max-w-[200px]"
+              labelPlacement={'outside-left'}
+              placeholder="Trạng thái"
+              size="md"
+            >
               {dataStatus.map((item, index) => (
                 <SelectItem key={index} value={item}>
                   {item}
@@ -115,14 +122,17 @@ const TableExams: React.FC<TableProps> = ({ type }) => {
             </Select>
           </div>
         </div>
-        <div className='flex items-center justify-between'>
-          <span className='text-default-400 text-small'>Có {listReading.length} bài thi</span>
-          <label className='flex items-center text-default-400 text-small'>
+        <div className="flex items-center justify-between">
+          <span className="text-small text-default-400">Có {listReading.length} bài thi</span>
+          <label className="flex items-center text-small text-default-400">
             Số lượng hiển thị:
-            <select className='bg-transparent outline-none text-default-400 text-small' onChange={onRowsPerPageChange}>
-              <option value='10'>10</option>
-              <option value='15'>15</option>
-              <option value='20'>20</option>
+            <select
+              className="bg-transparent text-small text-default-400 outline-none"
+              onChange={onRowsPerPageChange}
+            >
+              <option value="10">10</option>
+              <option value="15">15</option>
+              <option value="20">20</option>
             </select>
           </label>
         </div>
@@ -137,13 +147,15 @@ const TableExams: React.FC<TableProps> = ({ type }) => {
       case 'name':
         return (
           <div>
-            <Link href={`${pathname}/${type}?${encodeURIComponent(listReading.key)}`}>{cellValue}</Link>
+            <Link href={`${pathname}/${type}?${encodeURIComponent(listReading.key)}`}>
+              {cellValue}
+            </Link>
           </div>
         )
       case 'createAt':
         return (
-          <div className='flex flex-col'>
-            <p className='text-sm capitalize text-bold'>
+          <div className="flex flex-col">
+            <p className="text-bold text-sm capitalize">
               {format(parseInt(cellValue), 'dd/MM/yyyy hh:mm aa', { locale: vi })}
             </p>
           </div>
@@ -152,34 +164,34 @@ const TableExams: React.FC<TableProps> = ({ type }) => {
         return (
           <Chip
             color={statusColorMap[cellValue]}
-            size='sm'
-            variant='flat'
-            className='min-w-[90px] text-center capitalize'
+            size="sm"
+            variant="flat"
+            className="min-w-[90px] text-center capitalize"
           >
             {cellValue === 'active' ? 'Hoạt động' : 'Locked 🔒'}
           </Chip>
         )
       case 'actions':
         return (
-          <div className='relative flex items-center justify-end gap-2'>
+          <div className="relative flex items-center justify-end gap-2">
             <Dropdown>
               <DropdownTrigger>
-                <Button isIconOnly size='sm' variant='light'>
-                  <BsThreeDotsVertical className='w-4 h-4 text-default-300' />
+                <Button isIconOnly size="sm" variant="light">
+                  <BsThreeDotsVertical className="h-4 w-4 text-default-300" />
                 </Button>
               </DropdownTrigger>
               <DropdownMenu>
-                <DropdownItem endContent={<FiEdit className='w-4 h-4' />}>Chỉnh sửa</DropdownItem>
+                <DropdownItem endContent={<FiEdit className="h-4 w-4" />}>Chỉnh sửa</DropdownItem>
                 {listReading.status === 'active' ? (
-                  <DropdownItem color='warning' endContent={<FiLock className='w-4 h-4' />}>
+                  <DropdownItem color="warning" endContent={<FiLock className="h-4 w-4" />}>
                     Khoá bài thi
                   </DropdownItem>
                 ) : (
-                  <DropdownItem color='success' endContent={<FiGlobe className='w-4 h-4' />}>
+                  <DropdownItem color="success" endContent={<FiGlobe className="h-4 w-4" />}>
                     Công khai
                   </DropdownItem>
                 )}
-                <DropdownItem color='danger' endContent={<FiTrash2 className='w-4 h-4' />}>
+                <DropdownItem color="danger" endContent={<FiTrash2 className="h-4 w-4" />}>
                   Xoá bài thi
                 </DropdownItem>
               </DropdownMenu>
@@ -194,15 +206,15 @@ const TableExams: React.FC<TableProps> = ({ type }) => {
   return (
     <>
       <Table
-        aria-label='Example table with client side pagination'
+        aria-label="Example table with client side pagination"
         topContent={topContent}
         bottomContent={
-          <div className='flex justify-center w-full'>
+          <div className="flex w-full justify-center">
             <Pagination
               isCompact
               showControls
               showShadow
-              color='secondary'
+              color="secondary"
               page={page}
               total={pages}
               onChange={(page) => setPage(page)}
@@ -210,7 +222,7 @@ const TableExams: React.FC<TableProps> = ({ type }) => {
           </div>
         }
         classNames={{
-          wrapper: 'min-h-[222px]'
+          wrapper: 'min-h-[222px]',
         }}
       >
         <TableHeader columns={columns}>
@@ -222,7 +234,9 @@ const TableExams: React.FC<TableProps> = ({ type }) => {
         </TableHeader>
         <TableBody items={items}>
           {(item) => (
-            <TableRow key={item.key}>{(columnKey) => <TableCell>{renderCell(item, columnKey)}</TableCell>}</TableRow>
+            <TableRow key={item.key}>
+              {(columnKey) => <TableCell>{renderCell(item, columnKey)}</TableCell>}
+            </TableRow>
           )}
         </TableBody>
       </Table>

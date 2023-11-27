@@ -1,6 +1,8 @@
 import 'css/tailwind.css'
 import 'css/home.css'
 import 'css/ckeditorbuild.css'
+import 'react-date-range/dist/styles.css'
+import 'react-date-range/dist/theme/default.css'
 
 import { Roboto } from 'next/font/google'
 import { Analytics, AnalyticsConfig } from 'pliny/analytics'
