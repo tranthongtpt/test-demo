@@ -1,4 +1,5 @@
 // import { setSession } from '@/redux/features/sessionSlice'
+import { adminEmails } from '@/data/dummy'
 import NextAuth from 'next-auth/next'
 import CredentialsProvider from 'next-auth/providers/credentials'
 import GoogleProvider from 'next-auth/providers/google'
@@ -56,7 +57,7 @@ const handler = NextAuth({
   },
   callbacks: {
     async jwt({ token, user }) {
-      if (user?.email === 'thienmai1312@gmail.com') {
+      if (token.email && adminEmails.includes(token.email)) {
         token.typeUser = 'admin'
       }
       return { ...token, ...user }

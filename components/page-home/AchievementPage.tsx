@@ -94,7 +94,7 @@ const AchievementPage = () => {
                   <h2 className="text-3xl font-semibold text-gray-800">{item.name}</h2>
                   <div className="flex items-center space-x-1 py-2">
                     <Image
-                      src="/static/svg/mic.svg"
+                      src="/svg/mic.svg"
                       width={25}
                       height={25}
                       alt="loader"
@@ -104,7 +104,7 @@ const AchievementPage = () => {
                   </div>
                   <div className="flex items-center space-x-1 pb-2">
                     <Image
-                      src="/static/svg/listening.svg"
+                      src="/svg/listening.svg"
                       width={25}
                       height={25}
                       alt="loader"
@@ -114,7 +114,7 @@ const AchievementPage = () => {
                   </div>
                   <div className="flex items-center space-x-1 pb-2">
                     <Image
-                      src="/static/svg/reading.svg"
+                      src="/svg/reading.svg"
                       width={25}
                       height={25}
                       alt="loader"
@@ -124,7 +124,7 @@ const AchievementPage = () => {
                   </div>
                   <div className="flex items-center space-x-1">
                     <Image
-                      src="/static/svg/pencil.svg"
+                      src="/svg/pencil.svg"
                       width={25}
                       height={25}
                       alt="loader"
@@ -398,7 +398,7 @@ const AchievementPage = () => {
       </span> */}
       <div className="absolute -left-80 -top-72">
         <Image
-          src="/static/svg/test/svg-decorator-blob-3.svg"
+          src="/svg/test/svg-decorator-blob-3.svg"
           alt="VPN Illustrasi"
           layout="responsive"
           height={50}

@@ -10,7 +10,7 @@ export default function Footer() {
           <div>
             <div className='sm:flex sm:items-center text-center'>
               <div className='mb-6 md:mb-0'>
-                <Image src='/static/images/logos/logo.svg' alt='logo' height={200} width={200} priority />
+                <Image src='/images/logos/logo.svg' alt='logo' height={200} width={200} priority />
               </div>
               <h1 className='text-3xl	font-extrabold text-white pl-40'>
                 Anh ngữ Dream - <span className='text-red-600	'>10 năm</span> hình thành và phát triển

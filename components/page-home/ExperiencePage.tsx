@@ -158,7 +158,7 @@ const ExperiencePage = () => {
       </div>
       <div className="absolute -top-10 -right-72">
         <Image
-          src="/static/svg/test/svg-decorator-blob-3.svg"
+          src="/svg/test/svg-decorator-blob-3.svg"
           alt="VPN Illustrasi"
           layout="responsive"
           height={50}

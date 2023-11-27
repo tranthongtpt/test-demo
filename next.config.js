@@ -96,6 +96,7 @@ module.exports = {
     dirs: ['app', 'components', 'lib', 'layouts', 'scripts'],
   },
   swcMinify: true,
+  experimental: { appDir: true },
   images: {
     domains: ['picsum.photos'],
   },

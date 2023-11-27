@@ -116,7 +116,7 @@ function HeroHome() {
                 <div className="mt-4 flex flex-wrap items-center gap-6 lg:gap-24">
                   <motion.img
                     className=" object-contain"
-                    src="/static/images/british-council.png"
+                    src="/images/british-council.png"
                     loading="lazy"
                     alt="british"
                     width="180"
@@ -127,7 +127,7 @@ function HeroHome() {
                   />
                   <motion.img
                     className=" object-contain"
-                    src="/static/images/idp-education.png"
+                    src="/images/idp-education.png"
                     loading="lazy"
                     alt="idp"
                     width="180"
@@ -163,7 +163,7 @@ function HeroHome() {
               </motion.div>
               <motion.div className="z-40" initial={{ opacity: 0 }} animate={{ opacity: 1 }}>
                 <Image
-                  src="/static/images/heroman.webp"
+                  src="/images/heroman.webp"
                   width={600}
                   height={600}
                   alt="hinh anh hero"
@@ -210,7 +210,7 @@ function HeroHome() {
         <div className="relative mx-0 mt-4 flex items-center gap-4 overflow-hidden rounded-xl bg-transparent bg-clip-border pb-8 pt-0 text-gray-700 shadow-none">
           <Image
             alt="tania andrew"
-            src="/static/images/heroman.webp"
+            src="/images/heroman.webp"
             className="relative inline-block h-[58px] w-[58px] !rounded-full object-cover object-center"
             height={58}
             width={58}

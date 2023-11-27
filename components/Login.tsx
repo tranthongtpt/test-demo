@@ -34,66 +34,79 @@ const Login = (props: Props) => {
 
   const onSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
-    setLoading(true)
-    const res = await signIn('credentials', {
-      username: userName,
-      password: password,
-      redirect: false,
+    MySwal.fire({
+      toast: true,
+      position: 'top-end',
+      showConfirmButton: false,
+      timer: 2000,
+      timerProgressBar: true,
+      didOpen: (toast) => {
+        toast.addEventListener('mouseenter', Swal.stopTimer)
+        toast.addEventListener('mouseleave', Swal.resumeTimer)
+      },
+      icon: 'error',
+      title: 'Hãy đăng nhập bằng tài khoản Google',
+      footer: `Tính năng này đang được cập nhật!`
     })
+    // setLoading(true)
+    // const res = await signIn('credentials', {
+    //   username: userName,
+    //   password: password,
+    //   redirect: false,
+    // })
 
-    if (res?.error) {
-      setLoading(false)
-      MySwal.fire({
-        toast: true,
-        position: 'top-end',
-        showConfirmButton: false,
-        timer: 2000,
-        timerProgressBar: true,
-        didOpen: (toast) => {
-          toast.addEventListener('mouseenter', Swal.stopTimer)
-          toast.addEventListener('mouseleave', Swal.resumeTimer)
-        },
-        icon: 'error',
-        title: 'Lỗi',
-      })
-    } else {
-      MySwal.fire({
-        toast: true,
-        position: 'top-end',
-        showConfirmButton: false,
-        timer: 2000,
-        timerProgressBar: true,
-        didOpen: (toast) => {
-          toast.addEventListener('mouseenter', Swal.stopTimer)
-          toast.addEventListener('mouseleave', Swal.resumeTimer)
-        },
-        icon: 'success',
-        title: 'Đăng nhập thành công!',
-      }).then(() => {
-        setLoading(false)
-        if (session) {
-          const user = session.user as User
-          if (user && user.typeUser === 'admin') {
-            router.push('/teacher')
-          } else {
-            router.push('/student')
-          }
-        }
-      })
-    }
+    // if (res?.error) {
+    //   setLoading(false)
+    //   MySwal.fire({
+    //     toast: true,
+    //     position: 'top-end',
+    //     showConfirmButton: false,
+    //     timer: 2000,
+    //     timerProgressBar: true,
+    //     didOpen: (toast) => {
+    //       toast.addEventListener('mouseenter', Swal.stopTimer)
+    //       toast.addEventListener('mouseleave', Swal.resumeTimer)
+    //     },
+    //     icon: 'error',
+    //     title: 'Lỗi',
+    //   })
+    // } else {
+    //   MySwal.fire({
+    //     toast: true,
+    //     position: 'top-end',
+    //     showConfirmButton: false,
+    //     timer: 2000,
+    //     timerProgressBar: true,
+    //     didOpen: (toast) => {
+    //       toast.addEventListener('mouseenter', Swal.stopTimer)
+    //       toast.addEventListener('mouseleave', Swal.resumeTimer)
+    //     },
+    //     icon: 'success',
+    //     title: 'Đăng nhập thành công!',
+    //   }).then(() => {
+    //     setLoading(false)
+    //     if (session) {
+    //       const user = session.user as User
+    //       if (user && user.typeUser === 'admin') {
+    //         router.push('/teacher')
+    //       } else {
+    //         router.push('/student')
+    //       }
+    //     }
+    //   })
+    // }
   }
 
-  // useEffect(() => {
-  //   if (session) {
-  //     dispatch(setSession(session))
-  //     const user = session.user as User
-  //     if (user && user.typeUser === 'admin') {
-  //       router.push('/teacher')
-  //     } else {
-  //       router.push('/student')
-  //     }
-  //   }
-  // }, [session])
+  useEffect(() => {
+    if (session) {
+      const user = session.user as User
+      if (user && user.typeUser === 'admin') {
+        router.push('/teacher')
+      } else {
+        router.push('/student')
+      }
+    }
+  }, [session, router])
 
   return (
     <div>

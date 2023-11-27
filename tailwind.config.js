@@ -10,11 +10,11 @@ module.exports = {
   },
   content: [
     "./node_modules/@nextui-org/theme/dist/**/*.{js,ts,jsx,tsx}",
-    './app/**/*.{js,ts,jsx,tsx}',
-    './pages/**/*.{js,ts,tsx}',
-    './components/**/*.{js,ts,tsx}',
-    './layouts/**/*.{js,ts,tsx}',
-    './data/**/*.mdx',
+    './app/**/**/*.{js,ts,jsx,tsx}',
+    './pages/**/**/*.{js,ts,tsx}',
+    './components/**/**/*.{js,ts,tsx}',
+    './layouts/**/**/*.{js,ts,tsx}',
+    './data/**/**/*.mdx',
   ],
   darkMode: 'class',
   theme: {

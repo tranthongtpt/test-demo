@@ -165,7 +165,7 @@ export default function AppHeader({ children }: AppHeaderProps) {
             <div className="flex items-center justify-between w-auto w-full md:">
               <a href="/" aria-label="Home">
                 <Image
-                  src="/static/images/logos/logo.svg"
+                  src="/images/logos/logo.svg"
                   alt="logo"
                   height={100}
                   width={100}
@@ -217,13 +217,13 @@ export default function AppHeader({ children }: AppHeaderProps) {
               <ProductItem
                 title="Thi thử IELTS"
                 href="/dang-ky-thi-thu-ielts"
-                src="/static/images/avatar.png"
+                src="/images/avatar.png"
                 description="Thi thử IELTS giúp người học luyện tập và cải thiện kỹ năng Nghe, Đọc, Viết và Nói, tất cả những kỹ năng quan trọng được đánh giá trong bài thi IELTS."
               />
               <ProductItem
                 title="Đăng ký IELTS"
                 href="/ielts-writing"
-                src="/static/images/avatar.png"
+                src="/images/avatar.png"
                 description="Đăng ký IELTS là bước quan trọng cho những người muốn tham gia kỳ thi này để đánh giá kỹ năng tiếng Anh của mình. "
               />
             </div>

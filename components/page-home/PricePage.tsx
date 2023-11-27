@@ -1136,7 +1136,7 @@ const PricePage = () => {
       </svg>
       <div className="absolute -bottom-96 -left-80">
         <Image
-          src="/static/svg/test/svg-decorator-blob-3.svg"
+          src="/svg/test/svg-decorator-blob-3.svg"
           alt="VPN Illustrasi"
           layout="responsive"
           height={50}

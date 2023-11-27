@@ -204,7 +204,7 @@ const ReasonPage = () => {
       </div>
       <div className="absolute -right-72 top-0">
         <Image
-          src="/static/svg/test/svg-decorator-blob-3.svg"
+          src="/svg/test/svg-decorator-blob-3.svg"
           alt="VPN Illustrasi"
           layout="responsive"
           height={50}
@@ -214,7 +214,7 @@ const ReasonPage = () => {
       </div>
       <div className="absolute -bottom-80 -left-80">
         <Image
-          src="/static/svg/test/svg-decorator-blob-3.svg"
+          src="/svg/test/svg-decorator-blob-3.svg"
           alt="VPN Illustrasi"
           layout="responsive"
           height={50}

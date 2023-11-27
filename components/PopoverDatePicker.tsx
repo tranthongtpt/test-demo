@@ -131,7 +131,7 @@ const PopoverDatePicker = ({
               <PopoverTrigger>
                 <div className='flex items-start space-x-2 cursor-pointer flex-1'>
                   <div className='w-4 h-4 flex justify-center items-center'>
-                    <Image src='/static/svg/calendar.svg' width={150} height={150} alt='loader' />
+                    <Image src='/svg/calendar.svg' width={150} height={150} alt='loader' />
                   </div>
                   <div>
                     <p className='text-black font-bold dark:text-white text-xs'>Ngày</p>
@@ -305,7 +305,7 @@ const PopoverDatePicker = ({
                     <PopoverTrigger>
                       <div className='flex items-start space-x-2 cursor-pointer flex-1'>
                         <div className='w-4 h-4 flex justify-center items-center'>
-                          <Image src='/static/svg/clock.svg' width={400} height={400} alt='loader' />
+                          <Image src='/svg/clock.svg' width={400} height={400} alt='loader' />
                         </div>
                         <div>
                           <p className='text-black font-bold dark:text-white text-xs'>Ca thi L-R-W</p>

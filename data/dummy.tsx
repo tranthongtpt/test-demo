@@ -1,5 +1,12 @@
 import Image from 'next/image'
 
+export const adminEmails = [
+  'thienmai1312@gmail.com',
+  'anna.huong@anhngudream.edu.vn',
+  'rosa.linh@anhngudream.edu.vn',
+  'hadang@anhngudream.edu.vn',
+];
+
 export const listReading = [
   {
     key: '1',

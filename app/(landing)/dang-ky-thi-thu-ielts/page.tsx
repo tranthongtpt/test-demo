@@ -180,7 +180,7 @@ export default function RegisterTest() {
                 <div className="wow fadeInUp relative z-10 mx-auto w-full  lg:mr-0">
                   <motion.div className="z-40" initial={{ opacity: 0 }} animate={{ opacity: 1 }}>
                     <Image
-                      src="/static/svg/Saly-22.svg"
+                      src="/svg/Saly-22.svg"
                       width={600}
                       height={600}
                       alt="loader"

@@ -1,20 +1,25 @@
 import { getToken } from 'next-auth/jwt'
 import { NextFetchEvent, NextRequest, NextResponse } from 'next/server'
 import { withAuth } from 'next-auth/middleware'
+import { adminEmails } from './data/dummy'
 
 export default withAuth(
   async function middleware(request: NextRequest, _next: NextFetchEvent) {
     const { pathname } = request.nextUrl
     const token = await getToken({ req: request })
-    console.log('pathname', pathname)
-    console.log('token', token)
+
     if (!token) {
       const url = new URL(`/login`, request.url)
       url.searchParams.set('callbackUrl', encodeURI(request.url))
       return NextResponse.redirect(url)
     }
-    if (token.email === 'thienmai1312@gmail.com') {
-      token.typeUser = 'admin'
+    if (token && pathname.startsWith('/login')) {
+      const targetPath = token.typeUser === 'admin' ? '/teacher' : '/student' // Hoặc đường dẫn mặc định khác dựa trên vai trò
+      return NextResponse.redirect(new URL(targetPath, request.url))
+    }
+
+    if (token.email && adminEmails.includes(token.email)) {
+      token.typeUser = 'admin';
     }
 
     const isAdmin = token.typeUser === 'admin'
