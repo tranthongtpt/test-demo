@@ -2,7 +2,7 @@
 
 import React, { useState } from 'react'
 import parse from 'html-react-parser'
-import Highlightable from '@/components/Highlight'
+// import Highlightable from '@/components/Highlight'
 interface DataProps {
   data: [
     {
@@ -18,9 +18,9 @@ interface DataProps {
           answers: []
           type: string
           options?: []
-        }
+        },
       ]
-    }
+    },
   ]
 }
 
@@ -29,8 +29,8 @@ const ScreenExam = ({ data }: DataProps) => {
     {
       id: 0,
       offset: 10,
-      length: 29
-    }
+      length: 29,
+    },
   ])
 
   const handleHightlight = (range: any) => {
@@ -44,14 +44,14 @@ const ScreenExam = ({ data }: DataProps) => {
 
   console.log('RANGES', ranges)
   return (
-    <div className='w-full h-full p-8 pt-8 overflow-y-auto bg-slate-50/50'>
+    <div className="w-full h-full p-8 pt-8 overflow-y-auto bg-slate-50/50">
       {data?.map((item) => (
         <>
           {/* <p className='text-3xl font-bold uppercase'>{item.title}</p>
           <hr /> */}
           {/* <p className='text-3xl font-bold uppercase'> */}
 
-          <div className='ck-content'>
+          <div className="ck-content">
             {/* <Highlightable
               ranges={ranges}
               handleHighlight={handleHightlight}
