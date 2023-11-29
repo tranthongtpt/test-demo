@@ -9,7 +9,7 @@ import {
 import { signOut, useSession } from 'next-auth/react'
 import Image from 'next/image'
 import Link from 'next/link'
-import { usePathname } from 'next/navigation'
+import { usePathname, useRouter } from 'next/navigation'
 import Breadcrumbs from './Breadcrumbs'
 
 type TypeUser = {
@@ -21,6 +21,7 @@ function AdminNavbar() {
   const { data: session } = useSession()
   // const session123 = useSelector((state: any) => state.session.session)
   const pathname = usePathname()
+  const router = useRouter()
   const user = session?.user as TypeUser
   return (
     <div className="navbar flex items-center justify-between border-b border-divider bg-white px-5 py-2">
@@ -52,16 +53,38 @@ function AdminNavbar() {
             </div>
           </DropdownTrigger>
           <DropdownMenu aria-label="Profile Actions" variant="flat">
-            <DropdownItem key="settings">Hồ sơ</DropdownItem>
+            <DropdownItem
+              key="redirectHome"
+              startContent={<Image src="/svg/dashboard.svg" alt="logo" height={20} width={20} />}
+              onClick={() => {
+                if (pathname === '/') {
+                  if (user && user.typeUser !== 'admin') {
+                    router.push('/student')
+                  } else {
+                    router.push('/teacher')
+                  }
+                } else {
+                  router.push('/')
+                }
+              }}
+            >
+              {pathname === '/' ? 'Chuyển đến trang chủ' : 'Chuyển đến landing page'}
+            </DropdownItem>
+            <DropdownItem
+              key="settings"
+              showDivider
+              startContent={<Image src="/svg/setting.svg" alt="logo" height={20} width={20} />}
+              onClick={() => {
+                router.push('/ho-so')
+              }}
+            >
+              Hồ sơ
+            </DropdownItem>
             <DropdownItem
               key="logout"
               color="danger"
-              onClick={() =>
-                // signOut({ redirect: false }).then(() => {
-                //   router.push('/') // Redirect to the dashboard page after signing out
-                // })
-                signOut({ callbackUrl: '/' })
-              }
+              startContent={<Image src="/svg/logout.svg" alt="logo" height={20} width={20} />}
+              onClick={() => signOut({ callbackUrl: '/' })}
             >
               Đăng xuất
             </DropdownItem>

@@ -11,7 +11,6 @@ function AdminSidebar() {
   const userInfo = session?.user as User
 
   console.log('pathname', pathname)
-  const linkData = pathname.includes('teacher') ? admin : user
 
   const activeLink =
     'bg-rose-100  flex gap-2 w-full min-h-[44px] h-full items-center px-3.5 rounded-xl cursor-pointer transition-all duration-150 active:scale-[0.98]'
@@ -64,20 +63,6 @@ function AdminSidebar() {
               </>
             )}
           </div>
-          {/* <div className="flex flex-col gap-6 px-2 mt-9">
-            {linkData.map((item, index) => (
-              <Link
-                className="max-w-full text-default-900 active:bg-none"
-                href={item.link}
-                key={index}
-              >
-                <div className={pathname === item.link ? activeLink : normalLink}>
-                  {item.icon}
-                  <span className="text-red-900">{item.name}</span>
-                </div>
-              </Link>
-            ))}
-          </div> */}
           <div className="flex items-center justify-center gap-6 px-8 pb-8 pt-16 md:pb-0 md:pt-10">
             <p className="text-center text-xs">© 2023 All Rights Reserved Developed by TTH</p>
           </div>

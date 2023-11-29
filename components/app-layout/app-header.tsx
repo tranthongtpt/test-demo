@@ -9,6 +9,7 @@ import { motion } from 'framer-motion'
 import React, { useEffect, useState } from 'react'
 import { signOut, useSession } from 'next-auth/react'
 import { Dropdown, DropdownItem, DropdownMenu, DropdownTrigger, User } from '@nextui-org/react'
+import { usePathname, useRouter } from 'next/navigation'
 type AppHeaderProps = React.PropsWithChildren
 
 const transition = {
@@ -131,7 +132,9 @@ export default function AppHeader({ children }: AppHeaderProps) {
   const [scrolling, setScrolling] = useState(false)
   const { data: session } = useSession()
   const userInfo = session?.user as User
-
+  const router = useRouter()
+  const pathname = usePathname()
+  const iconClasses = 'text-xl text-default-500 pointer-events-none flex-shrink-0'
   useEffect(() => {
     const handleScroll = () => {
       const scrollPosition = window.scrollY
@@ -163,7 +166,7 @@ export default function AppHeader({ children }: AppHeaderProps) {
         <Menu setActive={setActive}>
           <div className="flex items-center flex-1 md:absolute md:inset-y-0 md:left-0">
             <div className="flex items-center justify-between w-auto w-full md:">
-              <a href="/" aria-label="Home">
+              <a href={userInfo ? `/teacher` : '/'} aria-label="Home">
                 <Image
                   src="/images/logos/logo.svg"
                   alt="logo"
@@ -258,11 +261,42 @@ export default function AppHeader({ children }: AppHeaderProps) {
                   </div>
                 </DropdownTrigger>
                 <DropdownMenu aria-label="Profile Actions" variant="flat">
-                  <DropdownItem key="settings">Hồ sơ</DropdownItem>
+                  <DropdownItem
+                    key="redirectHome"
+                    startContent={
+                      <Image src="/svg/dashboard.svg" alt="logo" height={20} width={20} />
+                    }
+                    onClick={() => {
+                      if (pathname === '/') {
+                        if (userInfo.typeUser !== 'admin') {
+                          router.push('/student')
+                        } else {
+                          router.push('/teacher')
+                        }
+                      } else {
+                        router.push('/')
+                      }
+                    }}
+                  >
+                    {pathname === '/' ? 'Chuyển về trang chủ' : 'Chuyển đến landing page'}
+                  </DropdownItem>
+                  <DropdownItem
+                    key="settings"
+                    showDivider
+                    startContent={
+                      <Image src="/svg/setting.svg" alt="logo" height={20} width={20} />
+                    }
+                    onClick={() => {
+                      router.push('/ho-so')
+                  }}
+                  >
+                    Hồ sơ
+                  </DropdownItem>
                   <DropdownItem
                     key="logout"
                     color="danger"
                     onClick={() => signOut({ callbackUrl: '/' })}
+                    startContent={<Image src="/svg/logout.svg" alt="logo" height={20} width={20} />}
                   >
                     Đăng xuất
                   </DropdownItem>
