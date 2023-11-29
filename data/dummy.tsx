@@ -122,12 +122,12 @@ export const admin = [
     icon: <Image src="/svg/users.svg" alt="logo" height={24} width={24} className="text-white" />,
     link: '/teacher/hoc-vien',
   },
-  {
-    id: 5,
-    name: 'Lịch sử đăng ký',
-    icon: <Image src="/svg/history.svg" alt="logo" height={24} width={24} className="text-white" />,
-    link: '/teacher/lich-su-dang-ky',
-  },
+  // {
+  //   id: 5,
+  //   name: 'Lịch sử đăng ký',
+  //   icon: <Image src="/svg/history.svg" alt="logo" height={24} width={24} className="text-white" />,
+  //   link: '/teacher/lich-su-dang-ky',
+  // },
   // {
   //   id: 3,
   //   name: 'Writing',
