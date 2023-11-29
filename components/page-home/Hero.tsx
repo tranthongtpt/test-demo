@@ -4,7 +4,7 @@ import Image from 'next/image'
 import { useEffect } from 'react'
 import { Highlighter } from './Highlighter'
 import { useTheme } from 'next-themes'
-import { ColorContainer } from '../ContainerColor'
+import { ColorContainer } from '../z_old_source_timlrx/ContainerColor'
 
 const words = `   Tham gia sự kiện thi thử IELTS ngay hôm nay cùng cựu giám khảo IDP và Hội đồng Anh. Đừng bỏ lỡ cơ
 hội hiếm có này để trải nghiệm môi trường thi thử chân thực và nhận phản hồi chi tiết từ những
@@ -162,12 +162,7 @@ function HeroHome() {
                 </svg>
               </motion.div>
               <motion.div className="z-40" initial={{ opacity: 0 }} animate={{ opacity: 1 }}>
-                <Image
-                  src="/images/heroman.webp"
-                  width={600}
-                  height={600}
-                  alt="hinh anh hero"
-                />
+                <Image src="/images/heroman.webp" width={600} height={600} alt="hinh anh hero" />
               </motion.div>
             </div>
           </div>
@@ -180,7 +175,7 @@ function HeroHome() {
           hidden: { opacity: 0, scale: 0.8 },
           visible: { opacity: 1, scale: 1, transition: { duration: 0.5, delay: 0.2 } },
         }}
-        className={`shadow-small border-1 absolute bottom-[123px] right-[36rem] z-50 w-auto rounded-xl border-white/20 bg-white/50 backdrop-sepia-0`}
+        className={`absolute bottom-[123px] right-[36rem] z-50 w-auto rounded-xl border-1 border-white/20 bg-white/50 shadow-small backdrop-sepia-0`}
       >
         <div className="grid grid-cols-5 gap-y-2 p-5">
           <div>

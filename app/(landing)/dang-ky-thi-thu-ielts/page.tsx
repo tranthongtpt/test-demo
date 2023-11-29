@@ -2,11 +2,11 @@
 import React, { useState, useMemo, useEffect } from 'react'
 import Image from 'next/image'
 import { useRouter } from 'next/navigation'
-import { ColorContainer } from '@/components/ContainerColor'
-import { motion, stagger, useAnimate } from 'framer-motion'
-import { useTheme } from 'next-themes'
-import { Highlighter } from '@/components/page-home/Highlighter'
-import PopoverDatePicker from '@/components/PopoverDatePicker'
+import { ColorContainer } from '@/components/z_old_source_timlrx/ContainerColor'
+import { motion } from 'framer-motion'
+// import { useTheme } from 'next-themes'
+// import { Highlighter } from '@/components/page-home/Highlighter'
+import PopoverDatePicker from '@/components/DatePicker/PopoverDatePicker'
 import { Button, Checkbox, Divider, Input } from '@nextui-org/react'
 import { cn } from '@/utils/utils'
 
@@ -88,7 +88,7 @@ function DayInfo({ selectedDay }: { selectedDay: any }) {
 
   return (
     <div>
-      <p className="text-xl	">
+      <p className="text-xl ">
         {dayname[dayOfWeek] && day && month && year
           ? dayname[dayOfWeek] + ', ' + day + '/' + month + '/' + year
           : ''}
@@ -145,7 +145,7 @@ export default function RegisterTest() {
     router.push('/thanh-toan')
   }
   return (
-    <section className="bg-slate-50	">
+    <section className="bg-slate-50 ">
       <ColorContainer>
         <div className="container mx-auto p-6 md:px-12 lg:px-6 xl:px-0">
           <div className="relative ml-auto">
@@ -156,7 +156,7 @@ export default function RegisterTest() {
                 transition={{ duration: 0.5 }}
                 className="sm:px-12 md:w-2/3 md:px-0 md:text-left lg:w-1/2"
               >
-                <h1 className="font-display relative z-50 text-5xl font-black tracking-tight text-white md:text-6xl xl:text-7xl	">
+                <h1 className="font-display relative z-50 text-5xl font-black tracking-tight text-white md:text-6xl xl:text-7xl ">
                   Thi thử IELTS 4 kỹ năng
                 </h1>
                 <div className="mb-12">
@@ -171,20 +171,20 @@ export default function RegisterTest() {
                 </div>
                 <button className="group relative h-12 w-48 overflow-hidden rounded-xl bg-white text-lg shadow">
                   <div className="absolute inset-0 w-3 bg-amber-300 transition-all duration-[250ms] ease-out group-hover:w-full"></div>
-                  <span className="relative font-semibold text-black group-hover:text-white	">
+                  <span className="relative font-semibold text-black group-hover:text-white ">
                     Đăng ký ngay
                   </span>
                 </button>
               </motion.div>
               <div className="relative z-50 md:mt-0 md:w-2/5 lg:w-1/2">
-                <div className="wow fadeInUp relative z-10 mx-auto w-full  lg:mr-0">
+                <div className="wow fadeInUp relative z-10 mx-auto w-full lg:mr-0">
                   <motion.div className="z-40" initial={{ opacity: 0 }} animate={{ opacity: 1 }}>
                     <Image
                       src="/svg/Saly-22.svg"
                       width={600}
                       height={600}
                       alt="loader"
-                      className="z-50  object-contain"
+                      className="z-50 object-contain"
                     />
                   </motion.div>
                   <div className="absolute bottom-10 right-10">
@@ -252,75 +252,78 @@ export default function RegisterTest() {
           </svg>
         </div>
       </ColorContainer>
-      <div className='bg-rose-500'>
-        <div className='flex flex-col items-center  bg-white py-4 sm:flex-row sm:px-10 lg:px-20 xl:px-32 justify-center	'>
-          <div className='mt-4 py-2 text-xs sm:mt-0 sm:text-base'>
-            <div className='relative'>
-              <ul className='relative flex w-full items-center justify-between space-x-2 sm:space-x-4'>
-                <li className='flex items-center space-x-3 text-left sm:space-x-4'>
+      <div className="bg-rose-500">
+        <div className="flex flex-col items-center justify-center bg-white py-4 sm:flex-row sm:px-10 lg:px-20 xl:px-32 ">
+          <div className="mt-4 py-2 text-xs sm:mt-0 sm:text-base">
+            <div className="relative">
+              <ul className="relative flex w-full items-center justify-between space-x-2 sm:space-x-4">
+                <li className="flex items-center space-x-3 text-left sm:space-x-4">
                   <a
-                    className='flex h-10 w-10 items-center justify-center rounded-full bg-gray-600 text-xl	 font-semibold text-white ring ring-gray-600 ring-offset-2'
-                    href='#'
+                    className="flex h-10 w-10 items-center justify-center rounded-full bg-gray-600 text-xl font-semibold text-white ring ring-gray-600 ring-offset-2"
+                    href="#"
                   >
                     1
                   </a>
-                  <span className='font-semibold text-gray-500'>Đăng ký thi thử</span>
+                  <span className="font-semibold text-gray-500">Đăng ký thi thử</span>
                 </li>
                 <svg
-                  xmlns='http://www.w3.org/2000/svg'
-                  className='h-4 w-4 text-gray-400'
-                  fill='none'
-                  viewBox='0 0 24 24'
-                  stroke='currentColor'
-                  strokeWidth='2'
+                  xmlns="http://www.w3.org/2000/svg"
+                  className="h-4 w-4 text-gray-400"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                  strokeWidth="2"
                 >
-                  <path strokeLinecap='round' strokeLinejoin='round' d='M9 5l7 7-7 7' />
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
                 </svg>
-                <li className='flex items-center space-x-3 text-left sm:space-x-4'>
+                <li className="flex items-center space-x-3 text-left sm:space-x-4">
                   <a
-                    className='flex h-10 w-10 items-center justify-center rounded-full bg-gray-400 text-xl	 font-semibold text-white'
-                    href='#'
+                    className="flex h-10 w-10 items-center justify-center rounded-full bg-gray-400 text-xl font-semibold text-white"
+                    href="#"
                   >
                     2
                   </a>
-                  <span className='font-semibold text-gray-500'>Thanh toán</span>
+                  <span className="font-semibold text-gray-500">Thanh toán</span>
                 </li>
                 <svg
-                  xmlns='http://www.w3.org/2000/svg'
-                  className='h-4 w-4 text-gray-400'
-                  fill='none'
-                  viewBox='0 0 24 24'
-                  stroke='currentColor'
-                  strokeWidth='2'
+                  xmlns="http://www.w3.org/2000/svg"
+                  className="h-4 w-4 text-gray-400"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                  strokeWidth="2"
                 >
-                  <path strokeLinecap='round' strokeLinejoin='round' d='M9 5l7 7-7 7' />
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
                 </svg>
-                <li className='flex items-center space-x-3 text-left sm:space-x-4'>
+                <li className="flex items-center space-x-3 text-left sm:space-x-4">
                   <a
-                    className='flex h-10 w-10 items-center justify-center rounded-full bg-gray-400 text-xl	 font-semibold text-white'
-                    href='#'
+                    className="flex h-10 w-10 items-center justify-center rounded-full bg-gray-400 text-xl font-semibold text-white"
+                    href="#"
                   >
                     3
                   </a>
-                  <span className='font-semibold text-gray-500'>Xác nhận</span>
+                  <span className="font-semibold text-gray-500">Xác nhận</span>
                 </li>
               </ul>
             </div>
           </div>
         </div>
       </div>
-      <div className='container mx-auto'>
-        <p className='bg-[#fef1ef] p-3 rounded-md mt-3'>
-          Vui lòng <span className='font-semibold	uppercase text-red-500 cursor-pointer'>đăng ký</span> tài khoản để được
-          tiếp tục thanh toán
+      <div className="container mx-auto">
+        <p className="mt-3 rounded-md bg-[#fef1ef] p-3">
+          Vui lòng{' '}
+          <span className="cursor-pointer font-semibold uppercase text-red-500">đăng ký</span> tài
+          khoản để được tiếp tục thanh toán
         </p>
-        <div className='py-5'>
-          <div className='flex flex-col lg:grid grid-cols-12 bg-white rounded-2xl shadow-card p-4 md:p-6 gap-8'>
-            <div className='lg:col-span-7'>
+        <div className="py-5">
+          <div className="shadow-card flex grid-cols-12 flex-col gap-8 rounded-2xl bg-white p-4 md:p-6 lg:grid">
+            <div className="lg:col-span-7">
               <form onSubmit={handleSubmit}>
-                <div className='mt-2'>
-                  <p className='font-bold dark:text-white pb-2'>Lịch thi Listening - Reading - Writing</p>
-                  <div className='flex flex-col sm:flex-row gap-3'>
+                <div className="mt-2">
+                  <p className="pb-2 font-bold dark:text-white">
+                    Lịch thi Listening - Reading - Writing
+                  </p>
+                  <div className="flex flex-col gap-3 sm:flex-row">
                     <PopoverDatePicker
                       setSelectedDay={setSelectedDay}
                       selectedDay={selectedDay}
@@ -330,12 +333,18 @@ export default function RegisterTest() {
                     />
                   </div>
                   {/* {selectedDay ?? <p>Chọn ca thi Listening - Reading - Writing</p>} */}
-                  {errorMessage && <p className='mt-2 pl-2 text-sm text-red-600 dark:text-red-500'>{errorMessage}</p>}
+                  {errorMessage && (
+                    <p className="mt-2 pl-2 text-sm text-red-600 dark:text-red-500">
+                      {errorMessage}
+                    </p>
+                  )}
                 </div>
-                <div className='mt-2'>
-                  <p className='font-bold dark:text-white pb-2'>Chọn Feedback Writing chi tiết (không bắt buộc)</p>
-                  <div className='flex flex-col sm:flex-row gap-3'>
-                    <div className='w-full relative '>
+                <div className="mt-2">
+                  <p className="pb-2 font-bold dark:text-white">
+                    Chọn Feedback Writing chi tiết (không bắt buộc)
+                  </p>
+                  <div className="flex flex-col gap-3 sm:flex-row">
+                    <div className="relative w-full ">
                       <Checkbox
                         classNames={{
                           base: cn(
@@ -344,24 +353,24 @@ export default function RegisterTest() {
                             'cursor-pointer rounded-lg gap-2 p-4 border-2 border-transparent',
                             'data-[selected=true]:border-rose-500	'
                           ),
-                          label: 'w-full'
+                          label: 'w-full',
                         }}
                         isSelected={isSelected}
                         onValueChange={setIsSelected}
                         onChange={handleChangeCheckbox}
-                        className='rounded-2xl border  border-slate-400 m-0'
-                        color='danger'
-                        value='Writing Task 1'
+                        className="m-0 rounded-2xl border border-slate-400"
+                        color="danger"
+                        value="Writing Task 1"
                       >
-                        <div className='w-full flex justify-between gap-2 items-center	'>
+                        <div className="flex w-full items-center justify-between gap-2 ">
                           <p>Writing Task 1 (125.000đ)</p>
-                          <div className='flex flex-col items-end gap-1'>
-                            <span className='text-tiny text-default-500'> +10 phút</span>
+                          <div className="flex flex-col items-end gap-1">
+                            <span className="text-tiny text-default-500"> +10 phút</span>
                           </div>
                         </div>
                       </Checkbox>
                     </div>
-                    <div className='w-full relative '>
+                    <div className="relative w-full ">
                       {/* thong */}
                       <Checkbox
                         classNames={{
@@ -371,43 +380,44 @@ export default function RegisterTest() {
                             'cursor-pointer rounded-lg gap-2 p-4 border-2 border-transparent',
                             'data-[selected=true]:border-rose-500	'
                           ),
-                          label: 'w-full'
+                          label: 'w-full',
                         }}
                         isSelected={isSelecteds}
                         onValueChange={setIsSelecteds}
                         onChange={handleChangeCheckboxs}
-                        className='rounded-2xl border  border-slate-400 m-0'
-                        color='danger'
-                        value='Writing Task 2'
+                        className="m-0 rounded-2xl border border-slate-400"
+                        color="danger"
+                        value="Writing Task 2"
                       >
-                        <div className='w-full flex justify-between gap-2 items-center	'>
+                        <div className="flex w-full items-center justify-between gap-2 ">
                           <p>Writing Task 2 (125.000đ)</p>
-                          <div className='flex flex-col items-end gap-1'>
-                            <span className='text-tiny text-default-500'> +10 phút</span>
+                          <div className="flex flex-col items-end gap-1">
+                            <span className="text-tiny text-default-500"> +10 phút</span>
                           </div>
                         </div>
                       </Checkbox>
                     </div>
                   </div>
                   {isSelecteds === true || isSelected === true ? (
-                    <div className='flex items-center gap-x-2'>
+                    <div className="flex items-center gap-x-2">
                       <svg
-                        className='w-5 h-5 text-red-500'
-                        aria-hidden='true'
-                        xmlns='http://www.w3.org/2000/svg'
-                        fill='none'
-                        viewBox='0 0 20 20'
+                        className="h-5 w-5 text-red-500"
+                        aria-hidden="true"
+                        xmlns="http://www.w3.org/2000/svg"
+                        fill="none"
+                        viewBox="0 0 20 20"
                       >
                         <path
-                          stroke='currentColor'
-                          strokeLinecap='round'
-                          strokeLinejoin='round'
-                          strokeWidth='2'
-                          d='M7.529 7.988a2.502 2.502 0 0 1 5 .191A2.441 2.441 0 0 1 10 10.582V12m-.01 3.008H10M19 10a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z'
+                          stroke="currentColor"
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth="2"
+                          d="M7.529 7.988a2.502 2.502 0 0 1 5 .191A2.441 2.441 0 0 1 10 10.582V12m-.01 3.008H10M19 10a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"
                         />
                       </svg>
-                      <span className=''>
-                        Feedback Writing sẽ được chấm sau khi thi Speaking. Thời gian sẽ được cộng vào ca thi Speaking.
+                      <span className="">
+                        Feedback Writing sẽ được chấm sau khi thi Speaking. Thời gian sẽ được cộng
+                        vào ca thi Speaking.
                       </span>
                     </div>
                   ) : (
@@ -415,8 +425,8 @@ export default function RegisterTest() {
                   )}
                 </div>
                 {/* <div className='mt-2'>
-                  <p className='font-bold dark:text-white pb-2'>Lịch thi Speaking</p>
-                  <div className='flex flex-col sm:flex-row gap-3'>
+                  <p className='pb-2 font-bold dark:text-white'>Lịch thi Speaking</p>
+                  <div className='flex flex-col gap-3 sm:flex-row'>
                     <PopoverDatePickerS2
                       setSelectedDays={setSelectedDays}
                       selectedDays={selectedDays}
@@ -425,82 +435,90 @@ export default function RegisterTest() {
                     />
                   </div>
                 </div> */}
-                <Button color='danger' fullWidth size='lg' className='bg-rose-500 mt-4' type='submit'>
+                <Button
+                  color="danger"
+                  fullWidth
+                  size="lg"
+                  className="mt-4 bg-rose-500"
+                  type="submit"
+                >
                   Thanh toán ngay
                 </Button>
               </form>
             </div>
-            <div className='lg:col-span-5 bg-gray-primary dark:bg-white/10 p-4 md:p-6 rounded-2xl shadow-md'>
-              <p className='text-2xl font-semibold text-slate-600	pb-3'>Chi tiết đăng ký</p>
-              <div className='p-4 rounded-2xl border border-slate-400 text-slate-600'>
-                <div className='flex justify-between pb-3'>
-                  <p className='text-lg	font-semibold text-slate-600	'>Thi L-R-W</p>
-                  <p className='text-lg	font-semibold text-slate-600	'>Thi Speaking</p>
+            <div className="bg-gray-primary rounded-2xl p-4 shadow-md dark:bg-white/10 md:p-6 lg:col-span-5">
+              <p className="pb-3 text-2xl font-semibold text-slate-600">Chi tiết đăng ký</p>
+              <div className="rounded-2xl border border-slate-400 p-4 text-slate-600">
+                <div className="flex justify-between pb-3">
+                  <p className="text-lg font-semibold text-slate-600 ">Thi L-R-W</p>
+                  <p className="text-lg font-semibold text-slate-600 ">Thi Speaking</p>
                 </div>
-                <div className='flex justify-between pb-3'>
-                  <div className='flex flex-col font-semibold'>
+                <div className="flex justify-between pb-3">
+                  <div className="flex flex-col font-semibold">
                     <DayInfo selectedDay={selectedDay} />
-                    <p className=''>{selectRadios}</p>
+                    <p className="">{selectRadios}</p>
                   </div>
-                  <div className='hidden md:block h-[48px] w-[1px] my-auto dark:bg-white/10 bg-black/10'></div>
-                  <div className='flex flex-col font-semibold items-end		'>
+                  <div className="my-auto hidden h-[48px] w-[1px] bg-black/10 dark:bg-white/10 md:block"></div>
+                  <div className="flex flex-col items-end font-semibold ">
                     <DayInfo selectedDay={selectedDays} />
-                    <p className=''>{selectRadio}</p>
+                    <p className="">{selectRadio}</p>
                   </div>
                 </div>
-                <div className='text-sm	'>
-                  <p className='font-semibold		 text-black/70 dark:text-white/70'>
-                    Hình thức thi: <span className=' text-black dark:text-white font-semibold'>Online</span>
+                <div className="text-sm ">
+                  <p className="font-semibold text-black/70 dark:text-white/70">
+                    Hình thức thi:{' '}
+                    <span className="font-semibold text-black dark:text-white">Online</span>
                   </p>
-                  <p className='font-semibold		 text-black/70 dark:text-white/70'>
-                    Examiner: <span className=' text-black dark:text-white font-semibold'>Vietnamese</span>
+                  <p className="font-semibold text-black/70 dark:text-white/70">
+                    Examiner:{' '}
+                    <span className="font-semibold text-black dark:text-white">Vietnamese</span>
                   </p>
-                  <p className='font-semibold		 text-black/70 dark:text-white/70'>
+                  <p className="font-semibold text-black/70 dark:text-white/70">
                     Feedback Writing chi tiết:{' '}
-                    <span className=' text-black dark:text-white font-semibold'>
+                    <span className="font-semibold text-black dark:text-white">
                       {selectCheckbox ?? ''} {selectCheckboxs ?? ''}
                     </span>
                   </p>
                 </div>
               </div>
-              <p className='text-2xl font-semibold text-slate-600	py-3'>Mã giảm giá</p>
-              <div className='flex gap-3'>
-                <Input type='email' size='lg' variant='bordered' />
-                <Button size='lg' variant='ghost'>
+              <p className="py-3 text-2xl font-semibold text-slate-600">Mã giảm giá</p>
+              <div className="flex gap-3">
+                <Input type="email" size="lg" variant="bordered" />
+                <Button size="lg" variant="ghost">
                   Đồng ý
                 </Button>
               </div>
-              <div className='py-3'>
-                <div className='flex justify-between'>
-                  <p className='font-semibold text-black/70 dark:text-white/70'>Tổng tiền:</p>
-                  <span className=' text-black dark:text-white font-semibold'>
+              <div className="py-3">
+                <div className="flex justify-between">
+                  <p className="font-semibold text-black/70 dark:text-white/70">Tổng tiền:</p>
+                  <span className="font-semibold text-black dark:text-white">
                     300.000 <strong>VNĐ</strong>
                   </span>
                 </div>
-                <div className='flex justify-between'>
-                  <p className='font-semibold text-black/70 dark:text-white/70'>Mã giảm giá: </p>
-                  <span className=' text-black dark:text-white font-semibold'>
+                <div className="flex justify-between">
+                  <p className="font-semibold text-black/70 dark:text-white/70">Mã giảm giá: </p>
+                  <span className="font-semibold text-black dark:text-white">
                     300.000 <strong>VNĐ</strong>
                   </span>
                 </div>
-                <div className='flex justify-between'>
-                  <p className='font-semibold text-black/70 dark:text-white/70'>Thành tiền: </p>
-                  <span className=' text-black dark:text-white font-semibold'>
+                <div className="flex justify-between">
+                  <p className="font-semibold text-black/70 dark:text-white/70">Thành tiền: </p>
+                  <span className="font-semibold text-black dark:text-white">
                     0 <strong>VNĐ</strong>
                   </span>
                 </div>
               </div>
-              <Divider className='my-4' />
+              <Divider className="my-4" />
               <p>
                 Lưu ý:
                 <ul>
                   <li>
-                    Thời hạn chốt danh sách là 2 ngày trước đợt thi diễn ra, thí sinh không được hoàn tiền nếu huỷ thi
-                    sau khi chốt danh sách thi.
+                    Thời hạn chốt danh sách là 2 ngày trước đợt thi diễn ra, thí sinh không được
+                    hoàn tiền nếu huỷ thi sau khi chốt danh sách thi.
                   </li>
                   <li>
-                    Suất thi sẽ được ưu tiên cho thí sinh thanh toán thành công trước. Thanh toán qua Momo sẽ được xác
-                    nhận tự động ngay lập tức.
+                    Suất thi sẽ được ưu tiên cho thí sinh thanh toán thành công trước. Thanh toán
+                    qua Momo sẽ được xác nhận tự động ngay lập tức.
                   </li>
                 </ul>
                 <br />
@@ -508,127 +526,147 @@ export default function RegisterTest() {
             </div>
           </div>
         </div>
-        <div className='pb-5'>
-          <div className='flex flex-col lg:grid grid-cols-12 bg-white rounded-2xl shadow-card p-4 md:p-6 gap-8'>
-            <div className='lg:col-span-7 pb-40'>
-              <div className='pb-5'>
-                <h4 className='mt-2 text-xl font-extrabold leading-8 text-gray-900 dark:text-white  sm:leading-9'>
+        <div className="pb-5">
+          <div className="shadow-card flex grid-cols-12 flex-col gap-8 rounded-2xl bg-white p-4 md:p-6 lg:grid">
+            <div className="pb-40 lg:col-span-7">
+              <div className="pb-5">
+                <h4 className="mt-2 text-xl font-extrabold leading-8 text-gray-900 dark:text-white sm:leading-9">
                   Hướng dẫn đăng ký lịch thi thử IELTS
                 </h4>
-                <ul className='mt-4 space-y-3 font-medium'>
-                  <li className='flex items-start lg:col-span-1'>
-                    <div className='flex-shrink-0'>
-                      <svg className='w-5 h-5 text-indigo-600' fill='currentColor' viewBox='0 0 20 20'>
+                <ul className="mt-4 space-y-3 font-medium">
+                  <li className="flex items-start lg:col-span-1">
+                    <div className="flex-shrink-0">
+                      <svg
+                        className="h-5 w-5 text-indigo-600"
+                        fill="currentColor"
+                        viewBox="0 0 20 20"
+                      >
                         <path
-                          fillRule='evenodd'
-                          d='M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z'
-                          clipRule='evenodd'
+                          fillRule="evenodd"
+                          d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                          clipRule="evenodd"
                         ></path>
                       </svg>
                     </div>
-                    <p className='ml-3 leading-5 text-gray-600'>
+                    <p className="ml-3 leading-5 text-gray-600">
                       Thí sinh chọn chi tiết thông tin thi trong các đợt thi.
                     </p>
                   </li>
-                  <li className='flex items-start lg:col-span-1'>
-                    <div className='flex-shrink-0'>
-                      <svg className='w-5 h-5 text-indigo-600' fill='currentColor' viewBox='0 0 20 20'>
+                  <li className="flex items-start lg:col-span-1">
+                    <div className="flex-shrink-0">
+                      <svg
+                        className="h-5 w-5 text-indigo-600"
+                        fill="currentColor"
+                        viewBox="0 0 20 20"
+                      >
                         <path
-                          fillRule='evenodd'
-                          d='M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z'
-                          clipRule='evenodd'
+                          fillRule="evenodd"
+                          d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                          clipRule="evenodd"
                         ></path>
                       </svg>
                     </div>
-                    <p className='ml-3 leading-5 text-gray-600'>
-                      Hạn đăng ký và thanh toán là trước ngày bắt đầu thi 02 ngày. Sau thời gian này mọi hồ sơ đăng ký
-                      nhưng chưa thanh toán sẽ bị hủy. Thí sinh thanh toán thành công trước sẽ được ưu tiên chốt danh
-                      sách trước.{' '}
+                    <p className="ml-3 leading-5 text-gray-600">
+                      Hạn đăng ký và thanh toán là trước ngày bắt đầu thi 02 ngày. Sau thời gian này
+                      mọi hồ sơ đăng ký nhưng chưa thanh toán sẽ bị hủy. Thí sinh thanh toán thành
+                      công trước sẽ được ưu tiên chốt danh sách trước.{' '}
                     </p>
                   </li>
-                  <li className='flex items-start lg:col-span-1'>
-                    <div className='flex-shrink-0'>
-                      <svg className='w-5 h-5 text-indigo-600' fill='currentColor' viewBox='0 0 20 20'>
+                  <li className="flex items-start lg:col-span-1">
+                    <div className="flex-shrink-0">
+                      <svg
+                        className="h-5 w-5 text-indigo-600"
+                        fill="currentColor"
+                        viewBox="0 0 20 20"
+                      >
                         <path
-                          fillRule='evenodd'
-                          d='M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z'
-                          clipRule='evenodd'
+                          fillRule="evenodd"
+                          d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                          clipRule="evenodd"
                         ></path>
                       </svg>
                     </div>
-                    <p className='ml-3 leading-5 text-gray-600'>
-                      Với thí sinh thanh toán thành công, trước ngày thi 02 ngày thí sinh sẽ nhận email chốt danh sách
-                      thi, cung cấp thông tin đợt thi bao gồm: họ tên thí sinh, số báo danh và thời gian thi của các kỹ
-                      năng
+                    <p className="ml-3 leading-5 text-gray-600">
+                      Với thí sinh thanh toán thành công, trước ngày thi 02 ngày thí sinh sẽ nhận
+                      email chốt danh sách thi, cung cấp thông tin đợt thi bao gồm: họ tên thí sinh,
+                      số báo danh và thời gian thi của các kỹ năng
                     </p>
                   </li>
-                  <li className='flex items-start lg:col-span-1'>
-                    <div className='flex-shrink-0'>
-                      <svg className='w-5 h-5 text-indigo-600' fill='currentColor' viewBox='0 0 20 20'>
+                  <li className="flex items-start lg:col-span-1">
+                    <div className="flex-shrink-0">
+                      <svg
+                        className="h-5 w-5 text-indigo-600"
+                        fill="currentColor"
+                        viewBox="0 0 20 20"
+                      >
                         <path
-                          fillRule='evenodd'
-                          d='M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z'
-                          clipRule='evenodd'
+                          fillRule="evenodd"
+                          d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                          clipRule="evenodd"
                         ></path>
                       </svg>
                     </div>
-                    <p className='ml-3 leading-5 text-gray-600'>
-                      Thí sinh vui lòng sử dụng thông tin nhận được trong email để khai báo điểm danh vào phòng thi
-                      Speaking
+                    <p className="ml-3 leading-5 text-gray-600">
+                      Thí sinh vui lòng sử dụng thông tin nhận được trong email để khai báo điểm
+                      danh vào phòng thi Speaking
                     </p>
                   </li>
-                  <li className='flex items-start lg:col-span-1'>
-                    <div className='flex-shrink-0'>
-                      <svg className='w-5 h-5 text-indigo-600' fill='currentColor' viewBox='0 0 20 20'>
+                  <li className="flex items-start lg:col-span-1">
+                    <div className="flex-shrink-0">
+                      <svg
+                        className="h-5 w-5 text-indigo-600"
+                        fill="currentColor"
+                        viewBox="0 0 20 20"
+                      >
                         <path
-                          fillRule='evenodd'
-                          d='M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z'
-                          clipRule='evenodd'
+                          fillRule="evenodd"
+                          d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                          clipRule="evenodd"
                         ></path>
                       </svg>
                     </div>
-                    <p className='ml-3 leading-5 text-gray-600'>
-                      Kết quả thi sẽ được gửi về email của thí sinh và lưu trữ trong phần quản lý thông tin cá nhân của
-                      thí sinh trên website
+                    <p className="ml-3 leading-5 text-gray-600">
+                      Kết quả thi sẽ được gửi về email của thí sinh và lưu trữ trong phần quản lý
+                      thông tin cá nhân của thí sinh trên website
                     </p>
                   </li>
                 </ul>
               </div>
-              <div className='pb-5'>
-                <h4 className='mt-2 text-xl font-extrabold leading-8 text-gray-900 dark:text-whitesm:leading-9'>
+              <div className="pb-5">
+                <h4 className="dark:text-whitesm:leading-9 mt-2 text-xl font-extrabold leading-8 text-gray-900">
                   Thanh toán phí thi
                 </h4>
-                <div className='font-medium leading-relaxed space-y-4' itemProp='text'>
+                <div className="space-y-4 font-medium leading-relaxed" itemProp="text">
                   <div>
                     <strong>Trung tâm hiện tại chỉ chấp nhận thanh toán:</strong>
                     <ul>
-                      <li className='flex items-center gap-2'>
+                      <li className="flex items-center gap-2">
                         <svg
-                          stroke='currentColor'
-                          fill='currentColor'
-                          strokeWidth='0'
-                          viewBox='0 0 1024 1024'
-                          className='w-4 h-4'
-                          height='1em'
-                          width='1em'
-                          xmlns='http://www.w3.org/2000/svg'
+                          stroke="currentColor"
+                          fill="currentColor"
+                          strokeWidth="0"
+                          viewBox="0 0 1024 1024"
+                          className="h-4 w-4"
+                          height="1em"
+                          width="1em"
+                          xmlns="http://www.w3.org/2000/svg"
                         >
-                          <path d='M723 620.5C666.8 571.6 593.4 542 513 542s-153.8 29.6-210.1 78.6a8.1 8.1 0 0 0-.8 11.2l36 42.9c2.9 3.4 8 3.8 11.4.9C393.1 637.2 450.3 614 513 614s119.9 23.2 163.5 61.5c3.4 2.9 8.5 2.5 11.4-.9l36-42.9c2.8-3.3 2.4-8.3-.9-11.2zm117.4-140.1C751.7 406.5 637.6 362 513 362s-238.7 44.5-327.5 118.4a8.05 8.05 0 0 0-1 11.3l36 42.9c2.8 3.4 7.9 3.8 11.2 1C308 472.2 406.1 434 513 434s205 38.2 281.2 101.6c3.4 2.8 8.4 2.4 11.2-1l36-42.9c2.8-3.4 2.4-8.5-1-11.3zm116.7-139C835.7 241.8 680.3 182 511 182c-168.2 0-322.6 59-443.7 157.4a8 8 0 0 0-1.1 11.4l36 42.9c2.8 3.3 7.8 3.8 11.1 1.1C222 306.7 360.3 254 511 254c151.8 0 291 53.5 400 142.7 3.4 2.8 8.4 2.3 11.2-1.1l36-42.9c2.9-3.4 2.4-8.5-1.1-11.3zM448 778a64 64 0 1 0 128 0 64 64 0 1 0-128 0z'></path>
+                          <path d="M723 620.5C666.8 571.6 593.4 542 513 542s-153.8 29.6-210.1 78.6a8.1 8.1 0 0 0-.8 11.2l36 42.9c2.9 3.4 8 3.8 11.4.9C393.1 637.2 450.3 614 513 614s119.9 23.2 163.5 61.5c3.4 2.9 8.5 2.5 11.4-.9l36-42.9c2.8-3.3 2.4-8.3-.9-11.2zm117.4-140.1C751.7 406.5 637.6 362 513 362s-238.7 44.5-327.5 118.4a8.05 8.05 0 0 0-1 11.3l36 42.9c2.8 3.4 7.9 3.8 11.2 1C308 472.2 406.1 434 513 434s205 38.2 281.2 101.6c3.4 2.8 8.4 2.4 11.2-1l36-42.9c2.8-3.4 2.4-8.5-1-11.3zm116.7-139C835.7 241.8 680.3 182 511 182c-168.2 0-322.6 59-443.7 157.4a8 8 0 0 0-1.1 11.4l36 42.9c2.8 3.3 7.8 3.8 11.1 1.1C222 306.7 360.3 254 511 254c151.8 0 291 53.5 400 142.7 3.4 2.8 8.4 2.3 11.2-1.1l36-42.9c2.9-3.4 2.4-8.5-1.1-11.3zM448 778a64 64 0 1 0 128 0 64 64 0 1 0-128 0z"></path>
                         </svg>
                         <p>Thanh toán Online qua (Ví MoMo, Cổng Onepay)</p>
                       </li>
-                      <li className='flex items-center gap-2'>
+                      <li className="flex items-center gap-2">
                         <svg
-                          stroke='currentColor'
-                          fill='currentColor'
-                          strokeWidth='0'
-                          viewBox='0 0 16 16'
-                          className='w-4 h-4'
-                          height='1em'
-                          width='1em'
-                          xmlns='http://www.w3.org/2000/svg'
+                          stroke="currentColor"
+                          fill="currentColor"
+                          strokeWidth="0"
+                          viewBox="0 0 16 16"
+                          className="h-4 w-4"
+                          height="1em"
+                          width="1em"
+                          xmlns="http://www.w3.org/2000/svg"
                         >
-                          <path d='M8 .95 14.61 4h.89a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-.5.5H15v7a.5.5 0 0 1 .485.379l.5 2A.5.5 0 0 1 15.5 17H.5a.5.5 0 0 1-.485-.621l.5-2A.5.5 0 0 1 1 14V7H.5a.5.5 0 0 1-.5-.5v-2A.5.5 0 0 1 .5 4h.89L8 .95zM3.776 4h8.447L8 2.05 3.776 4zM2 7v7h1V7H2zm2 0v7h2.5V7H4zm3.5 0v7h1V7h-1zm2 0v7H12V7H9.5zM13 7v7h1V7h-1zm2-1V5H1v1h14zm-.39 9H1.39l-.25 1h13.72l-.25-1z'></path>
+                          <path d="M8 .95 14.61 4h.89a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-.5.5H15v7a.5.5 0 0 1 .485.379l.5 2A.5.5 0 0 1 15.5 17H.5a.5.5 0 0 1-.485-.621l.5-2A.5.5 0 0 1 1 14V7H.5a.5.5 0 0 1-.5-.5v-2A.5.5 0 0 1 .5 4h.89L8 .95zM3.776 4h8.447L8 2.05 3.776 4zM2 7v7h1V7H2zm2 0v7h2.5V7H4zm3.5 0v7h1V7h-1zm2 0v7H12V7H9.5zM13 7v7h1V7h-1zm2-1V5H1v1h14zm-.39 9H1.39l-.25 1h13.72l-.25-1z"></path>
                         </svg>
                         <p>Chuyển khoản ngân hàng</p>
                       </li>
@@ -644,198 +682,202 @@ export default function RegisterTest() {
                 </div>
               </div>
               {/* pricing */}
-              <div className=''>
-                <h4 className='my-2 text-xl font-extrabold leading-8 text-gray-900 dark:text-whitesm:leading-9'>
+              <div className="">
+                <h4 className="dark:text-whitesm:leading-9 my-2 text-xl font-extrabold leading-8 text-gray-900">
                   Các gói thi thử và so sánh các ưu đãi đi kèm
                 </h4>
-                <div className='relative mx-auto flex w-full max-w-screen-lg flex-col rounded-lg rounded-br-none shadow-md '>
-                  <div className='space relative flex h-20 items-center border-b border-gray-200 px-4'>
-                    <div className='w-40'></div>
-                    <div className='w-28 flex-grow rounded-t-md py-2 text-center text-lg font-semibold'>Basic</div>
-                    <div className='relative w-28 flex-grow rounded-md  py-6 text-center text-lg font-semibold'>
-                      <div className='pointer-events-none absolute top-0 hidden h-[25rem] w-full rounded-lg border-4 border-orange-600 sm:block'></div>
+                <div className="relative mx-auto flex w-full max-w-screen-lg flex-col rounded-lg rounded-br-none shadow-md ">
+                  <div className="space relative flex h-20 items-center border-b border-gray-200 px-4">
+                    <div className="w-40"></div>
+                    <div className="w-28 flex-grow rounded-t-md py-2 text-center text-lg font-semibold">
+                      Basic
+                    </div>
+                    <div className="relative w-28 flex-grow rounded-md py-6 text-center text-lg font-semibold">
+                      <div className="pointer-events-none absolute top-0 hidden h-[25rem] w-full rounded-lg border-4 border-orange-600 sm:block"></div>
                       Premium
                     </div>
-                    <div className='w-28 flex-grow rounded-t-md py-2 text-center text-lg font-semibold'>Pro</div>
+                    <div className="w-28 flex-grow rounded-t-md py-2 text-center text-lg font-semibold">
+                      Pro
+                    </div>
                   </div>
 
-                  <div className='flex h-12 items-center border-b border-gray-200 px-4'>
-                    <div className='w-40'>Ưu Đãi Giảm Xx%</div>
-                    <div className='flex w-0 flex-grow justify-center'>
+                  <div className="flex h-12 items-center border-b border-gray-200 px-4">
+                    <div className="w-40">Ưu Đãi Giảm Xx%</div>
+                    <div className="flex w-0 flex-grow justify-center">
                       <svg
-                        className='h-4 w-4 fill-current text-green-600'
-                        xmlns='http://www.w3.org/2000/svg'
-                        viewBox='0 0 20 20'
-                        fill='currentColor'
+                        className="h-4 w-4 fill-current text-green-600"
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 20 20"
+                        fill="currentColor"
                       >
                         <path
-                          fillRule='evenodd'
-                          d='M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z'
-                          clipRule='evenodd'
+                          fillRule="evenodd"
+                          d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                          clipRule="evenodd"
                         />
                       </svg>
                     </div>
-                    <div className='flex w-0 flex-grow justify-center'>
+                    <div className="flex w-0 flex-grow justify-center">
                       <svg
-                        className='h-4 w-4 fill-current text-green-600'
-                        xmlns='http://www.w3.org/2000/svg'
-                        viewBox='0 0 20 20'
-                        fill='currentColor'
+                        className="h-4 w-4 fill-current text-green-600"
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 20 20"
+                        fill="currentColor"
                       >
                         <path
-                          fillRule='evenodd'
-                          d='M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z'
-                          clipRule='evenodd'
+                          fillRule="evenodd"
+                          d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                          clipRule="evenodd"
                         />
                       </svg>
                     </div>
-                    <div className='flex w-0 flex-grow justify-center'>
+                    <div className="flex w-0 flex-grow justify-center">
                       <svg
-                        className='h-4 w-4 fill-current text-green-600'
-                        xmlns='http://www.w3.org/2000/svg'
-                        viewBox='0 0 20 20'
-                        fill='currentColor'
+                        className="h-4 w-4 fill-current text-green-600"
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 20 20"
+                        fill="currentColor"
                       >
                         <path
-                          fillRule='evenodd'
-                          d='M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z'
-                          clipRule='evenodd'
-                        />
-                      </svg>
-                    </div>
-                  </div>
-                  <div className='flex h-12 items-center border-b border-gray-200 px-4'>
-                    <div className='w-40'>Ưu Tiên Lịch</div>
-                    <div className='w-0 flex-grow'></div>
-                    <div className='flex w-0 flex-grow justify-center'>
-                      <svg
-                        className='h-4 w-4 fill-current text-green-600'
-                        xmlns='http://www.w3.org/2000/svg'
-                        viewBox='0 0 20 20'
-                        fill='currentColor'
-                      >
-                        <path
-                          fillRule='evenodd'
-                          d='M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z'
-                          clipRule='evenodd'
-                        />
-                      </svg>
-                    </div>
-                    <div className='flex w-0 flex-grow justify-center'>
-                      <svg
-                        className='h-4 w-4 fill-current text-green-600'
-                        xmlns='http://www.w3.org/2000/svg'
-                        viewBox='0 0 20 20'
-                        fill='currentColor'
-                      >
-                        <path
-                          fillRule='evenodd'
-                          d='M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z'
-                          clipRule='evenodd'
+                          fillRule="evenodd"
+                          d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                          clipRule="evenodd"
                         />
                       </svg>
                     </div>
                   </div>
-                  <div className='flex h-12 items-center border-b border-gray-200 px-4'>
-                    <div className='w-40'>Full Bộ Tài Liệu Bổ Trợ Của 4 Kỹ Năng</div>
-                    <div className='flex w-0 flex-grow justify-center'>
+                  <div className="flex h-12 items-center border-b border-gray-200 px-4">
+                    <div className="w-40">Ưu Tiên Lịch</div>
+                    <div className="w-0 flex-grow"></div>
+                    <div className="flex w-0 flex-grow justify-center">
                       <svg
-                        className='h-4 w-4 fill-current text-green-600'
-                        xmlns='http://www.w3.org/2000/svg'
-                        viewBox='0 0 20 20'
-                        fill='currentColor'
+                        className="h-4 w-4 fill-current text-green-600"
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 20 20"
+                        fill="currentColor"
                       >
                         <path
-                          fillRule='evenodd'
-                          d='M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z'
-                          clipRule='evenodd'
+                          fillRule="evenodd"
+                          d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                          clipRule="evenodd"
                         />
                       </svg>
                     </div>
-                    <div className='flex w-0 flex-grow justify-center'>
+                    <div className="flex w-0 flex-grow justify-center">
                       <svg
-                        className='h-4 w-4 fill-current text-green-600'
-                        xmlns='http://www.w3.org/2000/svg'
-                        viewBox='0 0 20 20'
-                        fill='currentColor'
+                        className="h-4 w-4 fill-current text-green-600"
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 20 20"
+                        fill="currentColor"
                       >
                         <path
-                          fillRule='evenodd'
-                          d='M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z'
-                          clipRule='evenodd'
-                        />
-                      </svg>
-                    </div>
-                    <div className='flex w-0 flex-grow justify-center'>
-                      <svg
-                        className='h-4 w-4 fill-current text-green-600'
-                        xmlns='http://www.w3.org/2000/svg'
-                        viewBox='0 0 20 20'
-                        fill='currentColor'
-                      >
-                        <path
-                          fillRule='evenodd'
-                          d='M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z'
-                          clipRule='evenodd'
+                          fillRule="evenodd"
+                          d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                          clipRule="evenodd"
                         />
                       </svg>
                     </div>
                   </div>
-                  <div className='flex h-12 items-center border-b border-gray-200 px-4'>
-                    <div className='w-40'>Voucher …% Kỹ Năng Speaking/Writing</div>
-                    <div className='w-0 flex-grow'></div>
-                    <div className='flex w-0 flex-grow justify-center'>
+                  <div className="flex h-12 items-center border-b border-gray-200 px-4">
+                    <div className="w-40">Full Bộ Tài Liệu Bổ Trợ Của 4 Kỹ Năng</div>
+                    <div className="flex w-0 flex-grow justify-center">
                       <svg
-                        className='h-4 w-4 fill-current text-green-600'
-                        xmlns='http://www.w3.org/2000/svg'
-                        viewBox='0 0 20 20'
-                        fill='currentColor'
+                        className="h-4 w-4 fill-current text-green-600"
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 20 20"
+                        fill="currentColor"
                       >
                         <path
-                          fillRule='evenodd'
-                          d='M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z'
-                          clipRule='evenodd'
+                          fillRule="evenodd"
+                          d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                          clipRule="evenodd"
                         />
                       </svg>
                     </div>
-                    <div className='flex w-0 flex-grow justify-center'>
+                    <div className="flex w-0 flex-grow justify-center">
                       <svg
-                        className='h-4 w-4 fill-current text-green-600'
-                        xmlns='http://www.w3.org/2000/svg'
-                        viewBox='0 0 20 20'
-                        fill='currentColor'
+                        className="h-4 w-4 fill-current text-green-600"
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 20 20"
+                        fill="currentColor"
                       >
                         <path
-                          fillRule='evenodd'
-                          d='M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z'
-                          clipRule='evenodd'
+                          fillRule="evenodd"
+                          d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                          clipRule="evenodd"
+                        />
+                      </svg>
+                    </div>
+                    <div className="flex w-0 flex-grow justify-center">
+                      <svg
+                        className="h-4 w-4 fill-current text-green-600"
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 20 20"
+                        fill="currentColor"
+                      >
+                        <path
+                          fillRule="evenodd"
+                          d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                          clipRule="evenodd"
                         />
                       </svg>
                     </div>
                   </div>
-                  <div className='hidden h-0 items-center sm:flex'>
-                    <div className='w-40'></div>
-                    <div className='mr-4 mt-24 flex h-24 w-0 flex-grow flex-col items-center space-y-2 rounded-b-lg bg-white px-8 shadow-md'>
-                      <span className='text-xl font-bold'>
-                        $1,497,000đ<span className='text-sm font-normal'>/tháng</span>
+                  <div className="flex h-12 items-center border-b border-gray-200 px-4">
+                    <div className="w-40">Voucher …% Kỹ Năng Speaking/Writing</div>
+                    <div className="w-0 flex-grow"></div>
+                    <div className="flex w-0 flex-grow justify-center">
+                      <svg
+                        className="h-4 w-4 fill-current text-green-600"
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 20 20"
+                        fill="currentColor"
+                      >
+                        <path
+                          fillRule="evenodd"
+                          d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                          clipRule="evenodd"
+                        />
+                      </svg>
+                    </div>
+                    <div className="flex w-0 flex-grow justify-center">
+                      <svg
+                        className="h-4 w-4 fill-current text-green-600"
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 20 20"
+                        fill="currentColor"
+                      >
+                        <path
+                          fillRule="evenodd"
+                          d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                          clipRule="evenodd"
+                        />
+                      </svg>
+                    </div>
+                  </div>
+                  <div className="hidden h-0 items-center sm:flex">
+                    <div className="w-40"></div>
+                    <div className="mr-4 mt-24 flex h-24 w-0 flex-grow flex-col items-center space-y-2 rounded-b-lg bg-white px-8 shadow-md">
+                      <span className="text-xl font-bold">
+                        $1,497,000đ<span className="text-sm font-normal">/tháng</span>
                       </span>
-                      <button className='flex h-8 w-32 items-center justify-center whitespace-nowrap rounded-md bg-red-500 py-2 text-sm text-white shadow-lg shadow-indigo-200 hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-blue-300'>
+                      <button className="flex h-8 w-32 items-center justify-center whitespace-nowrap rounded-md bg-red-500 py-2 text-sm text-white shadow-lg shadow-indigo-200 hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-blue-300">
                         Xem chi tiết
                       </button>
                     </div>
-                    <div className='mt-28 flex h-36 w-0 flex-grow flex-col items-center space-y-2 rounded-b-lg bg-white px-8 py-2 shadow-md'>
-                      <span className='text-xl font-bold'>
-                        2,994,000đ<span className='text-sm font-normal'>/tháng</span>
+                    <div className="mt-28 flex h-36 w-0 flex-grow flex-col items-center space-y-2 rounded-b-lg bg-white px-8 py-2 shadow-md">
+                      <span className="text-xl font-bold">
+                        2,994,000đ<span className="text-sm font-normal">/tháng</span>
                       </span>
-                      <button className='flex h-8 w-32 items-center justify-center whitespace-nowrap rounded-md bg-red-500 py-2 text-sm text-white shadow-lg shadow-indigo-200 hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-blue-300'>
+                      <button className="flex h-8 w-32 items-center justify-center whitespace-nowrap rounded-md bg-red-500 py-2 text-sm text-white shadow-lg shadow-indigo-200 hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-blue-300">
                         Xem chi tiết
                       </button>
                     </div>
-                    <div className='ml-4 mt-24 flex h-24 w-0 flex-grow flex-col items-center space-y-2 rounded-b-lg bg-white px-8 shadow-md'>
-                      <span className='text-xl font-bold'>
-                        4,491,000đ<span className='text-sm font-normal'>/tháng</span>
+                    <div className="ml-4 mt-24 flex h-24 w-0 flex-grow flex-col items-center space-y-2 rounded-b-lg bg-white px-8 shadow-md">
+                      <span className="text-xl font-bold">
+                        4,491,000đ<span className="text-sm font-normal">/tháng</span>
                       </span>
-                      <button className='flex h-8 w-32 items-center justify-center whitespace-nowrap rounded-md bg-red-500 py-2 text-sm text-white shadow-lg shadow-indigo-200 hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-blue-300'>
+                      <button className="flex h-8 w-32 items-center justify-center whitespace-nowrap rounded-md bg-red-500 py-2 text-sm text-white shadow-lg shadow-indigo-200 hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-blue-300">
                         Xem chi tiết
                       </button>
                     </div>
@@ -843,45 +885,56 @@ export default function RegisterTest() {
                 </div>
               </div>
             </div>
-            <div className='lg:col-span-5 bg-gray-primary dark:bg-white/10 p-4 md:p-6 rounded-2xl shadow-md'>
-              <h1 className='text-center text-2xl font-semibold text-slate-600 mb-10'>Thí sinh tiêu biểu</h1>
-              <div className='center'>
-                <div className='top3'>
-                  <div className='two item'>
-                    <div className='pos'>2</div>
+            <div className="bg-gray-primary rounded-2xl p-4 shadow-md dark:bg-white/10 md:p-6 lg:col-span-5">
+              <h1 className="mb-10 text-center text-2xl font-semibold text-slate-600">
+                Thí sinh tiêu biểu
+              </h1>
+              <div className="center">
+                <div className="top3">
+                  <div className="two item">
+                    <div className="pos">2</div>
                     <div
-                      className='pic'
-                      style={{ backgroundImage: 'url(https://randomuser.me/api/portraits/men/85.jpg)' }}
+                      className="pic"
+                      style={{
+                        backgroundImage: 'url(https://randomuser.me/api/portraits/men/85.jpg)',
+                      }}
                     ></div>
-                    <div className='name'>Nguyễn Văn A</div>
-                    <div className='score '>8.0</div>
+                    <div className="name">Nguyễn Văn A</div>
+                    <div className="score ">8.0</div>
                   </div>
-                  <div className='one item'>
-                    <div className='pos'>1</div>
+                  <div className="one item">
+                    <div className="pos">1</div>
                     <div
-                      className='pic'
-                      style={{ backgroundImage: 'url(https://randomuser.me/api/portraits/women/39.jpg)' }}
+                      className="pic"
+                      style={{
+                        backgroundImage: 'url(https://randomuser.me/api/portraits/women/39.jpg)',
+                      }}
                     ></div>
-                    <div className='name'>Nguyễn Thị B</div>
-                    <div className='score'>9.0</div>
+                    <div className="name">Nguyễn Thị B</div>
+                    <div className="score">9.0</div>
                   </div>
-                  <div className='three item'>
-                    <div className='pos'>3</div>
+                  <div className="three item">
+                    <div className="pos">3</div>
                     <div
-                      className='pic'
-                      style={{ backgroundImage: 'url(https://randomuser.me/api/portraits/men/30.jpg)' }}
+                      className="pic"
+                      style={{
+                        backgroundImage: 'url(https://randomuser.me/api/portraits/men/30.jpg)',
+                      }}
                     ></div>
-                    <div className='name'>Justin Nguyen</div>
-                    <div className='score'>8.5</div>
+                    <div className="name">Justin Nguyen</div>
+                    <div className="score">8.5</div>
                   </div>
                 </div>
-                <div className='list'>
+                <div className="list">
                   {data.map((item, index) => (
-                    <div className='item  bg-gradient-to-l from-rose-300 to-rose-500 shadow' key={index}>
-                      <div className='pos'>{item.id}</div>
-                      <div className='pic' style={{ backgroundImage: `url(${item.img})` }}></div>
-                      <div className='name'>{item.name}</div>
-                      <div className='score'>{item.score}</div>
+                    <div
+                      className="item bg-gradient-to-l from-rose-300 to-rose-500 shadow"
+                      key={index}
+                    >
+                      <div className="pos">{item.id}</div>
+                      <div className="pic" style={{ backgroundImage: `url(${item.img})` }}></div>
+                      <div className="name">{item.name}</div>
+                      <div className="score">{item.score}</div>
                     </div>
                   ))}
                 </div>
@@ -891,23 +944,23 @@ export default function RegisterTest() {
         </div>
       </div>
       {/* <div className="">
-        <h1 className="mx-auto mt-2 max-w-3xl text-center text-2xl font-semibold leading-tight sm:text-4xl md:text-5xl">
+        <h1 className="max-w-3xl mx-auto mt-2 text-2xl font-semibold leading-tight text-center sm:text-4xl md:text-5xl">
           Đánh giá của học viên
         </h1>
-        <div className="brand-wheel infinite-scroller my-10">
+        <div className="my-10 brand-wheel infinite-scroller">
           <div className="flex flex-row gap-5">
-            <div className=" scrollers  flex  rounded-xl border border-gray-100 p-4 text-left text-gray-600 shadow-lg ">
+            <div className="flex p-4 text-left text-gray-600 border border-gray-100 shadow-lg scrollers rounded-xl">
               <img
-                className="mr-5 block h-8 w-8 max-w-full text-left align-middle sm:h-16 sm:w-16"
+                className="block w-8 h-8 max-w-full mr-5 text-left align-middle sm:h-16 sm:w-16"
                 src="https://www.uifaces.co/wp-content/themes/uifaces-theme/src/img/home-animation/avatar-3.svg"
                 alt="Profile Picture"
               />
               <div className="w-full text-left">
-                <div className="mb-2 flex flex-col justify-between text-gray-600 sm:flex-row">
+                <div className="flex flex-col justify-between mb-2 text-gray-600 sm:flex-row">
                   <div className="flex flex-col">
                     {' '}
                     <h3 className="font-medium">Nguyen Tung</h3>
-                    <span className="text-xs	text-slate-400	">Thi thử</span>
+                    <span className="text-xs text-slate-400 ">Thi thử</span>
                   </div>
 
                   <time className="text-xs" dateTime="2022-11-13T20:00Z">
@@ -917,18 +970,18 @@ export default function RegisterTest() {
                 <p className="text-sm">Môi trường học tập và chất lượng thi ổn</p>
               </div>
             </div>
-            <div className=" scrollers  flex  rounded-xl border border-gray-100 p-4 text-left text-gray-600 shadow-lg ">
+            <div className="flex p-4 text-left text-gray-600 border border-gray-100 shadow-lg scrollers rounded-xl">
               <img
-                className="mr-5 block h-8 w-8 max-w-full text-left align-middle sm:h-16 sm:w-16"
+                className="block w-8 h-8 max-w-full mr-5 text-left align-middle sm:h-16 sm:w-16"
                 src="https://www.uifaces.co/wp-content/themes/uifaces-theme/src/img/home-animation/avatar-3.svg"
                 alt="Profile Picture"
               />
               <div className="w-full text-left">
-                <div className="mb-2 flex flex-col justify-between text-gray-600 sm:flex-row">
+                <div className="flex flex-col justify-between mb-2 text-gray-600 sm:flex-row">
                   <div className="flex flex-col">
                     {' '}
                     <h3 className="font-medium">Nguyen Tung</h3>
-                    <span className="text-xs	text-slate-400	">Thi thử</span>
+                    <span className="text-xs text-slate-400 ">Thi thử</span>
                   </div>
 
                   <time className="text-xs" dateTime="2022-11-13T20:00Z">
@@ -938,18 +991,18 @@ export default function RegisterTest() {
                 <p className="text-sm">Môi trường học tập và chất lượng thi ổn</p>
               </div>
             </div>
-            <div className=" scrollers  flex  rounded-xl border border-gray-100 p-4 text-left text-gray-600 shadow-lg ">
+            <div className="flex p-4 text-left text-gray-600 border border-gray-100 shadow-lg scrollers rounded-xl">
               <img
-                className="mr-5 block h-8 w-8 max-w-full text-left align-middle sm:h-16 sm:w-16"
+                className="block w-8 h-8 max-w-full mr-5 text-left align-middle sm:h-16 sm:w-16"
                 src="https://www.uifaces.co/wp-content/themes/uifaces-theme/src/img/home-animation/avatar-3.svg"
                 alt="Profile Picture"
               />
               <div className="w-full text-left">
-                <div className="mb-2 flex flex-col justify-between text-gray-600 sm:flex-row">
+                <div className="flex flex-col justify-between mb-2 text-gray-600 sm:flex-row">
                   <div className="flex flex-col">
                     {' '}
                     <h3 className="font-medium">Nguyen Tung</h3>
-                    <span className="text-xs	text-slate-400	">Thi thử</span>
+                    <span className="text-xs text-slate-400 ">Thi thử</span>
                   </div>
 
                   <time className="text-xs" dateTime="2022-11-13T20:00Z">
@@ -959,18 +1012,18 @@ export default function RegisterTest() {
                 <p className="text-sm">Môi trường học tập và chất lượng thi ổn</p>
               </div>
             </div>
-            <div className=" scrollers  flex  rounded-xl border border-gray-100 p-4 text-left text-gray-600 shadow-lg ">
+            <div className="flex p-4 text-left text-gray-600 border border-gray-100 shadow-lg scrollers rounded-xl">
               <img
-                className="mr-5 block h-8 w-8 max-w-full text-left align-middle sm:h-16 sm:w-16"
+                className="block w-8 h-8 max-w-full mr-5 text-left align-middle sm:h-16 sm:w-16"
                 src="https://www.uifaces.co/wp-content/themes/uifaces-theme/src/img/home-animation/avatar-3.svg"
                 alt="Profile Picture"
               />
               <div className="w-full text-left">
-                <div className="mb-2 flex flex-col justify-between text-gray-600 sm:flex-row">
+                <div className="flex flex-col justify-between mb-2 text-gray-600 sm:flex-row">
                   <div className="flex flex-col">
                     {' '}
                     <h3 className="font-medium">Nguyen Tung</h3>
-                    <span className="text-xs	text-slate-400	">Thi thử</span>
+                    <span className="text-xs text-slate-400 ">Thi thử</span>
                   </div>
 
                   <time className="text-xs" dateTime="2022-11-13T20:00Z">
@@ -980,18 +1033,18 @@ export default function RegisterTest() {
                 <p className="text-sm">Môi trường học tập và chất lượng thi ổn</p>
               </div>
             </div>
-            <div className=" scrollers  flex  rounded-xl border border-gray-100 p-4 text-left text-gray-600 shadow-lg ">
+            <div className="flex p-4 text-left text-gray-600 border border-gray-100 shadow-lg scrollers rounded-xl">
               <img
-                className="mr-5 block h-8 w-8 max-w-full text-left align-middle sm:h-16 sm:w-16"
+                className="block w-8 h-8 max-w-full mr-5 text-left align-middle sm:h-16 sm:w-16"
                 src="https://www.uifaces.co/wp-content/themes/uifaces-theme/src/img/home-animation/avatar-3.svg"
                 alt="Profile Picture"
               />
               <div className="w-full text-left">
-                <div className="mb-2 flex flex-col justify-between text-gray-600 sm:flex-row">
+                <div className="flex flex-col justify-between mb-2 text-gray-600 sm:flex-row">
                   <div className="flex flex-col">
                     {' '}
                     <h3 className="font-medium">Nguyen Tung</h3>
-                    <span className="text-xs	text-slate-400	">Thi thử</span>
+                    <span className="text-xs text-slate-400 ">Thi thử</span>
                   </div>
 
                   <time className="text-xs" dateTime="2022-11-13T20:00Z">
@@ -1001,18 +1054,18 @@ export default function RegisterTest() {
                 <p className="text-sm">Môi trường học tập và chất lượng thi ổn</p>
               </div>
             </div>
-            <div className=" scrollers  flex  rounded-xl border border-gray-100 p-4 text-left text-gray-600 shadow-lg ">
+            <div className="flex p-4 text-left text-gray-600 border border-gray-100 shadow-lg scrollers rounded-xl">
               <img
-                className="mr-5 block h-8 w-8 max-w-full text-left align-middle sm:h-16 sm:w-16"
+                className="block w-8 h-8 max-w-full mr-5 text-left align-middle sm:h-16 sm:w-16"
                 src="https://www.uifaces.co/wp-content/themes/uifaces-theme/src/img/home-animation/avatar-3.svg"
                 alt="Profile Picture"
               />
               <div className="w-full text-left">
-                <div className="mb-2 flex flex-col justify-between text-gray-600 sm:flex-row">
+                <div className="flex flex-col justify-between mb-2 text-gray-600 sm:flex-row">
                   <div className="flex flex-col">
                     {' '}
                     <h3 className="font-medium">Nguyen Tung</h3>
-                    <span className="text-xs	text-slate-400	">Thi thử</span>
+                    <span className="text-xs text-slate-400 ">Thi thử</span>
                   </div>
 
                   <time className="text-xs" dateTime="2022-11-13T20:00Z">
@@ -1024,18 +1077,18 @@ export default function RegisterTest() {
             </div>
           </div>
           <div className="flex flex-row gap-5">
-            <div className=" scrollers-else  flex  rounded-xl border border-gray-100 p-4 text-left text-gray-600 shadow-lg ">
+            <div className="flex p-4 text-left text-gray-600 border border-gray-100 shadow-lg scrollers-else rounded-xl">
               <img
-                className="mr-5 block h-8 w-8 max-w-full text-left align-middle sm:h-16 sm:w-16"
+                className="block w-8 h-8 max-w-full mr-5 text-left align-middle sm:h-16 sm:w-16"
                 src="https://www.uifaces.co/wp-content/themes/uifaces-theme/src/img/home-animation/avatar-3.svg"
                 alt="Profile Picture"
               />
               <div className="w-full text-left">
-                <div className="mb-2 flex flex-col justify-between text-gray-600 sm:flex-row">
+                <div className="flex flex-col justify-between mb-2 text-gray-600 sm:flex-row">
                   <div className="flex flex-col">
                     {' '}
                     <h3 className="font-medium">Nguyen Tung</h3>
-                    <span className="text-xs	text-slate-400	">Thi thử</span>
+                    <span className="text-xs text-slate-400 ">Thi thử</span>
                   </div>
 
                   <time className="text-xs" dateTime="2022-11-13T20:00Z">
@@ -1045,18 +1098,18 @@ export default function RegisterTest() {
                 <p className="text-sm">Môi trường học tập và chất lượng thi ổn</p>
               </div>
             </div>
-            <div className=" scrollers-else  flex  rounded-xl border border-gray-100 p-4 text-left text-gray-600 shadow-lg ">
+            <div className="flex p-4 text-left text-gray-600 border border-gray-100 shadow-lg scrollers-else rounded-xl">
               <img
-                className="mr-5 block h-8 w-8 max-w-full text-left align-middle sm:h-16 sm:w-16"
+                className="block w-8 h-8 max-w-full mr-5 text-left align-middle sm:h-16 sm:w-16"
                 src="https://www.uifaces.co/wp-content/themes/uifaces-theme/src/img/home-animation/avatar-3.svg"
                 alt="Profile Picture"
               />
               <div className="w-full text-left">
-                <div className="mb-2 flex flex-col justify-between text-gray-600 sm:flex-row">
+                <div className="flex flex-col justify-between mb-2 text-gray-600 sm:flex-row">
                   <div className="flex flex-col">
                     {' '}
                     <h3 className="font-medium">Nguyen Tung</h3>
-                    <span className="text-xs	text-slate-400	">Thi thử</span>
+                    <span className="text-xs text-slate-400 ">Thi thử</span>
                   </div>
 
                   <time className="text-xs" dateTime="2022-11-13T20:00Z">
@@ -1066,18 +1119,18 @@ export default function RegisterTest() {
                 <p className="text-sm">Môi trường học tập và chất lượng thi ổn</p>
               </div>
             </div>
-            <div className=" scrollers-else  flex  rounded-xl border border-gray-100 p-4 text-left text-gray-600 shadow-lg ">
+            <div className="flex p-4 text-left text-gray-600 border border-gray-100 shadow-lg scrollers-else rounded-xl">
               <img
-                className="mr-5 block h-8 w-8 max-w-full text-left align-middle sm:h-16 sm:w-16"
+                className="block w-8 h-8 max-w-full mr-5 text-left align-middle sm:h-16 sm:w-16"
                 src="https://www.uifaces.co/wp-content/themes/uifaces-theme/src/img/home-animation/avatar-3.svg"
                 alt="Profile Picture"
               />
               <div className="w-full text-left">
-                <div className="mb-2 flex flex-col justify-between text-gray-600 sm:flex-row">
+                <div className="flex flex-col justify-between mb-2 text-gray-600 sm:flex-row">
                   <div className="flex flex-col">
                     {' '}
                     <h3 className="font-medium">Nguyen Tung</h3>
-                    <span className="text-xs	text-slate-400	">Thi thử</span>
+                    <span className="text-xs text-slate-400 ">Thi thử</span>
                   </div>
 
                   <time className="text-xs" dateTime="2022-11-13T20:00Z">
@@ -1087,18 +1140,18 @@ export default function RegisterTest() {
                 <p className="text-sm">Môi trường học tập và chất lượng thi ổn</p>
               </div>
             </div>
-            <div className=" scrollers-else  flex  rounded-xl border border-gray-100 p-4 text-left text-gray-600 shadow-lg ">
+            <div className="flex p-4 text-left text-gray-600 border border-gray-100 shadow-lg scrollers-else rounded-xl">
               <img
-                className="mr-5 block h-8 w-8 max-w-full text-left align-middle sm:h-16 sm:w-16"
+                className="block w-8 h-8 max-w-full mr-5 text-left align-middle sm:h-16 sm:w-16"
                 src="https://www.uifaces.co/wp-content/themes/uifaces-theme/src/img/home-animation/avatar-3.svg"
                 alt="Profile Picture"
               />
               <div className="w-full text-left">
-                <div className="mb-2 flex flex-col justify-between text-gray-600 sm:flex-row">
+                <div className="flex flex-col justify-between mb-2 text-gray-600 sm:flex-row">
                   <div className="flex flex-col">
                     {' '}
                     <h3 className="font-medium">Nguyen Tung</h3>
-                    <span className="text-xs	text-slate-400	">Thi thử</span>
+                    <span className="text-xs text-slate-400 ">Thi thử</span>
                   </div>
 
                   <time className="text-xs" dateTime="2022-11-13T20:00Z">
@@ -1108,18 +1161,18 @@ export default function RegisterTest() {
                 <p className="text-sm">Môi trường học tập và chất lượng thi ổn</p>
               </div>
             </div>
-            <div className=" scrollers-else  flex  rounded-xl border border-gray-100 p-4 text-left text-gray-600 shadow-lg ">
+            <div className="flex p-4 text-left text-gray-600 border border-gray-100 shadow-lg scrollers-else rounded-xl">
               <img
-                className="mr-5 block h-8 w-8 max-w-full text-left align-middle sm:h-16 sm:w-16"
+                className="block w-8 h-8 max-w-full mr-5 text-left align-middle sm:h-16 sm:w-16"
                 src="https://www.uifaces.co/wp-content/themes/uifaces-theme/src/img/home-animation/avatar-3.svg"
                 alt="Profile Picture"
               />
               <div className="w-full text-left">
-                <div className="mb-2 flex flex-col justify-between text-gray-600 sm:flex-row">
+                <div className="flex flex-col justify-between mb-2 text-gray-600 sm:flex-row">
                   <div className="flex flex-col">
                     {' '}
                     <h3 className="font-medium">Nguyen Tung</h3>
-                    <span className="text-xs	text-slate-400	">Thi thử</span>
+                    <span className="text-xs text-slate-400 ">Thi thử</span>
                   </div>
 
                   <time className="text-xs" dateTime="2022-11-13T20:00Z">
@@ -1129,18 +1182,18 @@ export default function RegisterTest() {
                 <p className="text-sm">Môi trường học tập và chất lượng thi ổn</p>
               </div>
             </div>
-            <div className=" scrollers-else  flex  rounded-xl border border-gray-100 p-4 text-left text-gray-600 shadow-lg ">
+            <div className="flex p-4 text-left text-gray-600 border border-gray-100 shadow-lg scrollers-else rounded-xl">
               <img
-                className="mr-5 block h-8 w-8 max-w-full text-left align-middle sm:h-16 sm:w-16"
+                className="block w-8 h-8 max-w-full mr-5 text-left align-middle sm:h-16 sm:w-16"
                 src="https://www.uifaces.co/wp-content/themes/uifaces-theme/src/img/home-animation/avatar-3.svg"
                 alt="Profile Picture"
               />
               <div className="w-full text-left">
-                <div className="mb-2 flex flex-col justify-between text-gray-600 sm:flex-row">
+                <div className="flex flex-col justify-between mb-2 text-gray-600 sm:flex-row">
                   <div className="flex flex-col">
                     {' '}
                     <h3 className="font-medium">Nguyen Tung</h3>
-                    <span className="text-xs	text-slate-400	">Thi thử</span>
+                    <span className="text-xs text-slate-400 ">Thi thử</span>
                   </div>
 
                   <time className="text-xs" dateTime="2022-11-13T20:00Z">
@@ -1152,18 +1205,18 @@ export default function RegisterTest() {
             </div>
           </div>
           <div className="flex flex-row gap-5">
-            <div className=" scrollers  flex  rounded-xl border border-gray-100 p-4 text-left text-gray-600 shadow-lg ">
+            <div className="flex p-4 text-left text-gray-600 border border-gray-100 shadow-lg scrollers rounded-xl">
               <img
-                className="mr-5 block h-8 w-8 max-w-full text-left align-middle sm:h-16 sm:w-16"
+                className="block w-8 h-8 max-w-full mr-5 text-left align-middle sm:h-16 sm:w-16"
                 src="https://www.uifaces.co/wp-content/themes/uifaces-theme/src/img/home-animation/avatar-3.svg"
                 alt="Profile Picture"
               />
               <div className="w-full text-left">
-                <div className="mb-2 flex flex-col justify-between text-gray-600 sm:flex-row">
+                <div className="flex flex-col justify-between mb-2 text-gray-600 sm:flex-row">
                   <div className="flex flex-col">
                     {' '}
                     <h3 className="font-medium">Nguyen Tung</h3>
-                    <span className="text-xs	text-slate-400	">Thi thử</span>
+                    <span className="text-xs text-slate-400 ">Thi thử</span>
                   </div>
 
                   <time className="text-xs" dateTime="2022-11-13T20:00Z">
@@ -1173,18 +1226,18 @@ export default function RegisterTest() {
                 <p className="text-sm">Môi trường học tập và chất lượng thi ổn</p>
               </div>
             </div>
-            <div className=" scrollers  flex  rounded-xl border border-gray-100 p-4 text-left text-gray-600 shadow-lg ">
+            <div className="flex p-4 text-left text-gray-600 border border-gray-100 shadow-lg scrollers rounded-xl">
               <img
-                className="mr-5 block h-8 w-8 max-w-full text-left align-middle sm:h-16 sm:w-16"
+                className="block w-8 h-8 max-w-full mr-5 text-left align-middle sm:h-16 sm:w-16"
                 src="https://www.uifaces.co/wp-content/themes/uifaces-theme/src/img/home-animation/avatar-3.svg"
                 alt="Profile Picture"
               />
               <div className="w-full text-left">
-                <div className="mb-2 flex flex-col justify-between text-gray-600 sm:flex-row">
+                <div className="flex flex-col justify-between mb-2 text-gray-600 sm:flex-row">
                   <div className="flex flex-col">
                     {' '}
                     <h3 className="font-medium">Nguyen Tung</h3>
-                    <span className="text-xs	text-slate-400	">Thi thử</span>
+                    <span className="text-xs text-slate-400 ">Thi thử</span>
                   </div>
 
                   <time className="text-xs" dateTime="2022-11-13T20:00Z">
@@ -1194,18 +1247,18 @@ export default function RegisterTest() {
                 <p className="text-sm">Môi trường học tập và chất lượng thi ổn</p>
               </div>
             </div>
-            <div className=" scrollers  flex  rounded-xl border border-gray-100 p-4 text-left text-gray-600 shadow-lg ">
+            <div className="flex p-4 text-left text-gray-600 border border-gray-100 shadow-lg scrollers rounded-xl">
               <img
-                className="mr-5 block h-8 w-8 max-w-full text-left align-middle sm:h-16 sm:w-16"
+                className="block w-8 h-8 max-w-full mr-5 text-left align-middle sm:h-16 sm:w-16"
                 src="https://www.uifaces.co/wp-content/themes/uifaces-theme/src/img/home-animation/avatar-3.svg"
                 alt="Profile Picture"
               />
               <div className="w-full text-left">
-                <div className="mb-2 flex flex-col justify-between text-gray-600 sm:flex-row">
+                <div className="flex flex-col justify-between mb-2 text-gray-600 sm:flex-row">
                   <div className="flex flex-col">
                     {' '}
                     <h3 className="font-medium">Nguyen Tung</h3>
-                    <span className="text-xs	text-slate-400	">Thi thử</span>
+                    <span className="text-xs text-slate-400 ">Thi thử</span>
                   </div>
 
                   <time className="text-xs" dateTime="2022-11-13T20:00Z">
@@ -1215,18 +1268,18 @@ export default function RegisterTest() {
                 <p className="text-sm">Môi trường học tập và chất lượng thi ổn</p>
               </div>
             </div>
-            <div className=" scrollers  flex  rounded-xl border border-gray-100 p-4 text-left text-gray-600 shadow-lg ">
+            <div className="flex p-4 text-left text-gray-600 border border-gray-100 shadow-lg scrollers rounded-xl">
               <img
-                className="mr-5 block h-8 w-8 max-w-full text-left align-middle sm:h-16 sm:w-16"
+                className="block w-8 h-8 max-w-full mr-5 text-left align-middle sm:h-16 sm:w-16"
                 src="https://www.uifaces.co/wp-content/themes/uifaces-theme/src/img/home-animation/avatar-3.svg"
                 alt="Profile Picture"
               />
               <div className="w-full text-left">
-                <div className="mb-2 flex flex-col justify-between text-gray-600 sm:flex-row">
+                <div className="flex flex-col justify-between mb-2 text-gray-600 sm:flex-row">
                   <div className="flex flex-col">
                     {' '}
                     <h3 className="font-medium">Nguyen Tung</h3>
-                    <span className="text-xs	text-slate-400	">Thi thử</span>
+                    <span className="text-xs text-slate-400 ">Thi thử</span>
                   </div>
 
                   <time className="text-xs" dateTime="2022-11-13T20:00Z">
@@ -1236,18 +1289,18 @@ export default function RegisterTest() {
                 <p className="text-sm">Môi trường học tập và chất lượng thi ổn</p>
               </div>
             </div>
-            <div className=" scrollers  flex  rounded-xl border border-gray-100 p-4 text-left text-gray-600 shadow-lg ">
+            <div className="flex p-4 text-left text-gray-600 border border-gray-100 shadow-lg scrollers rounded-xl">
               <img
-                className="mr-5 block h-8 w-8 max-w-full text-left align-middle sm:h-16 sm:w-16"
+                className="block w-8 h-8 max-w-full mr-5 text-left align-middle sm:h-16 sm:w-16"
                 src="https://www.uifaces.co/wp-content/themes/uifaces-theme/src/img/home-animation/avatar-3.svg"
                 alt="Profile Picture"
               />
               <div className="w-full text-left">
-                <div className="mb-2 flex flex-col justify-between text-gray-600 sm:flex-row">
+                <div className="flex flex-col justify-between mb-2 text-gray-600 sm:flex-row">
                   <div className="flex flex-col">
                     {' '}
                     <h3 className="font-medium">Nguyen Tung</h3>
-                    <span className="text-xs	text-slate-400	">Thi thử</span>
+                    <span className="text-xs text-slate-400 ">Thi thử</span>
                   </div>
 
                   <time className="text-xs" dateTime="2022-11-13T20:00Z">
@@ -1257,18 +1310,18 @@ export default function RegisterTest() {
                 <p className="text-sm">Môi trường học tập và chất lượng thi ổn</p>
               </div>
             </div>
-            <div className=" scrollers  flex  rounded-xl border border-gray-100 p-4 text-left text-gray-600 shadow-lg ">
+            <div className="flex p-4 text-left text-gray-600 border border-gray-100 shadow-lg scrollers rounded-xl">
               <img
-                className="mr-5 block h-8 w-8 max-w-full text-left align-middle sm:h-16 sm:w-16"
+                className="block w-8 h-8 max-w-full mr-5 text-left align-middle sm:h-16 sm:w-16"
                 src="https://www.uifaces.co/wp-content/themes/uifaces-theme/src/img/home-animation/avatar-3.svg"
                 alt="Profile Picture"
               />
               <div className="w-full text-left">
-                <div className="mb-2 flex flex-col justify-between text-gray-600 sm:flex-row">
+                <div className="flex flex-col justify-between mb-2 text-gray-600 sm:flex-row">
                   <div className="flex flex-col">
                     {' '}
                     <h3 className="font-medium">Nguyen Tung</h3>
-                    <span className="text-xs	text-slate-400	">Thi thử</span>
+                    <span className="text-xs text-slate-400 ">Thi thử</span>
                   </div>
 
                   <time className="text-xs" dateTime="2022-11-13T20:00Z">

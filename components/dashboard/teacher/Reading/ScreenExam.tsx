@@ -43,14 +43,14 @@ const ScreenExam = ({ data }: DataProps) => {
   }
 
   return (
-    <div className="w-full h-full p-8 pt-8 overflow-y-auto bg-slate-50/50">
+    <div className="h-full w-full overflow-y-auto bg-slate-50/50 p-8 pt-8">
       {data?.map((item) => (
         <>
           {/* <p className='text-3xl font-bold uppercase'>{item.title}</p>
           <hr /> */}
           {/* <p className='text-3xl font-bold uppercase'> */}
           <div
-            className="w-full ck-content"
+            className="ck-content w-full"
             onMouseUp={() =>
               console.log(window.getSelection()?.getRangeAt(0).getBoundingClientRect())
             }

@@ -28,9 +28,9 @@ import {
   startOfYesterday
 } from 'date-fns'
 import { cn, dayNames } from '@/utils/utils'
-import TimesBar from '@/components/DatePicker/timesBar'
 
-import { Button, Checkbox, Divider, Popover, PopoverContent, PopoverTrigger } from '@nextui-org/react'
+import {Popover, PopoverContent, PopoverTrigger } from '@nextui-org/react'
+import TimesBar from './timesBar'
 const reservations = [
   addHours(startOfToday(), 5).toString(),
   addHours(startOfToday(), 6).toString(),
@@ -124,18 +124,18 @@ const PopoverDatePicker = ({
   return (
     <>
       {/* button left */}
-      <div className='flex-1 flex items-center px-4 rounded-2xl border  border-slate-400	'>
-        <div className='py-3 w-full'>
-          <div className='flex justify-between items-center '>
+      <div className='flex items-center flex-1 px-4 border rounded-2xl border-slate-400 '>
+        <div className='w-full py-3'>
+          <div className='flex items-center justify-between '>
             <Popover placement='bottom' showArrow={true} offset={20}>
               <PopoverTrigger>
-                <div className='flex items-start space-x-2 cursor-pointer flex-1'>
-                  <div className='w-4 h-4 flex justify-center items-center'>
+                <div className='flex items-start flex-1 space-x-2 cursor-pointer'>
+                  <div className='flex items-center justify-center w-4 h-4'>
                     <Image src='/svg/calendar.svg' width={150} height={150} alt='loader' />
                   </div>
                   <div>
-                    <p className='text-black font-bold dark:text-white text-xs'>Ngày</p>
-                    <p className='text-black dark:text-white text-base'>
+                    <p className='text-xs font-bold text-black dark:text-white'>Ngày</p>
+                    <p className='text-base text-black dark:text-white'>
                       {calendarTouched === true ? dates : 'Chọn ngày thi'}
                     </p>
                   </div>
@@ -151,7 +151,7 @@ const PopoverDatePicker = ({
                         className={cn(isThisMonth(new Date(currentMonth)) && 'text-gray-300')}
                       />
                     </button>
-                    <h2 className='font-semibold text-orange-950 justify-center flex'>
+                    <h2 className='flex justify-center font-semibold text-orange-950'>
                       {format(firstDayCurrentMonth, ' MMMM yyyy')}
                     </h2>
                     <button type='button' className='flex justify-end' onClick={nextMonth}>
@@ -289,27 +289,27 @@ const PopoverDatePicker = ({
         </div>
       </div>
       {/* button right */}
-      <div className='flex-1 flex items-center px-4 rounded-2xl border border-slate-400'>
-        <div className='flex flex-col items-start gap-2 w-full w-full cursor-pointer rounded-2xl'>
+      <div className='flex items-center flex-1 px-4 border rounded-2xl border-slate-400'>
+        <div className='flex flex-col items-start w-full gap-2 cursor-pointer rounded-2xl'>
           <div className='w-full'>
             <div
-              className='cursor-pointer text-sm focus:outline flex items-start gap-2'
+              className='flex items-start gap-2 text-sm cursor-pointer focus:outline'
               id='headlessui-menu-button-64'
               aria-haspopup='true'
               aria-expanded='false'
               data-headlessui-state=''
             >
-              <div className='py-3 w-full'>
-                <div className='flex justify-between items-center '>
+              <div className='w-full py-3'>
+                <div className='flex items-center justify-between '>
                   <Popover placement='bottom' showArrow={true} offset={20} size='sm'>
                     <PopoverTrigger>
-                      <div className='flex items-start space-x-2 cursor-pointer flex-1'>
-                        <div className='w-4 h-4 flex justify-center items-center'>
+                      <div className='flex items-start flex-1 space-x-2 cursor-pointer'>
+                        <div className='flex items-center justify-center w-4 h-4'>
                           <Image src='/svg/clock.svg' width={400} height={400} alt='loader' />
                         </div>
                         <div>
-                          <p className='text-black font-bold dark:text-white text-xs'>Ca thi L-R-W</p>
-                          <p className='text-black dark:text-white text-base'>
+                          <p className='text-xs font-bold text-black dark:text-white'>Ca thi L-R-W</p>
+                          <p className='text-base text-black dark:text-white'>
                             {radioTouched === true ? selectRadios : 'Chọn thời gian thi'}
                           </p>
                         </div>
@@ -321,10 +321,10 @@ const PopoverDatePicker = ({
                         'Vui lòng chọn ngày thi trước'
                       ) : (
                         <div className='block'>
-                          <span className='flex items-center w-full justify-center gap-1'>
+                          <span className='flex items-center justify-center w-full gap-1'>
                             <span>
                               Chọn thời gian đặt chỗ của bạn cho ngày
-                              <span className='text-orange-950 font-semibold pl-1'>{dates}</span>
+                              <span className='pl-1 font-semibold text-orange-950'>{dates}</span>
                             </span>
                           </span>
                           <ul className='uls' style={{ display: 'flex', flexDirection: 'column' }}>
@@ -338,7 +338,7 @@ const PopoverDatePicker = ({
                                 checked={selectRadios === '09:00 - 12:00'}
                               />
                               <label htmlFor='f-option' className='border cursor-pointer rounded-xl'>
-                                <div className='flex items-center justify-between  mx-auto p-5'>
+                                <div className='flex items-center justify-between p-5 mx-auto'>
                                   <div className='flex flex-col items-center mx-10 space-y-1'>
                                     <h2 className='text-lg font-medium text-gray-700'>Buổi sáng</h2>
                                     <div className='px-2 text-xs text-red-500 bg-gray-100 rounded-full sm:px-4 sm:py-1 dark:bg-gray-700 '>
@@ -361,7 +361,7 @@ const PopoverDatePicker = ({
                                 checked={selectRadios === '14:00 - 17:00'}
                               />
                               <label htmlFor='s-option' className='border cursor-pointer rounded-xl'>
-                                <div className='flex items-center justify-between  mx-auto p-5'>
+                                <div className='flex items-center justify-between p-5 mx-auto'>
                                   <div className='flex flex-col items-center mx-10 space-y-1'>
                                     <h2 className='text-lg font-medium text-gray-700'>Buổi chiều</h2>
                                     <div className='px-2 text-xs text-red-500 bg-gray-100 rounded-full sm:px-4 sm:py-1 dark:bg-gray-700 '>
@@ -386,7 +386,7 @@ const PopoverDatePicker = ({
                                 checked={selectRadios === '18:00 - 21:00'}
                               />
                               <label htmlFor='t-option' className='border cursor-pointer rounded-xl'>
-                                <div className='flex items-center justify-between  mx-auto p-5'>
+                                <div className='flex items-center justify-between p-5 mx-auto'>
                                   <div className='flex flex-col items-center mx-10 space-y-1'>
                                     <h2 className='text-lg font-medium text-gray-700'>Buổi tối</h2>
                                     <div className='px-2 text-xs text-red-500 bg-gray-100 rounded-full sm:px-4 sm:py-1 dark:bg-gray-700 '>

@@ -1,5 +1,5 @@
 'use client'
-import FormAdvise from '@/components/FormAdvise'
+import FormAdvise from '@/components/landing/FormAdvise'
 import AchievementPage from '@/components/page-home/AchievementPage'
 import ArchivesPage from '@/components/page-home/ArchivesPage'
 import BannerPage from '@/components/page-home/BannerPage'
@@ -20,7 +20,7 @@ function LandingPage() {
       <AchievementPage />
       <PricePage />
       <ArchivesPage />
-      <section className="container mx-auto  py-8 max-sm:px-2 sm:py-16">
+      <section className="container mx-auto py-8 max-sm:px-2 sm:py-16">
         <FormAdvise />
       </section>
     </>

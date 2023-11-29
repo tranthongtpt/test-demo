@@ -126,7 +126,7 @@ const Page = () => {
                   key="new"
                   shortcut="⌘A"
                   // startContent={<AddNoteIcon className={iconClasses} />}
-                  onClick={() => router.push('/teacher/bai-thi/create-academic')}
+                  onClick={() => router.push('/teacher/de-thi/create-academic')}
                 >
                   <div className="flex items-center mr-2 space-x-2">
                     <Image
@@ -143,7 +143,7 @@ const Page = () => {
                   key="new"
                   shortcut="⌘L"
                   // startContent={<AddNoteIcon className={iconClasses} />}
-                  onClick={() => router.push('/teacher/bai-thi/create-listening')}
+                  onClick={() => router.push('/teacher/de-thi/create-listening')}
                 >
                   <div className="flex items-center space-x-2">
                     <Image
@@ -160,7 +160,7 @@ const Page = () => {
                   key="edit"
                   shortcut="⌘W"
                   // startContent={<EditDocumentIcon className={iconClasses} />}
-                  onClick={() => router.push('/teacher/bai-thi/create-writing')}
+                  onClick={() => router.push('/teacher/de-thi/create-writing')}
                 >
                   <div className="flex items-center space-x-2">
                     <Image
@@ -177,7 +177,7 @@ const Page = () => {
                   key="copy"
                   shortcut="⌘R"
                   // startContent={<CopyDocumentIcon className={iconClasses} />}
-                  onClick={() => router.push('/teacher/bai-thi/create-reading')}
+                  onClick={() => router.push('/teacher/de-thi/create-reading')}
                 >
                   <div className="flex items-center space-x-2">
                     <Image

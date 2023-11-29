@@ -5,7 +5,6 @@ import React, { useEffect, useState } from 'react'
 import { BsClock } from 'react-icons/bs'
 import Swal from 'sweetalert2'
 import withReactContent from 'sweetalert2-react-content'
-import Image from 'next/image'
 import LoadingScreen from '../../LoadingScreen'
 const Footer = ({ onOpen, link }: any) => {
   const [minutes, setMinutes] = useState(30)
@@ -66,7 +65,7 @@ const Footer = ({ onOpen, link }: any) => {
         toast.addEventListener('mouseleave', Swal.resumeTimer)
       },
       icon: 'success',
-      title: 'Đã nộp bài'
+      title: 'Đã nộp bài',
     }).then(() => {
       router.push(pathname + '/result')
       setLoadingSubmit(false)
@@ -77,47 +76,52 @@ const Footer = ({ onOpen, link }: any) => {
     <>
       {loadingSubmit && <LoadingScreen />}
 
-      <footer className='relative flex justify-between w-full py-4 px-8 text-center shadow-[5px_0px_0px_rgba(221,_221,_221,_1),_0_10px_20px_rgba(204,_204,_204,_1)]'>
-        <div className=''>
+      <footer className="relative flex w-full justify-between px-8 py-4 text-center shadow-[5px_0px_0px_rgba(221,_221,_221,_1),_0_10px_20px_rgba(204,_204,_204,_1)]">
+        <div className="">
           <button
             onClick={handleClick}
-            className='inline-block px-12 py-3 text-sm font-medium text-red-600 border border-red-600 rounded hover:bg-red-600 hover:text-white active:bg-red-500 '
+            className="inline-block rounded border border-red-600 px-12 py-3 text-sm font-medium text-red-600 hover:bg-red-600 hover:text-white active:bg-red-500 "
           >
             Bảng câu hỏi
           </button>
           {isVisible && (
-            <div className='mx-8 pt-3 pb-4 rounded-md absolute inset-x-0 top-[-160px] bg-slate-100 shadow-md z-50'>
-              <div className='flex justify-between w-full p-2'>
-                <div className='flex'>
-                  <div className='flex items-center justify-center mr-4 text-sm text-gray-600'>
-                    <div className='w-5 h-5 mr-1 bg-teal-700 rounded-full' />
+            <div className="absolute inset-x-0 top-[-160px] z-50 mx-8 rounded-md bg-slate-100 pb-4 pt-3 shadow-md">
+              <div className="flex w-full justify-between p-2">
+                <div className="flex">
+                  <div className="mr-4 flex items-center justify-center text-sm text-gray-600">
+                    <div className="mr-1 h-5 w-5 rounded-full bg-teal-700" />
                     Đã trả lời
                   </div>
-                  <div className='flex items-center justify-center text-sm text-gray-600'>
-                    <div className='w-5 h-5 mr-1 bg-teal-500 rounded-full' />
+                  <div className="flex items-center justify-center text-sm text-gray-600">
+                    <div className="mr-1 h-5 w-5 rounded-full bg-teal-500" />
                     Chưa trả lời
                   </div>
                 </div>
                 <button
                   onClick={() => setIsVisible(false)}
-                  className='absolute p-1 bg-red-100 border border-gray-300 rounded-full -top-1 -right-1'
+                  className="absolute -right-1 -top-1 rounded-full border border-gray-300 bg-red-100 p-1"
                 >
-                  <svg xmlns='http://www.w3.org/2000/svg' className='w-3 h-3' viewBox='0 0 20 20' fill='currentColor'>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    className="h-3 w-3"
+                    viewBox="0 0 20 20"
+                    fill="currentColor"
+                  >
                     <path
-                      fill-rule='evenodd'
-                      d='M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z'
-                      clip-rule='evenodd'
+                      fill-rule="evenodd"
+                      d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
+                      clip-rule="evenodd"
                     />
                   </svg>
                 </button>
               </div>
-              <div className='grid grid-cols-[repeat(10,minmax(0,_1fr))] md:grid-cols-[repeat(20,minmax(0,_1fr))] lg:grid-cols-[repeat(25,minmax(0,_1fr))] gap-2  p-2 '>
+              <div className="grid grid-cols-[repeat(10,minmax(0,_1fr))] gap-2 p-2 md:grid-cols-[repeat(20,minmax(0,_1fr))]  lg:grid-cols-[repeat(25,minmax(0,_1fr))] ">
                 {Array.from({ length: 40 }, (_, index) => (
                   <div
                     key={index}
                     className={`${
                       index < 22 && index > 10 ? ' bg-teal-700 ' : ''
-                    } flex items-center m-1 justify-center p-2 font-bold text-white bg-teal-500 cursor-pointer rounded-full w-7 h-7`}
+                    } m-1 flex h-7 w-7 cursor-pointer items-center justify-center rounded-full bg-teal-500 p-2 font-bold text-white`}
                   >
                     {index + 1}
                   </div>
@@ -126,27 +130,27 @@ const Footer = ({ onOpen, link }: any) => {
             </div>
           )}
         </div>
-        <div className='flex items-center text-2xl font-semibold text-rose-500'>
-          <BsClock className='w-8 h-8 mr-4' />
+        <div className="flex items-center text-2xl font-semibold text-rose-500">
+          <BsClock className="mr-4 h-8 w-8" />
           <p>{`${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`}</p>
         </div>
         <div>
           <button
             onClick={onOpen}
-            className='mr-4 inline-block px-12 py-3 text-sm font-medium text-red-600 border border-red-600 rounded hover:bg-red-600 hover:text-white active:bg-red-500 '
+            className="mr-4 inline-block rounded border border-red-600 px-12 py-3 text-sm font-medium text-red-600 hover:bg-red-600 hover:text-white active:bg-red-500 "
           >
             Review
           </button>
           {minutes < 5 && (
             <button
               onClick={(e) => handleSubmit(e)}
-              className='inline-block px-12 py-3 text-sm font-medium bg-red-500 text-white border border-red-600 rounded hover:bg-red-700 hover:text-white'
+              className="inline-block rounded border border-red-600 bg-red-500 px-12 py-3 text-sm font-medium text-white hover:bg-red-700 hover:text-white"
             >
               Tiếp theo
             </button>
           )}
           {minutes > 5 && (
-            <Popover placement='top' showArrow={false} className='mb-4' isOpen={openPopover}>
+            <Popover placement="top" showArrow={false} className="mb-4" isOpen={openPopover}>
               <PopoverTrigger>
                 {/* <Button color='danger' variant='solid' onClick={() => setOpenPopover(true)}>
                   Nộp bài
@@ -156,25 +160,27 @@ const Footer = ({ onOpen, link }: any) => {
                     // setOpenPopover(true)
                     router.push(link)
                   }}
-                  className='inline-block px-12 py-3 text-sm font-medium bg-red-500 text-white border border-red-600 rounded hover:bg-red-700 hover:text-white'
+                  className="inline-block rounded border border-red-600 bg-red-500 px-12 py-3 text-sm font-medium text-white hover:bg-red-700 hover:text-white"
                 >
                   Tiếp theo
                 </button>
               </PopoverTrigger>
-              <PopoverContent className='px-4 py-2'>
-                <div className='text-center'>
+              <PopoverContent className="px-4 py-2">
+                <div className="text-center">
                   <p>
-                    Vẫn còn hơn <span className='mx-1 text-lg font-semibold text-rose-500'>{minutes}</span> phút!
+                    Vẫn còn hơn{' '}
+                    <span className="mx-1 text-lg font-semibold text-rose-500">{minutes}</span>{' '}
+                    phút!
                   </p>
                   Bạn chắc chắn muốn nộp bài chứ !
                 </div>
-                <Divider className='my-2' />
-                <div className='flex items-center justify-end w-full'>
+                <Divider className="my-2" />
+                <div className="flex w-full items-center justify-end">
                   <Button
-                    color='default'
-                    variant='light'
-                    size='sm'
-                    className='mr-2'
+                    color="default"
+                    variant="light"
+                    size="sm"
+                    className="mr-2"
                     onClick={() => setOpenPopover(false)}
                   >
                     Hủy
@@ -191,7 +197,7 @@ const Footer = ({ onOpen, link }: any) => {
                   </Button> */}
                   <button
                     onClick={(e) => handleSubmit(e)}
-                    className='inline-block px-12 py-3 text-sm font-medium bg-red-500 text-white border border-red-600 rounded hover:bg-red-700 hover:text-white'
+                    className="inline-block rounded border border-red-600 bg-red-500 px-12 py-3 text-sm font-medium text-white hover:bg-red-700 hover:text-white"
                   >
                     Tiếp theo
                   </button>

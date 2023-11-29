@@ -1,4 +1,4 @@
-import AppLayoutRoot from '@/components/app-layout/app-layout-root'
+// import AppLayoutRoot from '@/components/app-layout/app-layout-root'
 
 type AppLayoutProps = React.PropsWithChildren
 

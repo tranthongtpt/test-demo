@@ -3,8 +3,13 @@
 import { useSession } from 'next-auth/react'
 import Image from 'next/image'
 
+type TypeUser = {
+  typeUser: string
+}
+
 function Profile() {
   const { data: session } = useSession()
+  const user = session?.user as TypeUser
   return (
     <div className="p-10">
       <div className="grid grid-cols-4 gap-6 px-4 sm:grid-cols-12">
@@ -26,7 +31,9 @@ function Profile() {
             </div>
             <div className="mt-2 text-center">
               <h2 className="font-semibold">{session?.user?.name}</h2>
-              <p className="text-gray-500">Học viên</p>
+              <p className="text-gray-500">
+                {user.typeUser === 'admin' ? 'Giáo viên' : 'Học viên'}
+              </p>
             </div>
             <ul className="flex items-center justify-around py-4 mt-2 text-gray-700">
               <li className="flex flex-col items-center justify-around">

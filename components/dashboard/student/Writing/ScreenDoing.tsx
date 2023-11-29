@@ -1,7 +1,5 @@
 'use client'
 import React, { useEffect, useState } from 'react'
-import parse from 'html-react-parser'
-import { Input, Select, SelectItem } from '@nextui-org/react'
 import { useSession } from 'next-auth/react'
 interface DataProps {
   data: [
@@ -41,7 +39,7 @@ const ScreenDoing = ({ data }: DataProps) => {
     }
   }
   return (
-    <div className="w-full h-full p-8 pt-8 overflow-y-auto bg-slate-50/50">
+    <div className="h-full w-full overflow-y-auto bg-slate-50/50 p-8 pt-8">
       <textarea
         className="h-[50vh] w-full rounded-lg border border-slate-200 px-3 py-3 hover:shadow focus:border-slate-500 focus:outline-none dark:bg-gray-600 dark:text-gray-100"
         name="bio"

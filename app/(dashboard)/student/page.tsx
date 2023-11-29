@@ -41,7 +41,6 @@ const Dashboard = () => {
           </div>
         </div>
         <div className="rounded-lg border bg-white p-5">
-          {' '}
           <div className="flex items-center justify-between pb-2">
             <span>Đã hoàn thành bài kiểm tra</span>
             <Link
@@ -57,7 +56,6 @@ const Dashboard = () => {
           </div>
         </div>
         <div className="rounded-lg border bg-white p-5">
-          {' '}
           <div className="flex items-center justify-between pb-2">
             <span>Độ chính xác</span>
           </div>
@@ -65,9 +63,8 @@ const Dashboard = () => {
             <Image src="/svg/target.svg" alt="target" width={50} height={50} />
             <span className="text-3xl font-semibold ">10.00%</span>
           </div>
-        </div>{' '}
+        </div>
         <div className="rounded-lg border bg-white p-5">
-          {' '}
           <div className="flex items-center justify-between pb-2">
             <span>Điểm cao nhất</span>
           </div>

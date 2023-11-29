@@ -1,22 +1,11 @@
 'use client'
-import Breadcrumbs from '@/components/dashboard/Layout/Breadcrumbs'
-import TextEditor from '@/components/dashboard/teacher/TextEditor'
-import {
-  Button,
-  Card,
-  CardBody,
-  Input,
-  Select,
-  SelectItem,
-  Selection,
-  Tab,
-  Tabs,
-} from '@nextui-org/react'
+
+import { Card, CardBody, Input, Select, SelectItem, Selection, Tab, Tabs } from '@nextui-org/react'
 import dynamic from 'next/dynamic'
 import React, { useEffect, useState } from 'react'
 import { FiEye } from 'react-icons/fi'
 import Split from 'react-split'
-import parse from 'html-react-parser'
+// import parse from 'html-react-parser'
 
 interface InputValueExamsType {
   nameTitle?: string
@@ -54,9 +43,9 @@ const Page = () => {
   return (
     <>
       <section className="h-full min-h-screen w-full bg-[#f1f1f1] p-4">
-        <div className="px-1 py-6 bg-white rounded-md">
+        <div className="rounded-md bg-white px-1 py-6">
           <div className="my-2 text-center text-rose-500">
-            <h1 className="uppercase text-h1">
+            <h1 className="text-h1 uppercase">
               {inputValuesExams?.nameTitle ? inputValuesExams?.nameTitle : 'Academic Test'}
             </h1>
           </div>
@@ -109,7 +98,7 @@ const Page = () => {
                         direction="horizontal"
                       >
                         <div>
-                          <p className="my-8 text-xl font-semibold text-center">
+                          <p className="my-8 text-center text-xl font-semibold">
                             Đề thi cho PRACTICE {section}
                           </p>
                         </div>
