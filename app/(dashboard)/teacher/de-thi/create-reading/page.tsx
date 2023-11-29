@@ -1,5 +1,5 @@
 'use client'
-import TextEditor from '@/components/dashboard/TextEditor'
+import TextEditor from '@/components/dashboard/teacher/TextEditor'
 import { Button, Card, CardBody, Input, Select, SelectItem, Tab, Tabs } from '@nextui-org/react'
 import React, { useEffect, useState } from 'react'
 import Split from 'react-split'

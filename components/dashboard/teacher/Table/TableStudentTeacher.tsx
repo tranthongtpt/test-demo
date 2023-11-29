@@ -1,3 +1,4 @@
+import React from 'react'
 import {
   Chip,
   Input,
@@ -9,11 +10,10 @@ import {
   TableCell,
   TableColumn,
   TableHeader,
-  TableRow
+  TableRow,
 } from '@nextui-org/react'
-import React from 'react'
+import DateRangePickerComponent from '@/components/DateRangePicker'
 import { BsSearch } from 'react-icons/bs'
-import DateRangePickerComponent from '../DateRangePicker'
 
 const TableStudentTeacher = () => {
   const [page, setPage] = React.useState(1)
@@ -54,24 +54,29 @@ const TableStudentTeacher = () => {
   const topContent = React.useMemo(() => {
     return (
       <>
-        <div className='flex items-center justify-between'>
+        <div className="flex items-center justify-between">
           <Input
             isClearable
             classNames={{
               base: ' max-w-[50%]',
-              inputWrapper: 'border-1'
+              inputWrapper: 'border-1',
             }}
-            placeholder='Tìm kiếm theo tên'
-            size='md'
-            startContent={<BsSearch className='text-default-300' />}
+            placeholder="Tìm kiếm theo tên"
+            size="md"
+            startContent={<BsSearch className="text-default-300" />}
             // value={filterValue}
-            variant='bordered'
+            variant="bordered"
             // onClear={() => setFilterValue('')}
             // onValueChange={onSearchChange}
           />
-          <div className='flex items-center justify-end w-full'>
+          <div className="flex items-center justify-end w-full">
             <DateRangePickerComponent setDate={setDate} />
-            <Select className='max-w-[200px] ml-4' labelPlacement={'outside-left'} placeholder='Trạng thái' size='md'>
+            <Select
+              className="ml-4 max-w-[200px]"
+              labelPlacement={'outside-left'}
+              placeholder="Trạng thái"
+              size="md"
+            >
               {data.map((item, index) => (
                 <SelectItem key={index} value={item}>
                   {item}
@@ -80,14 +85,17 @@ const TableStudentTeacher = () => {
             </Select>
           </div>
         </div>
-        <div className='flex items-center justify-between'>
-          <span className='text-default-400 text-small'>Có 3 hoá đơn</span>
-          <label className='flex items-center text-default-400 text-small'>
+        <div className="flex items-center justify-between">
+          <span className="text-small text-default-400">Có 3 hoá đơn</span>
+          <label className="flex items-center text-small text-default-400">
             Số lượng hiển thị:
-            <select className='bg-transparent outline-none text-default-400 text-small' onChange={onRowsPerPageChange}>
-              <option value='10'>10</option>
-              <option value='15'>15</option>
-              <option value='20'>20</option>
+            <select
+              className="bg-transparent outline-none text-small text-default-400"
+              onChange={onRowsPerPageChange}
+            >
+              <option value="10">10</option>
+              <option value="15">15</option>
+              <option value="20">20</option>
             </select>
           </label>
         </div>
@@ -98,15 +106,15 @@ const TableStudentTeacher = () => {
     <div>
       <>
         <Table
-          aria-label='Example table with client side pagination'
+          aria-label="Example table with client side pagination"
           topContent={topContent}
           bottomContent={
-            <div className='flex justify-center w-full'>
+            <div className="flex justify-center w-full">
               <Pagination
                 isCompact
                 showControls
                 showShadow
-                color='secondary'
+                color="secondary"
                 page={page}
                 total={1}
                 // total={pages}
@@ -115,21 +123,21 @@ const TableStudentTeacher = () => {
             </div>
           }
           classNames={{
-            wrapper: 'min-h-[222px] !rounded-none !py-5'
+            wrapper: 'min-h-[222px] !rounded-none !py-5',
           }}
         >
           <TableHeader>
-            <TableColumn className='text-base '>Mã hóa đơn</TableColumn>
-            <TableColumn className='text-base '>Học viên</TableColumn>
-            <TableColumn className='text-base '>Tên đơn hàng</TableColumn>
-            <TableColumn className='text-base '>Ngày phát hành</TableColumn>
-            <TableColumn className='text-base '>Ngày thanh toán</TableColumn>
-            <TableColumn className='text-base '>Tổng tiền</TableColumn>
-            <TableColumn className='text-base '>Phương thức thanh toán</TableColumn>
-            <TableColumn className='text-base '>Trạng thái</TableColumn>
+            <TableColumn className="text-base ">Mã hóa đơn</TableColumn>
+            <TableColumn className="text-base ">Học viên</TableColumn>
+            <TableColumn className="text-base ">Tên đơn hàng</TableColumn>
+            <TableColumn className="text-base ">Ngày phát hành</TableColumn>
+            <TableColumn className="text-base ">Ngày thanh toán</TableColumn>
+            <TableColumn className="text-base ">Tổng tiền</TableColumn>
+            <TableColumn className="text-base ">Phương thức thanh toán</TableColumn>
+            <TableColumn className="text-base ">Trạng thái</TableColumn>
           </TableHeader>
           <TableBody emptyContent={'No rows to display.'}>
-            <TableRow key='1'>
+            <TableRow key="1">
               <TableCell>DEV5437</TableCell>
               <TableCell>Nguyễn Mai</TableCell>
               <TableCell>Thi combo Speaking + Listening + Reading</TableCell>
@@ -138,12 +146,17 @@ const TableStudentTeacher = () => {
               <TableCell>2,400,000 VNĐ</TableCell>
               <TableCell> Credit Card</TableCell>
               <TableCell>
-                <Chip color='success' size='sm' variant='flat' className='min-w-[116px] text-center capitalize'>
+                <Chip
+                  color="success"
+                  size="sm"
+                  variant="flat"
+                  className="min-w-[116px] text-center capitalize"
+                >
                   Đã thanh toán
                 </Chip>
               </TableCell>
             </TableRow>
-            <TableRow key='2'>
+            <TableRow key="2">
               <TableCell>DEV5437</TableCell>
               <TableCell>Nguyễn Long</TableCell>
               <TableCell>Thi combo Speaking + Listening + Reading</TableCell>
@@ -152,12 +165,17 @@ const TableStudentTeacher = () => {
               <TableCell>2,400,000 VNĐ</TableCell>
               <TableCell> Credit Card</TableCell>
               <TableCell>
-                <Chip color='warning' size='sm' variant='flat' className='min-w-[116px] text-center capitalize'>
+                <Chip
+                  color="warning"
+                  size="sm"
+                  variant="flat"
+                  className="min-w-[116px] text-center capitalize"
+                >
                   Đang giải quyết
                 </Chip>
               </TableCell>
             </TableRow>
-            <TableRow key='3'>
+            <TableRow key="3">
               <TableCell>DEV5437</TableCell>
               <TableCell>Nguyễn Long</TableCell>
               <TableCell>Thi combo Speaking + Listening + Reading</TableCell>
@@ -166,7 +184,12 @@ const TableStudentTeacher = () => {
               <TableCell>2,400,000 VNĐ</TableCell>
               <TableCell> Credit Card</TableCell>
               <TableCell>
-                <Chip color='danger' size='sm' variant='flat' className='min-w-[116px] text-center capitalize'>
+                <Chip
+                  color="danger"
+                  size="sm"
+                  variant="flat"
+                  className="min-w-[116px] text-center capitalize"
+                >
                   Quá hạn
                 </Chip>
               </TableCell>

@@ -1,6 +1,6 @@
 'use client'
 import Breadcrumbs from '@/components/dashboard/Layout/Breadcrumbs'
-import TextEditor from '@/components/dashboard/TextEditor'
+import TextEditor from '@/components/dashboard/teacher/TextEditor'
 import {
   Button,
   Card,

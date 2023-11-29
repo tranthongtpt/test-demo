@@ -21,17 +21,18 @@ import {
   TableColumn,
   TableHeader,
   TableRow,
+  Tooltip,
   getKeyValue,
 } from '@nextui-org/react'
 import { BsSearch, BsThreeDotsVertical } from 'react-icons/bs'
+import { FiDelete, FiEdit, FiGlobe, FiLock, FiTrash, FiTrash2 } from 'react-icons/fi'
 import { format } from 'date-fns'
 import { vi } from 'date-fns/locale'
-import { FiEdit, FiGlobe, FiLock, FiTrash2 } from 'react-icons/fi'
-import DateRangePickerComponent from '../DateRangePicker'
+import DateRangePickerComponent from '@/components/DateRangePicker'
 
 type ListReading = (typeof listReading)[0]
 interface TableProps {
-  // type: string
+  type: string
 }
 
 const statusColorMap: Record<string, ChipProps['color']> = {
@@ -44,15 +45,14 @@ const dataStatus = ['Hoạt động', 'Khoá']
 const columns = [
   { name: 'Tên bài thi', uid: 'name' },
   { name: 'Ngày tạo', uid: 'createAt' },
-  { name: 'Số người đăng ký', uid: 'users' },
   { name: 'Trạng thái', uid: 'status' },
   { name: '', uid: 'actions' },
 ]
 
-const TableAcademic: React.FC<TableProps> = ({}) => {
+const TableExams: React.FC<TableProps> = ({ type }) => {
   const [page, setPage] = React.useState(1)
-  const [filterValue, setFilterValue] = React.useState('')
   const [date, setDate] = React.useState({ fromDate: 0, toDate: 5550000000000 })
+  const [filterValue, setFilterValue] = React.useState('')
   const [rowsPerPage, setRowsPerPage] = React.useState(10)
   const pathname = usePathname()
 
@@ -147,7 +147,7 @@ const TableAcademic: React.FC<TableProps> = ({}) => {
       case 'name':
         return (
           <div>
-            <Link href={`${pathname}/academic?${encodeURIComponent(listReading.key)}`}>
+            <Link href={`${pathname}/${type}?${encodeURIComponent(listReading.key)}`}>
               {cellValue}
             </Link>
           </div>
@@ -157,14 +157,6 @@ const TableAcademic: React.FC<TableProps> = ({}) => {
           <div className="flex flex-col">
             <p className="text-sm capitalize text-bold">
               {format(parseInt(cellValue), 'dd/MM/yyyy hh:mm aa', { locale: vi })}
-            </p>
-          </div>
-        )
-      case 'users':
-        return (
-          <div className="flex flex-col">
-            <p className="text-sm capitalize text-bold">
-              {Math.floor(Math.random() * (1000 - 10 + 1) + 10)}
             </p>
           </div>
         )
@@ -252,4 +244,4 @@ const TableAcademic: React.FC<TableProps> = ({}) => {
   )
 }
 
-export default TableAcademic
+export default TableExams

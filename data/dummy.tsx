@@ -5,100 +5,104 @@ export const adminEmails = [
   'anna.huong@anhngudream.edu.vn',
   'rosa.linh@anhngudream.edu.vn',
   'hadang@anhngudream.edu.vn',
-];
+]
 
 export const listReading = [
   {
     key: '1',
     name: 'January - Ielts Reading Practic Test 1',
     status: 'active',
-    createAt: '1697182050000'
+    createAt: '1697182050000',
   },
   {
     key: '2',
     name: 'January - Ielts Reading Practic Test 2',
     status: 'locked',
-    createAt: '1697182050000'
+    createAt: '1697182050000',
   },
   {
     key: '3',
     name: 'January - Ielts Reading Practic Test 3',
     status: 'locked',
-    createAt: '1697182050000'
+    createAt: '1697182050000',
   },
   {
     key: '4',
     name: 'January - Ielts Reading Practic Test 4',
     status: 'active',
-    createAt: '1697182050000'
+    createAt: '1697182050000',
   },
   {
     key: '5',
     name: 'January - Ielts Reading Practic Test 5',
     status: 'locked',
-    createAt: '1697182050000'
+    createAt: '1697182050000',
   },
   {
     key: '6',
     name: 'January - Ielts Reading Practic Test 6',
     status: 'active',
-    createAt: '1697182050000'
+    createAt: '1697182050000',
   },
   {
     key: '7',
     name: 'January - Ielts Reading Practic Test 7',
     status: 'active',
-    createAt: '1697182050000'
+    createAt: '1697182050000',
   },
   {
     key: '8',
     name: 'January - Ielts Reading Practic Test 8',
     status: 'active',
-    createAt: '1697182050000'
+    createAt: '1697182050000',
   },
   {
     key: '9',
     name: 'January - Ielts Reading Practic Test 9',
     status: 'locked',
-    createAt: '1697182050000'
+    createAt: '1697182050000',
   },
   {
     key: '10',
     name: 'January - Ielts Reading Practic Test 10',
     status: 'active',
-    createAt: '1697182050000'
+    createAt: '1697182050000',
   },
   {
     key: '11',
     name: 'January - Ielts Reading Practic Test 11',
     status: 'active',
-    createAt: '1697182050000'
+    createAt: '1697182050000',
   },
   {
     key: '12',
     name: 'January - Ielts Reading Practic Test 12',
     status: 'active',
-    createAt: '1697182050000'
-  }
+    createAt: '1697182050000',
+  },
 ]
 export const admin = [
   {
     id: 1,
     name: 'Trang chủ',
-    icon: <Image src='/svg/dashboard.svg' alt='logo' height={24} width={24} className='text-white' />,
-    link: '/teacher'
+    icon: (
+      <Image src="/svg/dashboard.svg" alt="logo" height={24} width={24} className="text-white" />
+    ),
+    link: '/teacher',
   },
   {
     id: 7,
     name: 'Quản lý đề thi',
-    icon: <Image src='/svg/create.svg' alt='logo' height={24} width={24} className='text-white' />,
-    link: '/teacher/de-thi'
+    icon: <Image src="/svg/create.svg" alt="logo" height={24} width={24} className="text-white" />,
+    link: '/teacher/de-thi',
   },
   {
     id: 8,
     name: 'Quản lý bài thi',
-    icon: <Image src='/svg/create.svg' alt='logo' height={24} width={24} className='text-white' />,
-    link: '/teacher/bai-thi'
+    icon: (
+      <Image src="/svg/document.svg" alt="logo" height={24} width={24} className="text-white" />
+    ),
+    link: '/teacher/bai-thi',
   },
   // {
   //   id: 2,
@@ -115,14 +119,14 @@ export const admin = [
   {
     id: 4,
     name: 'Học viên đăng ký',
-    icon: <Image src='/svg/users.svg' alt='logo' height={24} width={24} className='text-white' />,
-    link: '/teacher/hoc-vien'
+    icon: <Image src="/svg/users.svg" alt="logo" height={24} width={24} className="text-white" />,
+    link: '/teacher/hoc-vien',
   },
   {
     id: 5,
     name: 'Lịch sử đăng ký',
-    icon: <Image src='/svg/history.svg' alt='logo' height={24} width={24} className='text-white' />,
-    link: '/teacher/lich-su-dang-ky'
+    icon: <Image src="/svg/history.svg" alt="logo" height={24} width={24} className="text-white" />,
+    link: '/teacher/lich-su-dang-ky',
   },
   // {
   //   id: 3,
@@ -139,41 +143,43 @@ export const admin = [
   {
     id: 6,
     name: 'Hồ sơ',
-    icon: <Image src='/svg/setting.svg' alt='logo' height={24} width={24} className='text-white' />,
-    link: '/ho-so'
-  }
+    icon: <Image src="/svg/setting.svg" alt="logo" height={24} width={24} className="text-white" />,
+    link: '/ho-so',
+  },
 ]
 export const user = [
   {
     id: 1,
     name: 'Trang chủ',
-    icon: <Image src='/svg/dashboard.svg' alt='logo' height={24} width={24} className='text-white' />,
-    link: '/student'
+    icon: (
+      <Image src="/svg/dashboard.svg" alt="logo" height={24} width={24} className="text-white" />
+    ),
+    link: '/student',
   },
   {
     id: 2,
     name: 'Ielts Prep Services',
-    icon: <Image src='/svg/class.svg' alt='logo' height={24} width={24} className='text-white' />,
-    link: '/student/ielts-prep-services'
+    icon: <Image src="/svg/class.svg" alt="logo" height={24} width={24} className="text-white" />,
+    link: '/student/ielts-prep-services',
   },
   {
     id: 3,
     name: 'Lịch sử làm bài',
-    icon: <Image src='/svg/history.svg' alt='logo' height={24} width={24} className='text-white' />,
-    link: '/student/lich-su-lam-bai'
+    icon: <Image src="/svg/history.svg" alt="logo" height={24} width={24} className="text-white" />,
+    link: '/student/lich-su-lam-bai',
   },
   {
     id: 4,
     name: 'Lịch sử thanh toán',
-    icon: <Image src='/svg/history.svg' alt='logo' height={24} width={24} className='text-white' />,
-    link: '/student/lich-su-thanh-toan'
+    icon: <Image src="/svg/history.svg" alt="logo" height={24} width={24} className="text-white" />,
+    link: '/student/lich-su-thanh-toan',
   },
   {
     id: 5,
     name: 'Hồ sơ',
-    icon: <Image src='/svg/setting.svg' alt='logo' height={24} width={24} className='text-white' />,
-    link: '/student/ho-so'
-  }
+    icon: <Image src="/svg/setting.svg" alt="logo" height={24} width={24} className="text-white" />,
+    link: '/student/ho-so',
+  },
 ]
 
 export const questionGroup = [
@@ -190,11 +196,11 @@ export const questionGroup = [
         answers: [
           {
             answer: 'Olivianna Palmero',
-            correct: true
-          }
+            correct: true,
+          },
         ],
         type: 'input',
-        options: null
+        options: null,
       },
       {
         id: '61b9a4c7d1fdb6001ebd155e',
@@ -203,11 +209,11 @@ export const questionGroup = [
         answers: [
           {
             answer: 'Palmero',
-            correct: true
-          }
+            correct: true,
+          },
         ],
         type: 'input',
-        options: null
+        options: null,
       },
       {
         id: '61b9a4c7d1fdb601123e123',
@@ -216,11 +222,11 @@ export const questionGroup = [
         answers: [
           {
             answer: 'Paris',
-            correct: true
-          }
+            correct: true,
+          },
         ],
         type: 'radio',
-        options: ['Paris', 'London', 'Berlin', 'Madrid']
+        options: ['Paris', 'London', 'Berlin', 'Madrid'],
       },
       {
         id: '1213dasdasd',
@@ -229,11 +235,11 @@ export const questionGroup = [
         answers: [
           {
             answer: 'Jupiter',
-            correct: true
-          }
+            correct: true,
+          },
         ],
         type: 'radio',
-        options: ['Mars', 'Venus', 'Jupiter', 'Saturn']
+        options: ['Mars', 'Venus', 'Jupiter', 'Saturn'],
       },
       {
         id: '11111111',
@@ -242,11 +248,11 @@ export const questionGroup = [
         answers: [
           {
             answer: '1',
-            correct: true
-          }
+            correct: true,
+          },
         ],
         type: 'radio',
-        options: ['1', '2', '3', '4']
+        options: ['1', '2', '3', '4'],
       },
       {
         id: '61b9a4c7d1fdb601123e1',
@@ -255,11 +261,11 @@ export const questionGroup = [
         answers: [
           {
             answer: 'Paris',
-            correct: true
-          }
+            correct: true,
+          },
         ],
         type: 'radio',
-        options: ['Paris', 'London', 'Berlin', 'Madrid']
+        options: ['Paris', 'London', 'Berlin', 'Madrid'],
       },
       {
         id: '61b9a4c7d1fdb601123e12',
@@ -268,11 +274,11 @@ export const questionGroup = [
         answers: [
           {
             answer: 'Paris',
-            correct: true
-          }
+            correct: true,
+          },
         ],
         type: 'radio',
-        options: ['Paris', 'London', 'Berlin', 'Madrid']
+        options: ['Paris', 'London', 'Berlin', 'Madrid'],
       },
       {
         id: '1213dacasdasd',
@@ -281,11 +287,11 @@ export const questionGroup = [
         answers: [
           {
             answer: 'Jupiter',
-            correct: true
-          }
+            correct: true,
+          },
         ],
         type: 'radio',
-        options: ['Mars', 'Venus', 'Jupiter', 'Saturn']
+        options: ['Mars', 'Venus', 'Jupiter', 'Saturn'],
       },
       {
         id: '111111115123',
@@ -294,11 +300,11 @@ export const questionGroup = [
         answers: [
           {
             answer: '1',
-            correct: true
-          }
+            correct: true,
+          },
         ],
         type: 'radio',
-        options: ['1', '2', '3', '4']
+        options: ['1', '2', '3', '4'],
       },
       {
         id: '61b9a4c7d1fdb601123e1234',
@@ -307,12 +313,12 @@ export const questionGroup = [
         answers: [
           {
             answer: 'Paris',
-            correct: true
-          }
+            correct: true,
+          },
         ],
         type: 'radio',
-        options: ['Paris', 'London', 'Berlin', 'Madrid']
-      }
+        options: ['Paris', 'London', 'Berlin', 'Madrid'],
+      },
     ],
     answer: `Ganesh Chaturthi is one of the most prominent festivals of India. People of India wait the whole year for this festival eagerly. Although it is celebrated all over the country, in the state of Maharashtra it is celebrated with the most enthusiasm.
 
@@ -338,7 +344,7 @@ export const questionGroup = [
     
     When Ganesh Chaturthi ends, they pray for the return of Lord Ganesha every year. They look forward to this festival every year. The final immersion of Lord Ganesha’s statue in the river or ocean marks the end of Ganesh Chaturthi.
     
-    In short, Ganesh Chaturthi is a fun-filled festival in honour of Lord Ganesha. People all over India thoroughly enjoy it. All the devotees of Lord Ganesha come together irrespective of their differences of caste and colour. Ganesh Chaturthi spreads joy and unites people all over.`
+    In short, Ganesh Chaturthi is a fun-filled festival in honour of Lord Ganesha. People all over India thoroughly enjoy it. All the devotees of Lord Ganesha come together irrespective of their differences of caste and colour. Ganesh Chaturthi spreads joy and unites people all over.`,
   },
   {
     id: '6228d1fdb6001ebd0d15',
@@ -353,11 +359,11 @@ export const questionGroup = [
         answers: [
           {
             answer: 'Olivianna Palmero',
-            correct: true
-          }
+            correct: true,
+          },
         ],
         type: 'input',
-        options: null
+        options: null,
       },
       {
         id: '61b9a4c7d1fdb6001ebd155e',
@@ -366,11 +372,11 @@ export const questionGroup = [
         answers: [
           {
             answer: 'Palmero',
-            correct: true
-          }
+            correct: true,
+          },
         ],
         type: 'input',
-        options: null
+        options: null,
       },
       {
         id: '61b9a4c7d1fdb601123e123',
@@ -379,11 +385,11 @@ export const questionGroup = [
         answers: [
           {
             answer: 'Paris',
-            correct: true
-          }
+            correct: true,
+          },
         ],
         type: 'radio',
-        options: ['Paris', 'London', 'Berlin', 'Madrid']
+        options: ['Paris', 'London', 'Berlin', 'Madrid'],
       },
       {
         id: '1213dasdasd',
@@ -392,11 +398,11 @@ export const questionGroup = [
         answers: [
           {
             answer: 'Jupiter',
-            correct: true
-          }
+            correct: true,
+          },
         ],
         type: 'radio',
-        options: ['Mars', 'Venus', 'Jupiter', 'Saturn']
+        options: ['Mars', 'Venus', 'Jupiter', 'Saturn'],
       },
       {
         id: '11111111',
@@ -405,11 +411,11 @@ export const questionGroup = [
         answers: [
           {
             answer: '1',
-            correct: true
-          }
+            correct: true,
+          },
         ],
         type: 'radio',
-        options: ['1', '2', '3', '4']
+        options: ['1', '2', '3', '4'],
       },
       {
         id: '61b9a4c7d1fdb601123e1',
@@ -418,11 +424,11 @@ export const questionGroup = [
         answers: [
           {
             answer: 'Paris',
-            correct: true
-          }
+            correct: true,
+          },
         ],
         type: 'radio',
-        options: ['Paris', 'London', 'Berlin', 'Madrid']
+        options: ['Paris', 'London', 'Berlin', 'Madrid'],
       },
       {
         id: '61b9a4c7d1fdb601123e12',
@@ -431,11 +437,11 @@ export const questionGroup = [
         answers: [
           {
             answer: 'Paris',
-            correct: true
-          }
+            correct: true,
+          },
         ],
         type: 'radio',
-        options: ['Paris', 'London', 'Berlin', 'Madrid']
+        options: ['Paris', 'London', 'Berlin', 'Madrid'],
       },
       {
         id: '1213dacasdasd',
@@ -444,11 +450,11 @@ export const questionGroup = [
         answers: [
           {
             answer: 'Jupiter',
-            correct: true
-          }
+            correct: true,
+          },
         ],
         type: 'radio',
-        options: ['Mars', 'Venus', 'Jupiter', 'Saturn']
+        options: ['Mars', 'Venus', 'Jupiter', 'Saturn'],
       },
       {
         id: '111111115123',
@@ -457,11 +463,11 @@ export const questionGroup = [
         answers: [
           {
             answer: '1',
-            correct: true
-          }
+            correct: true,
+          },
         ],
         type: 'radio',
-        options: ['1', '2', '3', '4']
+        options: ['1', '2', '3', '4'],
       },
       {
         id: '61b9a4c7d1fdb601123e1234',
@@ -470,13 +476,13 @@ export const questionGroup = [
         answers: [
           {
             answer: 'Paris',
-            correct: true
-          }
+            correct: true,
+          },
         ],
         type: 'radio',
-        options: ['Paris', 'London', 'Berlin', 'Madrid']
-      }
-    ]
+        options: ['Paris', 'London', 'Berlin', 'Madrid'],
+      },
+    ],
   },
   {
     id: '123123123fafasdasdsa',
@@ -492,11 +498,11 @@ export const questionGroup = [
         answers: [
           {
             answer: 'Olivianna Palmero',
-            correct: true
-          }
+            correct: true,
+          },
         ],
         type: 'input',
-        options: null
+        options: null,
       },
       {
         id: '61b9a4c7d1fdb6001ebd155e',
@@ -505,11 +511,11 @@ export const questionGroup = [
         answers: [
           {
             answer: 'Palmero',
-            correct: true
-          }
+            correct: true,
+          },
         ],
         type: 'input',
-        options: null
+        options: null,
       },
       {
         id: '61b9a4c7d1fdb601123e123',
@@ -518,11 +524,11 @@ export const questionGroup = [
         answers: [
           {
             answer: 'Paris',
-            correct: true
-          }
+            correct: true,
+          },
         ],
         type: 'radio',
-        options: ['Paris', 'London', 'Berlin', 'Madrid']
+        options: ['Paris', 'London', 'Berlin', 'Madrid'],
       },
       {
         id: '1213dasdasd',
@@ -531,11 +537,11 @@ export const questionGroup = [
         answers: [
           {
             answer: 'Jupiter',
-            correct: true
-          }
+            correct: true,
+          },
         ],
         type: 'radio',
-        options: ['Mars', 'Venus', 'Jupiter', 'Saturn']
+        options: ['Mars', 'Venus', 'Jupiter', 'Saturn'],
       },
       {
         id: '11111111',
@@ -544,11 +550,11 @@ export const questionGroup = [
         answers: [
           {
             answer: '1',
-            correct: true
-          }
+            correct: true,
+          },
         ],
         type: 'radio',
-        options: ['1', '2', '3', '4']
+        options: ['1', '2', '3', '4'],
       },
       {
         id: '61b9a4c7d1fdb601123e1',
@@ -557,11 +563,11 @@ export const questionGroup = [
         answers: [
           {
             answer: 'Paris',
-            correct: true
-          }
+            correct: true,
+          },
         ],
         type: 'radio',
-        options: ['Paris', 'London', 'Berlin', 'Madrid']
+        options: ['Paris', 'London', 'Berlin', 'Madrid'],
       },
       {
         id: '61b9a4c7d1fdb601123e12',
@@ -570,11 +576,11 @@ export const questionGroup = [
         answers: [
           {
             answer: 'Paris',
-            correct: true
-          }
+            correct: true,
+          },
         ],
         type: 'radio',
-        options: ['Paris', 'London', 'Berlin', 'Madrid']
+        options: ['Paris', 'London', 'Berlin', 'Madrid'],
       },
       {
         id: '1213dacasdasd',
@@ -583,11 +589,11 @@ export const questionGroup = [
         answers: [
           {
             answer: 'Jupiter',
-            correct: true
-          }
+            correct: true,
+          },
         ],
         type: 'radio',
-        options: ['Mars', 'Venus', 'Jupiter', 'Saturn']
+        options: ['Mars', 'Venus', 'Jupiter', 'Saturn'],
       },
       {
         id: '111111115123',
@@ -596,11 +602,11 @@ export const questionGroup = [
         answers: [
           {
             answer: '1',
-            correct: true
-          }
+            correct: true,
+          },
         ],
         type: 'radio',
-        options: ['1', '2', '3', '4']
+        options: ['1', '2', '3', '4'],
       },
       {
         id: '61b9a4c7d1fdb601123e1234',
@@ -609,13 +615,13 @@ export const questionGroup = [
         answers: [
           {
             answer: 'Paris',
-            correct: true
-          }
+            correct: true,
+          },
         ],
         type: 'radio',
-        options: ['Paris', 'London', 'Berlin', 'Madrid']
-      }
-    ]
+        options: ['Paris', 'London', 'Berlin', 'Madrid'],
+      },
+    ],
   },
   {
     id: '6228d1fdb6001ebd0d15',
@@ -631,11 +637,11 @@ export const questionGroup = [
         answers: [
           {
             answer: 'Olivianna Palmero',
-            correct: true
-          }
+            correct: true,
+          },
         ],
         type: 'input',
-        options: null
+        options: null,
       },
       {
         id: '61b9a4c7d1fdb6001ebd155e',
@@ -644,11 +650,11 @@ export const questionGroup = [
         answers: [
           {
             answer: 'Palmero',
-            correct: true
-          }
+            correct: true,
+          },
         ],
         type: 'input',
-        options: null
+        options: null,
       },
       {
         id: '61b9a4c7d1fdb601123e123',
@@ -657,11 +663,11 @@ export const questionGroup = [
         answers: [
           {
             answer: 'Paris',
-            correct: true
-          }
+            correct: true,
+          },
         ],
         type: 'radio',
-        options: ['Paris', 'London', 'Berlin', 'Madrid']
+        options: ['Paris', 'London', 'Berlin', 'Madrid'],
       },
       {
         id: '1213dasdasd',
@@ -670,11 +676,11 @@ export const questionGroup = [
         answers: [
           {
             answer: 'Jupiter',
-            correct: true
-          }
+            correct: true,
+          },
         ],
         type: 'radio',
-        options: ['Mars', 'Venus', 'Jupiter', 'Saturn']
+        options: ['Mars', 'Venus', 'Jupiter', 'Saturn'],
       },
       {
         id: '11111111',
@@ -683,11 +689,11 @@ export const questionGroup = [
         answers: [
           {
             answer: '1',
-            correct: true
-          }
+            correct: true,
+          },
         ],
         type: 'radio',
-        options: ['1', '2', '3', '4']
+        options: ['1', '2', '3', '4'],
       },
       {
         id: '61b9a4c7d1fdb601123e1',
@@ -696,11 +702,11 @@ export const questionGroup = [
         answers: [
           {
             answer: 'Paris',
-            correct: true
-          }
+            correct: true,
+          },
         ],
         type: 'radio',
-        options: ['Paris', 'London', 'Berlin', 'Madrid']
+        options: ['Paris', 'London', 'Berlin', 'Madrid'],
       },
       {
         id: '61b9a4c7d1fdb601123e12',
@@ -709,11 +715,11 @@ export const questionGroup = [
         answers: [
           {
             answer: 'Paris',
-            correct: true
-          }
+            correct: true,
+          },
         ],
         type: 'radio',
-        options: ['Paris', 'London', 'Berlin', 'Madrid']
+        options: ['Paris', 'London', 'Berlin', 'Madrid'],
       },
       {
         id: '1213dacasdasd',
@@ -722,11 +728,11 @@ export const questionGroup = [
         answers: [
           {
             answer: 'Jupiter',
-            correct: true
-          }
+            correct: true,
+          },
         ],
         type: 'radio',
-        options: ['Mars', 'Venus', 'Jupiter', 'Saturn']
+        options: ['Mars', 'Venus', 'Jupiter', 'Saturn'],
       },
       {
         id: '111111115123',
@@ -735,11 +741,11 @@ export const questionGroup = [
         answers: [
           {
             answer: '1',
-            correct: true
-          }
+            correct: true,
+          },
         ],
         type: 'radio',
-        options: ['1', '2', '3', '4']
+        options: ['1', '2', '3', '4'],
       },
       {
         id: '61b9a4c7d1fdb601123e1234',
@@ -748,14 +754,14 @@ export const questionGroup = [
         answers: [
           {
             answer: 'Paris',
-            correct: true
-          }
+            correct: true,
+          },
         ],
         type: 'radio',
-        options: ['Paris', 'London', 'Berlin', 'Madrid']
-      }
-    ]
-  }
+        options: ['Paris', 'London', 'Berlin', 'Madrid'],
+      },
+    ],
+  },
 ]
 export const questionGroupListening = [
   {
@@ -872,7 +878,7 @@ export const questionGroupListening = [
       
       <p>The girl does not like the bus because they are always late. She would rather&nbsp;<input type="text" />.</p>
       
-      <p>The girl can get the information about the homestay family that she wants&nbsp;<input type="text" />.</p>`
+      <p>The girl can get the information about the homestay family that she wants&nbsp;<input type="text" />.</p>`,
   },
   {
     id: '6228d1fdb6001ebd0d15',
@@ -985,7 +991,7 @@ export const questionGroupListening = [
     <p><span style="font-size:11pt"><span style="background-color:white"><span style="font-family:Calibri,&quot;sans-serif&quot;"><span style="font-size:13.0pt"><span style="font-family:&quot;Times New Roman&quot;,&quot;serif&quot;"><span style="color:#1a1a1a"><input name="question-37708" type="text" /></span></span></span></span></span></span></p>
     
     <p>&nbsp;</p>
-    `
+    `,
   },
   {
     id: '123123123fafasdasdsa',
@@ -1057,7 +1063,7 @@ export const questionGroupListening = [
     Step 4 Visit the University Facebook page and vote<br />
     &darr;<br />
     Step 5 The picture with the most votes at 5 pm on&nbsp;<u>____30____</u>&nbsp;wins</span></span></span></span></span></span></p>
-    `
+    `,
   },
   {
     id: '6228d1fdb6001ebd0d15',
@@ -1081,6 +1087,6 @@ export const questionGroupListening = [
     ● Farmers need to be educated but governments also need to pay attention to&nbsp;<u>____37____</u>&nbsp;in order to protect the environment and re-nourish the soil<br />
     ● Experts from around the world could come together to form a&nbsp;<u>____38____</u>&nbsp;to observe farm systems aiming to prevent pollution and erosion<span style="background-color:#f8f9fa"> and encourage safe procedures that </span>are also&nbsp;<u>____39____</u><br />
     ● Creating the project&quot;s&nbsp;<u>____40____</u>&nbsp;would be very expensive and more money would be needed for the monitoring system but it could solve the problem of food shortages</span></span></span></span></span></p>
-    `
-  }
+    `,
+  },
 ]

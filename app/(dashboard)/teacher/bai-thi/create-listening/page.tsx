@@ -1,7 +1,7 @@
 'use client'
 import InputFile from '@/components/dashboard/InputFile/InputFile'
 import LoadingScreen from '@/components/dashboard/LoadingScreen'
-import TextEditor from '@/components/dashboard/TextEditor'
+import TextEditor from '@/components/dashboard/teacher/TextEditor'
 import {
   Button,
   Card,
