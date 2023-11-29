@@ -3,6 +3,7 @@ import React, { useEffect, useState } from 'react'
 import parse from 'html-react-parser'
 import { Input, Select, SelectItem } from '@nextui-org/react'
 import { useSession } from 'next-auth/react'
+import CheckGrammarGPT from './CheckGrammarGPT'
 interface DataProps {
   data: [
     {
@@ -19,9 +20,9 @@ interface DataProps {
           answers: []
           type: string
           options?: []
-        },
+        }
       ]
-    },
+    }
   ]
 }
 
@@ -41,16 +42,17 @@ const ScreenDoing = ({ data }: DataProps) => {
     }
   }
   return (
-    <div className="w-full h-full p-8 pt-8 overflow-y-auto bg-slate-50/50">
+    <div className='w-full h-full p-8 pt-8 overflow-y-auto bg-slate-50/50'>
       <textarea
-        className="h-[50vh] w-full rounded-lg border border-slate-200 px-3 py-3 hover:shadow focus:border-slate-500 focus:outline-none dark:bg-gray-600 dark:text-gray-100"
-        name="bio"
+        className='h-[50vh] w-full py-3 border border-slate-200 rounded-lg px-3 focus:outline-none focus:border-slate-500 hover:shadow dark:bg-gray-600 dark:text-gray-100'
+        name='bio'
         value={textareaValue}
         onChange={handleTextareaChange}
       ></textarea>
       <p>
         Words Count: <span>{textareaValue.split(/\s+/).filter((word) => word !== '').length}</span>
       </p>
+      <CheckGrammarGPT data={textareaValue} />
     </div>
   )
 }
